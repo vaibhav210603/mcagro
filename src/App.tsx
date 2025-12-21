@@ -49,20 +49,18 @@ function App() {
         {isLoading && <Loader key="loader" />}
       </AnimatePresence>
 
-      {!isLoading && (
-        <>
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Sustainability />
-            <Products />
-            <Investors />
-            <Contact />
-          </main>
-          <Footer />
-        </>
-      )}
+      <div className={isLoading ? "fixed inset-0 overflow-hidden pointer-events-none opacity-0" : "relative opacity-100 transition-opacity duration-700"}>
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Sustainability />
+          <Products />
+          <Investors />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
