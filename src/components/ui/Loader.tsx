@@ -31,7 +31,7 @@ export const Loader = () => {
                     className="h-full bg-brand-400"
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
-                    transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
+                    transition={{ duration: 3, ease: "easeInOut", delay: 0.5 }}
                 />
             </motion.div>
         </motion.div>

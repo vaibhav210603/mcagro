@@ -35,7 +35,7 @@ function App() {
     // Loader timer
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 4000);
 
     return () => {
       lenis.destroy();
