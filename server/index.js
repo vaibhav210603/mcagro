@@ -1,15 +1,14 @@
-import express from 'express';
-import nodemailer from 'nodemailer';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const express = require('express');
+const nodemailer = require('nodemailer');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const path = require('path');
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 // Middleware
 const allowedOrigins = process.env.CLIENT_URL ? [process.env.CLIENT_URL] : ['*'];
 
@@ -29,8 +28,9 @@ app.use(cors({
 }));
 app.use(express.json());
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Remove import.meta.url logic as __dirname is available in CommonJS
+// const __filename = fileURLToPath(import.meta.url); // Not needed in CommonJS
+// const __dirname = path.dirname(__filename);      // Not needed in CommonJS
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
@@ -164,5 +164,4 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
-export default app;
-
+module.exports = app;
