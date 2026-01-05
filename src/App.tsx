@@ -1,15 +1,26 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import { AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
-import { Hero } from './components/sections/Hero';
-import { About } from './components/sections/About';
-import { Products } from './components/sections/Products';
-import { Sustainability } from './components/sections/Sustainability';
-import { Investors } from './components/sections/Investors';
-import { Contact } from './components/sections/Contact';
 import { Footer } from './components/layout/Footer';
 import { Loader } from './components/ui/Loader';
+import { Home } from './pages/Home';
+import { AboutUs } from './pages/AboutUs';
+import { Careers } from './pages/Careers';
+import { Investors as InvestorsPage } from './pages/Investors';
+import { GetInTouch } from './pages/GetInTouch';
+
+// ScrollToTop component to handle route changes
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +46,7 @@ function App() {
     // Loader timer
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000);
+    }, 1000);
 
     return () => {
       lenis.destroy();
@@ -44,25 +55,30 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen">
-      <AnimatePresence mode="wait">
-        {isLoading && <Loader key="loader" />}
-      </AnimatePresence>
+    <Router>
+      <ScrollToTop />
+      <div className="bg-white min-h-screen">
+        <AnimatePresence mode="wait">
+          {isLoading && <Loader key="loader" />}
+        </AnimatePresence>
 
-      <div className={isLoading ? "fixed inset-0 overflow-hidden pointer-events-none opacity-0" : "relative opacity-100 transition-opacity duration-700"}>
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Sustainability />
-          <Products />
-          <Investors />
-          <Contact />
-        </main>
-        <Footer />
+        <div className={isLoading ? "fixed inset-0 overflow-hidden pointer-events-none opacity-0" : "relative opacity-100 transition-opacity duration-700"}>
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/investors" element={<InvestorsPage />} />
+              <Route path="/get-in-touch" element={<GetInTouch />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
 export default App;
+

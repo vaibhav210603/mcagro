@@ -1,9 +1,12 @@
-
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { Button } from '../ui/Button';
+import { ContactModal } from '../ui/ContactModal';
 
 export const Contact = () => {
+    const [isContactOpen, setIsContactOpen] = useState(false);
+
     return (
         <SectionWrapper id="contact" className="bg-gray-50">
             <div className="relative rounded-[2.5rem] p-12 md:p-24 text-center overflow-hidden">
@@ -25,7 +28,11 @@ export const Contact = () => {
                     <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
                         Ready to shape the future of agriculture?
                     </h2>
-                    <Button size="lg" className="bg-white text-brand-900 hover:bg-brand-50 px-10 py-5 text-lg">
+                    <Button
+                        size="lg"
+                        className="bg-white text-brand-900 hover:bg-brand-50 px-10 py-5 text-lg"
+                        onClick={() => setIsContactOpen(true)}
+                    >
                         Get in Touch
                     </Button>
                 </motion.div>
@@ -50,6 +57,8 @@ export const Contact = () => {
                     </motion.div>
                 ))}
             </div>
+
+            <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
         </SectionWrapper>
     );
 };
