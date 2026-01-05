@@ -28,7 +28,7 @@ export const Careers = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch('http://localhost:3000/api/apply', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/apply`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
