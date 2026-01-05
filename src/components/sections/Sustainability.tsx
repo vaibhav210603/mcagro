@@ -18,7 +18,11 @@ export const Sustainability = () => {
                         100%<br /><span className="text-brand-400">Future.</span>
                     </motion.h2>
 
-                    <Button size="lg" className="bg-white text-brand-900 hover:bg-brand-50 border-white">
+                    <Button
+                        size="lg"
+                        className="bg-white text-brand-900 hover:bg-brand-50 border-white"
+                        onClick={() => alert("Sustainability Report 2024 is coming soon!")}
+                    >
                         Read Our Sustainability Report
                     </Button>
                 </div>

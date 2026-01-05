@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
+const OpenAI = require('openai');
 
 dotenv.config();
 
@@ -157,6 +158,37 @@ app.post('/api/contact', async (req, res) => {
     } catch (error) {
         console.error("Contact form error:", error);
         res.status(500).json({ success: false, message: 'Failed to send inquiry.' });
+    }
+});
+
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+});
+
+app.post('/api/chat', async (req, res) => {
+    const { message, history } = req.body;
+
+    if (!message) {
+        return res.status(400).json({ success: false, message: 'Message is required.' });
+    }
+
+    try {
+        const messages = [
+            { role: "system", content: "You are a helpful assistant for MRC Agro, a company specializing in sustainable, chemical-free, and regenerative farming. Answer questions about the company, its vision (zero chemicals, 100% future), products, and sustainability practices comfortably and professionally." },
+            ...(history || []),
+            { role: "user", content: message }
+        ];
+
+        const completion = await openai.chat.completions.create({
+            messages: messages,
+            model: "gpt-3.5-turbo",
+        });
+
+        const reply = completion.choices[0].message.content;
+        res.status(200).json({ success: true, reply });
+    } catch (error) {
+        console.error("OpenAI error:", error);
+        res.status(500).json({ success: false, message: 'Failed to get response from AI.' });
     }
 });
 

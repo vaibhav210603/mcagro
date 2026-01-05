@@ -63,10 +63,19 @@ export const Hero = () => {
                         transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                         className="flex flex-wrap gap-4"
                     >
-                        <Button size="lg" className="bg-white text-brand-900 hover:bg-brand-50">
+                        <Button
+                            size="lg"
+                            className="bg-white text-brand-900 hover:bg-brand-50"
+                            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
                             Our Vision
                         </Button>
-                        <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                        <Button
+                            size="lg"
+                            variant="outline"
+                            className="border-white text-white hover:bg-white/10"
+                            onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
                             View Products <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                     </motion.div>

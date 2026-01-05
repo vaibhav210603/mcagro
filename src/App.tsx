@@ -10,6 +10,7 @@ import { AboutUs } from './pages/AboutUs';
 import { Careers } from './pages/Careers';
 import { Investors as InvestorsPage } from './pages/Investors';
 import { GetInTouch } from './pages/GetInTouch';
+import { ChatWidget } from './components/ui/ChatWidget';
 
 // ScrollToTop component to handle route changes
 const ScrollToTop = () => {
@@ -74,6 +75,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <ChatWidget />
         </div>
       </div>
     </Router>
