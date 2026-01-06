@@ -1,9 +1,11 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../ui/Button';
 import { ArrowRight } from 'lucide-react';
 
 export const Hero = () => {
+    const navigate = useNavigate();
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -66,7 +68,7 @@ export const Hero = () => {
                         <Button
                             size="lg"
                             className="bg-white text-brand-900 hover:bg-brand-50"
-                            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => navigate('/about-us')}
                         >
                             Our Vision
                         </Button>
