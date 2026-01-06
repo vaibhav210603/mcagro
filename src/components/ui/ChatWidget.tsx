@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot } from 'lucide-react';
 import { Button } from './Button';
@@ -17,6 +18,8 @@ export const ChatWidget = () => {
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -29,25 +32,26 @@ export const ChatWidget = () => {
     const handleOptionClick = (option: string) => {
         let userMsg = option;
 
-
         switch (option) {
             case "View Products":
                 userMsg = "Tell me about your products";
-                document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+                if (location.pathname !== '/') {
+                    navigate('/');
+                    setTimeout(() => {
+                        document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 500); // Wait for page transition
+                } else {
+                    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+                }
                 break;
             case "Here to Apply":
                 userMsg = "I want to apply for a job";
-                // Assuming Careers is a page, we might need navigation. 
-                // Since this is a widget, let's try to find the element or redirect if needed.
-                // For now, simpler to just chat, but let's try to scroll if on home, or just chat.
-                // If using react-router, we might need useNavigate, but keeping it simple for now.
-                window.location.href = '/careers';
-                return; // consistent with navigation
+                navigate('/careers');
+                break;
             case "About Us":
                 userMsg = "Tell me about MRC Agro";
-                document.getElementById('about-us')?.scrollIntoView({ behavior: 'smooth' });
-                window.location.href = '/about-us'; // Ensure we go there
-                return;
+                navigate('/about-us');
+                break;
             case "Temi Tea":
                 userMsg = "Tell me about Temi Tea";
                 break;
