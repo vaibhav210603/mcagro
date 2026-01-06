@@ -1,17 +1,40 @@
-
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { ProfileModal } from '../ui/ProfileModal';
 
 const team = [
-    { name: 'Mr. Ashokk Singh', role: 'Chairman & Director', image: '/ashok.gif' },
-    { name: 'Mr. Sanjay Kumar Singh', role: 'Non-Executive Director', image: null },
-    { name: 'Mr. Jainendra Baxi', role: 'Independent Director', image: null },
-    { name: 'Ms. Swati Sharma', role: 'Independent Woman Director', image: null },
+    {
+        name: 'Mr. Ashokk Singh',
+        role: 'Chairman & Director',
+        image: '/ashok.gif',
+        bio: "He is a First Generation Entrepreneur with Hands on experience of more than a Decade in Financial World. He has In Depth knowledge of his core domain Financial Services and is known for his knowledge base on National and Global Capital Markets with finest Portfolio Management. He started his career in 2007 and worked with India's Best Financial Services Companies. He is a well-known Team Player and has mastery in Team Building and Management. He has secured a Post-Graduate Diploma in Management from the Welingkar Institute of Management Development and Research."
+    },
+    {
+        name: 'Mr. Sanjay Kumar Singh',
+        role: 'Non-Executive - Whole Time Director',
+        image: '/sanjay_singh.jpg',
+        bio: "He has more than 25 years of experience in various consulting domains like Finance, Sales, Marketing and Business Advisory. He is known for his precise analysis, practical insights and razor-sharp strategy. As a Director of the firm, he is deeply involved in consulting with clients and associates. Educational Qualification: MBA from Patna University."
+    },
+    {
+        name: 'Mr. Jainendra Baxi',
+        role: 'Non-Executive - Independent Director',
+        image: '/jainendra_baxi.jpg',
+        bio: "He has more than 25 years of experience in various consulting domains like Finance, Business Development (Media & Entertainment), Marketing and Business Advisory. Studied Film Production from the Prestigious & Renowned Notre Dame Communication Centre Patna (Year 1999). He has been an integral part in the complete making of the film based on the Best Selling Novel, 'Carnage by Angels', authored by Mr. Y.P Singh Ex IPS."
+    },
+    {
+        name: 'Ms. Swati Sharma',
+        role: 'Non-Executive - Independent Woman Director',
+        image: '/swati_sharma.jpg',
+        bio: "She has hands-on experience of 21 years which includes 11 years at Loyola College of Education, Jamshedpur and 10 years at Mumbai Universal College of Education and Nirmala College of Education. Her educational qualifications include M.Sc. MED from Patna University, along with a Ph.D. from the University of Mumbai. She is a Professor at Nirmala College of Education."
+    },
 ];
 
 export const Investors = () => {
+    const [selectedMember, setSelectedMember] = useState<typeof team[0] | null>(null);
+
     return (
         <SectionWrapper id="investors" className="bg-white">
             <div className="text-center mb-20">
@@ -37,11 +60,12 @@ export const Investors = () => {
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
                         className={cn(
-                            "group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl border border-transparent",
+                            "group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl border border-transparent cursor-pointer",
                             member.image
                                 ? "bg-black"
                                 : "bg-gray-50 hover:bg-white hover:border-gray-100"
                         )}
+                        onClick={() => setSelectedMember(member)}
                     >
                         {member.image ? (
                             <>
@@ -55,11 +79,11 @@ export const Investors = () => {
                                 </div>
                                 <div className="relative z-10 flex flex-col h-full justify-end text-center pt-32">
                                     <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                                    <p className="text-sm text-gray-300 mb-4">{member.role}</p>
+                                    <p className="text-sm text-gray-300 mb-4 h-10 flex items-center justify-center">{member.role}</p>
                                     <div className="flex justify-center">
-                                        <a href="#" className="inline-flex items-center text-sm font-medium text-white/90 hover:text-white border border-white/20 hover:border-white/50 px-4 py-2 rounded-full backdrop-blur-sm transition-colors">
+                                        <button className="inline-flex items-center text-sm font-medium text-white/90 hover:text-white border border-white/20 hover:border-white/50 px-4 py-2 rounded-full backdrop-blur-sm transition-colors">
                                             View Profile <ArrowUpRight className="w-4 h-4 ml-1" />
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </>
@@ -69,17 +93,23 @@ export const Investors = () => {
                                     {member.name.charAt(4)}
                                 </div>
                                 <h3 className="text-xl font-bold text-dark mb-1 text-center">{member.name}</h3>
-                                <p className="text-sm text-gray-500 mb-4 h-10 text-center">{member.role}</p>
+                                <p className="text-sm text-gray-500 mb-4 h-10 flex items-center justify-center text-center">{member.role}</p>
                                 <div className="flex justify-center">
-                                    <a href="#" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-800">
+                                    <button className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-800">
                                         View Profile <ArrowUpRight className="w-4 h-4 ml-1" />
-                                    </a>
+                                    </button>
                                 </div>
                             </>
                         )}
                     </motion.div>
                 ))}
             </div>
+
+            <ProfileModal
+                isOpen={!!selectedMember}
+                onClose={() => setSelectedMember(null)}
+                member={selectedMember}
+            />
         </SectionWrapper>
     );
 };

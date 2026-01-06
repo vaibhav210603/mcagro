@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot } from 'lucide-react';
 import { Button } from './Button';
+import { API_BASE_URL } from '../../config/api';
 
 interface Message {
     role: 'user' | 'assistant' | 'system';
@@ -11,7 +12,7 @@ interface Message {
 export const ChatWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
-        { role: 'assistant', content: 'Hello! How can I help you learn more about MRC Agro today?' }
+        { role: 'assistant', content: 'What do you want me to do?' }
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -25,25 +26,46 @@ export const ChatWidget = () => {
         scrollToBottom();
     }, [messages, isOpen]);
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!input.trim() || isLoading) return;
+    const handleOptionClick = (option: string) => {
+        let userMsg = option;
 
-        const userMessage = input.trim();
-        setInput('');
-        setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+
+        switch (option) {
+            case "View Products":
+                userMsg = "Tell me about your products";
+                document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case "Here to Apply":
+                userMsg = "I want to apply for a job";
+                // Assuming Careers is a page, we might need navigation. 
+                // Since this is a widget, let's try to find the element or redirect if needed.
+                // For now, simpler to just chat, but let's try to scroll if on home, or just chat.
+                // If using react-router, we might need useNavigate, but keeping it simple for now.
+                window.location.href = '/careers';
+                return; // consistent with navigation
+            case "About Us":
+                userMsg = "Tell me about MRC Agro";
+                document.getElementById('about-us')?.scrollIntoView({ behavior: 'smooth' });
+                window.location.href = '/about-us'; // Ensure we go there
+                return;
+            case "Temi Tea":
+                userMsg = "Tell me about Temi Tea";
+                break;
+        }
+
+        handleMessageSend(userMsg);
+    };
+
+    const handleMessageSend = async (text: string) => {
+        setMessages(prev => [...prev, { role: 'user', content: text }]);
         setIsLoading(true);
 
         try {
-            // Use hardcoded URL as per previous instruction or env var if available
-            // Ensuring we cover both cases for robustness
-            const API_URL = 'https://mcagro-ooix.vercel.app';
-
-            const response = await fetch(`${API_URL}/api/chat`, {
+            const response = await fetch(`${API_BASE_URL}/api/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    message: userMessage,
+                    message: text,
                     history: messages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content }))
                 }),
             });
@@ -53,15 +75,25 @@ export const ChatWidget = () => {
             if (data.success) {
                 setMessages(prev => [...prev, { role: 'assistant', content: data.reply }]);
             } else {
-                setMessages(prev => [...prev, { role: 'assistant', content: "I'm sorry, I'm having trouble connecting right now. Please try again later." }]);
+                setMessages(prev => [...prev, { role: 'assistant', content: "I'm having trouble connecting. Please try again." }]);
             }
         } catch (error) {
             console.error(error);
-            setMessages(prev => [...prev, { role: 'assistant', content: "I'm sorry, something went wrong. Please check your connection." }]);
+            setMessages(prev => [...prev, { role: 'assistant', content: "Connection error. Please check your internet." }]);
         } finally {
             setIsLoading(false);
         }
     };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!input.trim() || isLoading) return;
+        const text = input.trim();
+        setInput('');
+        handleMessageSend(text);
+    };
+
+    const quickOptions = ["View Products", "Here to Apply", "About Us", "Temi Tea"];
 
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
@@ -71,7 +103,7 @@ export const ChatWidget = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="pointer-events-auto bg-white rounded-2xl shadow-2xl w-[90vw] sm:w-[380px] h-[500px] mb-4 border border-gray-100 flex flex-col overflow-hidden"
+                        className="pointer-events-auto bg-white rounded-2xl shadow-2xl w-[90vw] sm:w-[380px] h-[550px] mb-4 border border-gray-100 flex flex-col overflow-hidden"
                     >
                         {/* Header */}
                         <div className="bg-brand-900 p-4 flex justify-between items-center text-white">
@@ -104,7 +136,7 @@ export const ChatWidget = () => {
                                 >
                                     <div
                                         className={`
-                                            max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed
+                                            max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed
                                             ${msg.role === 'user'
                                                 ? 'bg-brand-600 text-white rounded-tr-none'
                                                 : 'bg-white text-gray-800 border border-gray-100 shadow-sm rounded-tl-none'
@@ -115,6 +147,23 @@ export const ChatWidget = () => {
                                     </div>
                                 </div>
                             ))}
+
+                            {/* Quick Options - Show only if the last message is from assistant and it's the welcome message (or just show at bottom of chat if appropriate) */}
+                            {/* Simplified logic: Show chips if message count is 1 (only welcome message) */}
+                            {messages.length === 1 && (
+                                <div className="flex flex-wrap gap-2 mt-4">
+                                    {quickOptions.map(option => (
+                                        <button
+                                            key={option}
+                                            onClick={() => handleOptionClick(option)}
+                                            className="px-3 py-1.5 bg-brand-50 text-brand-700 text-sm rounded-full border border-brand-100 hover:bg-brand-100 transition-colors"
+                                        >
+                                            {option}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
                             {isLoading && (
                                 <div className="flex justify-start">
                                     <div className="bg-white border border-gray-100 p-3 rounded-2xl rounded-tl-none shadow-sm flex gap-1 items-center">

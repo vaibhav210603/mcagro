@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Loader2 } from 'lucide-react';
 import { Button } from './Button';
 import { Modal } from './Modal';
+import { API_BASE_URL } from '../../config/api';
 
 interface ContactModalProps {
     isOpen: boolean;
@@ -32,7 +33,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         setIsLoading(true);
 
         try {
-            const response = await fetch('https://mcagro-ooix.vercel.app/api/contact', {
+            const response = await fetch(`${API_BASE_URL}/api/contact`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),

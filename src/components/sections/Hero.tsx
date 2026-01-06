@@ -21,7 +21,7 @@ export const Hero = () => {
                 className="absolute inset-0 z-0"
             >
                 {/* Black Overlay for readability */}
-                <div className="absolute inset-0 bg-black/50 z-10" />
+                <div className="absolute inset-0 bg-black/80 z-10" />
 
                 <video
                     autoPlay
@@ -30,7 +30,7 @@ export const Hero = () => {
                     playsInline
                     className="w-full h-full object-cover"
                 >
-                    <source src="/High_tech_farming_202512211824_xljzd.mp4" type="video/mp4" />
+                    <source src="/hero.mp4" type="video/mp4" />
                 </video>
             </motion.div>
 

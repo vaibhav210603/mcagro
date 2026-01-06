@@ -5,6 +5,7 @@ import { Button } from '../components/ui/Button';
 import { Modal } from '../components/ui/Modal';
 import { useNavigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
+import { API_BASE_URL } from '../config/api';
 
 export const Careers = () => {
     const navigate = useNavigate();
@@ -28,7 +29,7 @@ export const Careers = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch('https://mcagro-ooix.vercel.app/api/apply', {
+            const response = await fetch(`${API_BASE_URL}/api/apply`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
