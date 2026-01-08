@@ -10,6 +10,18 @@ import { AboutUs } from './pages/AboutUs';
 import { Careers } from './pages/Careers';
 import { Investors as InvestorsPage } from './pages/Investors';
 import { GetInTouch } from './pages/GetInTouch';
+import { OurTeam } from './pages/company/OurTeam';
+import { BoardCommittees } from './pages/company/BoardCommittees';
+import { Auditors } from './pages/company/Auditors';
+import { OurFarms } from './pages/company/OurFarms';
+import { EssentialOils } from './pages/offering/EssentialOils';
+import { Tea } from './pages/offering/Tea';
+import { Seeds } from './pages/offering/Seeds';
+import { Fertilizers } from './pages/offering/Fertilizers';
+import { Others } from './pages/offering/Others';
+import { Lemongrass } from './pages/offering/Lemongrass';
+import { FarmerEducation } from './pages/FarmerEducation';
+
 import { ChatWidget } from './components/ui/ChatWidget';
 
 // ScrollToTop component to handle route changes
@@ -72,6 +84,18 @@ function App() {
               <Route path="/careers" element={<Careers />} />
               <Route path="/investors" element={<InvestorsPage />} />
               <Route path="/get-in-touch" element={<GetInTouch />} />
+              <Route path="/company/team" element={<OurTeam />} />
+              <Route path="/company/board" element={<BoardCommittees />} />
+              <Route path="/company/auditors" element={<Auditors />} />
+              <Route path="/company/farms" element={<OurFarms />} />
+              <Route path="/offering/essential-oils" element={<EssentialOils />} />
+              <Route path="/offering/tea" element={<Tea />} />
+              <Route path="/offering/seeds" element={<Seeds />} />
+              <Route path="/offering/fertilizers" element={<Fertilizers />} />
+              <Route path="/offering/others" element={<Others />} />
+              <Route path="/offering/lemongrass" element={<Lemongrass />} />
+              <Route path="/farmer-education" element={<FarmerEducation />} />
+
             </Routes>
           </main>
           <Footer />
@@ -81,6 +105,7 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
 

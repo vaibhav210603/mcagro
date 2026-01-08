@@ -15,7 +15,7 @@ export const About = () => {
                         className="relative aspect-video md:aspect-square rounded-3xl overflow-hidden shadow-2xl"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&q=80&w=2000"
+                            src="/homeimage.png"
                             alt="Sustainable farming"
                             className="object-cover w-full h-full"
                         />

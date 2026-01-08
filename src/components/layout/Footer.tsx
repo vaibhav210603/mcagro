@@ -8,6 +8,7 @@ export const Footer = () => {
 
                 <div className="flex gap-8 text-sm text-gray-500">
                     <a href="#" className="hover:text-brand-900 transition-colors">Privacy Policy</a>
+                    <a href="https://agronicaseeds.com/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-900 transition-colors">Group Companies</a>
                     <a href="#" className="hover:text-brand-900 transition-colors">Terms of Service</a>
                     <a href="#" className="hover:text-brand-900 transition-colors">Sitemap</a>
                 </div>
