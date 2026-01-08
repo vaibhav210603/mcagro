@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import { AnimatePresence } from 'framer-motion';
@@ -35,8 +35,12 @@ const ScrollToTop = () => {
   return null;
 };
 
+import { useLoading } from './context/LoadingContext';
+
+// ... imports
+
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoading } = useLoading();
 
   useEffect(() => {
     // Initialize Lenis smooth scrolling
@@ -56,14 +60,8 @@ function App() {
 
     requestAnimationFrame(raf);
 
-    // Loader timer
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
     return () => {
       lenis.destroy();
-      clearTimeout(timer);
     };
   }, []);
 

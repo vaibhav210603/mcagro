@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useLoading } from '../../context/LoadingContext';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../ui/Button';
@@ -6,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const Hero = () => {
     const navigate = useNavigate();
+    const { setVideoLoaded } = useLoading();
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -30,6 +32,8 @@ export const Hero = () => {
                     muted
                     loop
                     playsInline
+                    onCanPlayThrough={() => setVideoLoaded()}
+                    onError={() => setVideoLoaded()} // Fallback if video fails
                     className="w-full h-full object-cover"
                 >
                     <source src="/farming4.mp4" type="video/mp4" />
