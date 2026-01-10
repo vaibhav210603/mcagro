@@ -3,7 +3,6 @@ import { useLoading } from '../../context/LoadingContext';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../ui/Button';
-import { ArrowRight } from 'lucide-react';
 
 export const Hero = () => {
     const navigate = useNavigate();
@@ -75,14 +74,6 @@ export const Hero = () => {
                             onClick={() => navigate('/about-us')}
                         >
                             Our Vision
-                        </Button>
-                        <Button
-                            size="lg"
-                            variant="outline"
-                            className="border-white text-white hover:bg-white/10"
-                            onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            View Products <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                         <Button
                             size="lg"

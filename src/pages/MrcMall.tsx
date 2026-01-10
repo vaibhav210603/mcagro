@@ -117,36 +117,38 @@ export const MrcMall = () => {
                         </div>
 
                         {/* Content */}
-                        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
+                        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-white">
                             <div className="max-w-3xl">
-                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/90 text-white text-sm font-medium mb-4 backdrop-blur-sm">
-                                    <ShoppingBag className="w-4 h-4" /> Featured Partner
+                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/90 text-white text-xs md:text-sm font-medium mb-4 backdrop-blur-sm">
+                                    <ShoppingBag className="w-3 h-3 md:w-4 md:h-4" /> Featured Partner
                                 </span>
                                 <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
                                     Discover the Taste of <br /> Temi Tea
                                 </h2>
-                                <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-xl font-light">
+                                <p className="text-base md:text-xl text-gray-100 mb-8 max-w-xl font-light">
                                     Experience the finest organic tea from the only tea estate in Sikkim.
                                     A legacy of flavor, aroma, and purity.
                                 </p>
-                                <button
-                                    className="inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-brand-50 transition-colors text-lg group-hover:gap-4"
-                                    onClick={(e) => {
-                                        e.stopPropagation(); // Prevent card click
-                                        window.open('https://temiteaestate.com', '_blank');
-                                    }}
-                                >
-                                    Explore Products <ArrowRight className="w-5 h-5" />
-                                </button>
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        handlePayment();
-                                    }}
-                                    className="inline-flex items-center gap-2 bg-brand-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-700 transition-colors text-lg ml-4"
-                                >
-                                    Donate ₹2 Support
-                                </button>
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <button
+                                        className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-brand-50 transition-colors text-base md:text-lg group-hover:gap-4"
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // Prevent card click
+                                            window.open('https://temiteaestate.com', '_blank');
+                                        }}
+                                    >
+                                        Explore Products <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                                    </button>
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handlePayment();
+                                        }}
+                                        className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-brand-700 transition-colors text-base md:text-lg"
+                                    >
+                                        Donate ₹2 Support
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </motion.div>

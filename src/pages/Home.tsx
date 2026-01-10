@@ -10,9 +10,9 @@ export const Home = () => {
     return (
         <>
             <Hero />
+            <MrcMallPreview /> {/* New Promotional Section */}
             <About />
             <Sustainability />
-            <MrcMallPreview /> {/* New Promotional Section */}
             <Products />
             <Investors />
             <Contact />
