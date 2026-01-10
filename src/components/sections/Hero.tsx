@@ -84,6 +84,13 @@ export const Hero = () => {
                         >
                             View Products <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
+                        <Button
+                            size="lg"
+                            className="bg-gradient-to-r from-amber-400 to-yellow-600 text-white hover:from-amber-500 hover:to-yellow-700 border-none shadow-lg hover:shadow-amber-500/20 transition-all duration-300 transform hover:scale-105"
+                            onClick={() => navigate('/mrc-mall')}
+                        >
+                            <span className="mr-2">🛍️</span> Visit MRC Mall
+                        </Button>
                     </motion.div>
                 </div>
             </div>

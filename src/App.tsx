@@ -21,6 +21,7 @@ import { Fertilizers } from './pages/offering/Fertilizers';
 import { Others } from './pages/offering/Others';
 import { Lemongrass } from './pages/offering/Lemongrass';
 import { FarmerEducation } from './pages/FarmerEducation';
+import { MrcMall } from './pages/MrcMall'; // New Import
 
 import { ChatWidget } from './components/ui/ChatWidget';
 
@@ -93,6 +94,7 @@ function App() {
               <Route path="/offering/others" element={<Others />} />
               <Route path="/offering/lemongrass" element={<Lemongrass />} />
               <Route path="/farmer-education" element={<FarmerEducation />} />
+              <Route path="/mrc-mall" element={<MrcMall />} /> {/* New Route */}
 
             </Routes>
           </main>
