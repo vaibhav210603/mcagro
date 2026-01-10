@@ -165,6 +165,54 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
+const Razorpay = require('razorpay');
+const crypto = require('crypto');
+
+const razorpay = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET,
+});
+
+app.post('/api/payment/create-order', async (req, res) => {
+    try {
+        const options = {
+            amount: 200, // amount in the smallest currency unit (200 paise = ₹2)
+            currency: "INR",
+            receipt: "receipt_order_" + Date.now(),
+        };
+
+        const order = await razorpay.orders.create(options);
+
+        if (!order) return res.status(500).send("Some error occured");
+
+        res.json(order);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+});
+
+app.post('/api/payment/verify-payment', (req, res) => {
+    try {
+        const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
+
+        const sign = razorpay_order_id + "|" + razorpay_payment_id;
+        const expectedSign = crypto
+            .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
+            .update(sign.toString())
+            .digest("hex");
+
+        if (razorpay_signature === expectedSign) {
+            return res.status(200).json({ message: "Payment verified successfully" });
+        } else {
+            return res.status(400).json({ message: "Invalid signature sent!" });
+        }
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+// Chat route (existing)
 app.post('/api/chat', async (req, res) => {
     const { message, history } = req.body;
 
