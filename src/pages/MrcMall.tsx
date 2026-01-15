@@ -2,78 +2,8 @@ import { SectionWrapper } from '../components/ui/SectionWrapper';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
 import temiTeaBanner from '../assets/temi_tea_banner.png';
-import { API_BASE_URL } from '../config/api';
 
 export const MrcMall = () => {
-
-    const handlePayment = async () => {
-        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
-
-        if (!res) {
-            alert('Razorpay SDK failed to load. Are you online?');
-            return;
-        }
-
-        try {
-            // Create Order
-            const result = await fetch(`${API_BASE_URL}/api/payment/create-order`, {
-                method: 'POST',
-            });
-            const data = await result.json();
-
-            if (!data) {
-                alert('Server error. Are you online?');
-                return;
-            }
-
-            const { id: order_id, amount, currency } = data;
-
-            const options = {
-                key: "rzp_live_h384hG9ScLxFY3",
-                amount: amount.toString(),
-                currency: currency,
-                name: "MRC Agro",
-                description: "Test Transaction",
-                order_id: order_id,
-                handler: async function (response: any) {
-                    const data = {
-                        razorpay_payment_id: response.razorpay_payment_id,
-                        razorpay_order_id: response.razorpay_order_id,
-                        razorpay_signature: response.razorpay_signature,
-                    };
-
-                    const result = await fetch(`${API_BASE_URL}/api/payment/verify-payment`, {
-                        method: 'POST',
-                        body: JSON.stringify(data),
-                        headers: { "Content-Type": "application/json" }
-                    });
-
-                    const res = await result.json();
-
-                    if (result.status === 200) {
-                        alert(res.message);
-                    } else {
-                        alert(res.message);
-                    }
-                },
-                prefill: {
-                    name: "Vaibhav Upadhyay",
-                    email: "vaibhav@example.com",
-                    contact: "9999999999",
-                },
-                theme: {
-                    color: "#61dafb",
-                },
-            };
-
-            const paymentObject = new window.Razorpay(options);
-            paymentObject.open();
-
-        } catch (error) {
-            console.error(error);
-            alert("Error creating order");
-        }
-    };
 
     return (
         <div className="pt-20 min-h-screen bg-gray-50">
@@ -94,9 +24,11 @@ export const MrcMall = () => {
                             transition={{ delay: 0.1 }}
                             className="text-xl text-gray-600 max-w-2xl mx-auto"
                         >
-                            Curated premium products from the heart of nature.
+                            Organic premium products from the heart of nature to your doorstep
                         </motion.p>
                     </div>
+
+                  
 
                     {/* Featured Banner - Temi Tea */}
                     <motion.div
@@ -104,7 +36,7 @@ export const MrcMall = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                         className="relative rounded-[2rem] overflow-hidden shadow-2xl group cursor-pointer h-[500px]"
-                        onClick={() => window.open('https://temiteaestate.com', '_blank')}
+                        onClick={() => window.open('https://temiteaestate.com/collections/best-seller', '_blank')}
                     >
                         {/* Background Image */}
                         <div className="absolute inset-0">
@@ -134,19 +66,10 @@ export const MrcMall = () => {
                                         className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-brand-50 transition-colors text-base md:text-lg group-hover:gap-4"
                                         onClick={(e) => {
                                             e.stopPropagation(); // Prevent card click
-                                            window.open('https://temiteaestate.com', '_blank');
+                                            window.open('https://temiteaestate.com/collections/best-seller', '_blank');
                                         }}
                                     >
                                         Explore Products <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-                                    </button>
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            handlePayment();
-                                        }}
-                                        className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-brand-700 transition-colors text-base md:text-lg"
-                                    >
-                                        Donate ₹2 Support
                                     </button>
                                 </div>
                             </div>
@@ -157,25 +80,3 @@ export const MrcMall = () => {
         </div>
     );
 };
-
-// Add loadScript helper outside component
-const loadScript = (src: string) => {
-    return new Promise((resolve) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.onload = () => {
-            resolve(true);
-        };
-        script.onerror = () => {
-            resolve(false);
-        };
-        document.body.appendChild(script);
-    });
-};
-
-// Extend Window interface for Razorpay
-declare global {
-    interface Window {
-        Razorpay: any;
-    }
-}

@@ -58,8 +58,8 @@ export const Hero = () => {
                         transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                         className="text-xl md:text-2xl text-white/90 mb-10 max-w-xl font-light leading-relaxed"
                     >
-                        We are spearheading the shift to chemical-free, regenerative, and scalable farming.
-                        Economical. Sustainable. Profitable.
+                        Using technology to protect nature and provide quality organic products from the hearts of India.<br/>
+                       <br/> Get the best of India from the best.
                     </motion.p>
 
                     <motion.div
