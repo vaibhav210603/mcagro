@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { ArrowRight, ShoppingBag, Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import promoImg from '../../assets/mrc_mall_promo.png';
 
 export const MrcMallPreview = () => {
     const navigate = useNavigate();
@@ -57,7 +56,7 @@ export const MrcMallPreview = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-transparent rounded-[2rem] transform rotate-3" />
                         <img
-                            src={promoImg}
+                            src="/temi1.jpg"
                             alt="MRC Mall Preview"
                             className="relative z-10 rounded-[2rem] shadow-2xl border border-white/10 w-full object-cover transform transition-transform hover:scale-[1.02] duration-500"
                         />

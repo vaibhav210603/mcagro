@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { SectionWrapper } from '../ui/SectionWrapper';
+import { ImageSlider } from '../ui/ImageSlider';
 
 export const About = () => {
     return (
@@ -12,12 +13,12 @@ export const About = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative aspect-video md:aspect-square rounded-3xl overflow-hidden shadow-2xl"
+                        className="relative rounded-3xl"
                     >
-                        <img
-                            src="/homeimage.png"
-                            alt="Sustainable farming"
-                            className="object-cover w-full h-full"
+                        <ImageSlider
+                            images={['/as1.jpeg', '/as2.jpeg']}
+                            className="w-full"
+                            imageFit="cover"
                         />
                     </motion.div>
                 </div>
