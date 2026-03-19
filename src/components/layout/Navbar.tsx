@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { cn } from '../../utils/cn';
@@ -38,16 +38,10 @@ const navLinks = [
 ];
 
 export const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isContactOpen, setIsContactOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-    const { scrollY } = useScroll();
     const location = useLocation();
-
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        setIsScrolled(latest > 50);
-    });
 
     const handleMouseEnter = (name: string) => {
         setActiveDropdown(name);
@@ -61,13 +55,8 @@ export const Navbar = () => {
 
     return (
         <>
-            <header className="fixed top-0 w-full z-50 transition-all duration-300">
-                <nav
-                    className={cn(
-                        'w-full transition-all duration-300 border-b border-transparent',
-                        isScrolled ? 'bg-white/90 backdrop-blur-md border-brand-100/20 py-3 shadow-sm' : 'bg-transparent py-4'
-                    )}
-                >
+            <header className="fixed top-0 w-full z-50">
+                <nav className="w-full bg-white border-b border-brand-100/20 py-3 shadow-sm">
                     <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                         <Link to="/" className="flex items-center gap-3 group">
                             <img src="/MRC.png" alt="MRCAgrotech ltd logo" className="h-12 md:h-12 w-auto object-contain" />
