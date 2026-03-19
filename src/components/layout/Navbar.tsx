@@ -70,7 +70,7 @@ export const Navbar = () => {
                 >
                     <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                         <Link to="/" className="flex items-center gap-3 group">
-                            <img src="/MRC LOGO.png" alt="MRCAgrotech ltd logo" className="h-10 md:h-12 w-auto object-contain" />
+                            <img src="/MRC.png" alt="MRCAgrotech ltd logo" className="h-12 md:h-12 w-auto object-contain" />
                             <span className="text-xl md:text-2xl font-bold tracking-tight text-brand-900 group-hover:text-brand-700 transition-colors">
                                 MRCAgrotech ltd
                             </span>
