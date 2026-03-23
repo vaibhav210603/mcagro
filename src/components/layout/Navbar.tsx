@@ -37,10 +37,10 @@ const navLinks = [
         subLinks: [
             { name: 'Investors Corner', href: '/investors' },
             { name: 'Shareholding Pattern', href: 'https://www.bseindia.com/stock-share-price/mrc-agrotech-ltd/mrcagro/540809/flag/7/shp' },
-            { name: 'Policy on Related Party Transactions', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/Notice.pdf' },
-            { name: 'Code of Conduct Policy', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/code.pdf' },
-            { name: 'Dividend Distribution Policy', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/Dividend.pdf' },
-            { name: 'Nomination and Remuneration', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/nomination.pdf' }
+            // { name: 'Policy on Related Party Transactions', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/Notice.pdf' },
+            // { name: 'Code of Conduct Policy', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/code.pdf' },
+            // { name: 'Dividend Distribution Policy', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/Dividend.pdf' },
+            // { name: 'Nomination and Remuneration', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/nomination.pdf' }
         ]
     },
     { name: 'Farmer Education', href: '/farmer-education' },
