@@ -12,16 +12,11 @@ const team = [
         image: '/ashok.gif',
         bio: "He is a First Generation Entrepreneur with Hands on experience of more than a Decade in Financial World. He has In Depth knowledge of his core domain Financial Services and is known for his knowledge base on National and Global Capital Markets with finest Portfolio Management. He started his career in 2007 and worked with India's Best Financial Services Companies. He is a well-known Team Player and has mastery in Team Building and Management. He has secured a Post-Graduate Diploma in Management from the Welingkar Institute of Management Development and Research."
     },
-    {
-        name: 'Mr. Sanjay Kumar Singh',
-        role: 'Non-Executive - Whole Time Director',
-        image: '/sanjay_singh.jpg',
-        bio: "He has more than 25 years of experience in various consulting domains like Finance, Sales, Marketing and Business Advisory. He is known for his precise analysis, practical insights and razor-sharp strategy. As a Director of the firm, he is deeply involved in consulting with clients and associates. Educational Qualification: MBA from Patna University."
-    },
+    
     {
         name: 'Mr. Jainendra Baxi',
         role: 'Non-Executive - Independent Director',
-        image: '/jainendra_baxi.jpg',
+        image: '/leadership_1.jpg',
         bio: "He has more than 25 years of experience in various consulting domains like Finance, Business Development (Media & Entertainment), Marketing and Business Advisory. Studied Film Production from the Prestigious & Renowned Notre Dame Communication Centre Patna (Year 1999). He has been an integral part in the complete making of the film based on the Best Selling Novel, 'Carnage by Angels', authored by Mr. Y.P Singh Ex IPS."
     },
     {
@@ -51,7 +46,7 @@ export const Investors = () => {
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {team.map((member, i) => (
                     <motion.div
                         key={member.name}

@@ -3,16 +3,24 @@ import { SectionWrapper } from '../../components/ui/SectionWrapper';
 const committees = [
     {
         name: "Audit Committee",
-        members: ["Member Name (Chairman)", "Member Name", "Member Name"]
+        members: ["Jainendra Baxi (Chairperson)", "Ms. Shweta Mundra (Member)"]
     },
     {
-        name: "Stakeholders Relationship Committee",
-        members: ["Member Name (Chairman)", "Member Name", "Member Name"]
+        name: "Nomination and Remuneration Committee",
+        members: ["Ms. Shweta Mundra (Chairperson)", "Ms. Swati Sharma (Member)"]
     },
     {
-        name: "Nomination & Remuneration Committee",
-        members: ["Member Name (Chairman)", "Member Name", "Member Name"]
+        name: "Stakeholder Relationship Committee",
+        members: ["Swati Sharma (Chairperson)", "Jainendra Baxi (Member)", "Ms. Shweta Mundra (Member)"]
     },
+    {
+        name: "Risk Management Committee",
+        members: ["Jitendra Dhanraj Jain (Chairperson)", "Jainendra Baxi (Member)", "Ashok Kumar Singh (Member)", "Ms. Shweta Mundra (Member)"]
+    },
+    {
+        name: "Corporate Social Responsibility",
+        members: ["Jainendra Baxi (Chairperson)", "Jitendra Dhanraj Jain (Director Member)", "Swati Sharma (Member)", "Ms. Shweta Mundra (Member)"]
+    }
 ];
 
 export const BoardCommittees = () => {

@@ -92,9 +92,13 @@ export const AboutUs = () => {
                         <h2 className="text-3xl font-bold text-gray-900 mb-8">Pioneers in Aromatic Agriculture</h2>
                         <div className="prose prose-lg mx-auto text-gray-600 leading-relaxed">
                             <p className="mb-6">
-                                MRC Agrotech Ltd stands as a beacon of stability and sustainability in the agricultural sector.
-                                Operating as a debt-free entity, we manage over <strong className="text-brand-700">100 acres</strong> of
-                                pristine farmland dedicated to the cultivation of aromatic crops.
+                               Welcome to MRC Agrotech Ltd, established in 2015 with a steadfast mission—to spearhead the development of an Economical, Sustainable, Profitable, and Scalable agriculture farming sector in India. Committed to mitigating the environmental impact of agriculture, we are dedicated to constructing a robust and flourishing agriculture-based economy. Our primary focus revolves around the shift towards chemical-free, regenerative, and commercial-scale farming practices, specializing in aromatic crops.
+
+As a debt-free entity, MRC Agrotech Ltd stands on a foundation of financial stability and prudence. Our farming operations span over 100 acres of land, showcasing the expansive scale of our commitment to sustainable agriculture.
+
+At MRC Agrotech Ltd, we take pride in our role as cultivators of change. Our core expertise lies in the cultivation of aromatic crops, fostering the growth of Natural Essential Oils that serve diverse industries, including Pharma, Home & Personal Care, Food & Beverage, and Aromatherapy. These special ingredients embody the essence of purity and sustainability, meeting the evolving demands of conscious consumers.
+
+Join us in our journey towards a greener, healthier future. Experience the essence of our commitment through our chemical-free, regenerative farming practices that produce exceptional ingredients for industries at the forefront of health, wellness, and sensory experiences.
                             </p>
                             <p>
                                 We are not just farmers; we are stewards of the land. Our chemical-free, regenerative practices
@@ -158,8 +162,7 @@ export const AboutUs = () => {
                                 Our Vision
                             </h3>
                             <p className="text-lg text-gray-600 leading-relaxed italic">
-                                "To be a leading sustainable agriculture company, setting new standards for environmental stewardship,
-                                social responsibility, and economic viability."
+                                To be a leading and sustainable agriculture and farming company, dedicated to feeding a growing global population while preserving the planet's natural resources for future generations. We envision a future where our farming practices and innovative technologies set a new standard for environmental stewardship, social responsibility, and economic viability for India.
                             </p>
                         </motion.div>
 

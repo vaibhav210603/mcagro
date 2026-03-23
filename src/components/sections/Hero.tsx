@@ -35,7 +35,7 @@ export const Hero = () => {
                     onError={() => setVideoLoaded()} // Fallback if video fails
                     className="w-full h-full object-cover"
                 >
-                    <source src="/farming4.mp4" type="video/mp4" />
+                    <source src="/farming_final.mp4" type="video/mp4" />
                 </video>
             </motion.div>
 

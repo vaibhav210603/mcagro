@@ -10,31 +10,30 @@ export const Auditors = () => {
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                             <h3 className="text-xl font-semibold text-primary mb-4">Statutory Auditors</h3>
                             <div className="space-y-2">
-                                <p className="font-medium text-dark">Name of the Firm</p>
-                                <p className="text-gray-600">Chartered Accountants</p>
-                                <p className="text-gray-600">Address Line 1</p>
-                                <p className="text-gray-600">City, State - Zip Code</p>
+                                <p className="font-medium text-dark">M/S Choudhary Choudhary & Company, (CA).(India) Pvt. Ltd.</p>
+                                <p className="text-gray-600">338 V Mall Asha Nagar Thakur Complex, Industrial Estate,</p>
+                                <p className="text-gray-600">Saidham Temple, WEH, Lower Parel (E), Kandivali E, Mumbai 400 101.</p>
+                                <p className="text-gray-600">Email: firmcco@gmail.com</p>
                             </div>
                         </div>
 
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                             <h3 className="text-xl font-semibold text-primary mb-4">Secretarial Auditors</h3>
                             <div className="space-y-2">
-                                <p className="font-medium text-dark">Name of the Firm</p>
-                                <p className="text-gray-600">Company Secretaries</p>
-                                <p className="text-gray-600">Address Line 1</p>
-                                <p className="text-gray-600">City, State - Zip Code</p>
+                                <p className="font-medium text-dark">M/S P Dhanuka & Associates</p>
+                                <p className="text-gray-600">14 Sir Hariram Goenka Street,</p>
+                                <p className="text-gray-600">Kolkata 700 007.</p>
+                                <p className="text-gray-600">Email: pinku.agarwal00@gmail.com</p>
                             </div>
                         </div>
 
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 md:col-span-2">
                             <h3 className="text-xl font-semibold text-primary mb-4">Registrar & Share Transfer Agent (RTA)</h3>
                             <div className="space-y-2">
-                                <p className="font-medium text-dark">Name of the RTA</p>
-                                <p className="text-gray-600">Address Line 1</p>
-                                <p className="text-gray-600">City, State - Zip Code</p>
-                                <p className="text-gray-600">Email: contact@example.com</p>
-                                <p className="text-gray-600">Phone: +91 123 456 7890</p>
+                                <p className="font-medium text-dark">Purva Shareregistry</p>
+                                <p className="text-gray-600">Unit no 9, Shiv Shakti J.R. Boricha Marg,</p>
+                                <p className="text-gray-600">Mumbai 400 011.</p>
+                                <p className="text-gray-600">Email: support@purvashare.com</p>
                             </div>
                         </div>
                     </div>
