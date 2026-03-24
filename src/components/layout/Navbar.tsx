@@ -27,6 +27,7 @@ const navLinks = [
             { name: 'Temi Tea', href: 'https://temiteaestate.com' },
             { name: 'Seeds', href: '/offering/seeds' },
             { name: 'Nano Fertilizers', href: '/offering/fertilizers' },
+            { name: 'Guar Gum', href: '/offering/guar-gum' },
             { name: 'Others', href: '/offering/others' },
             { name: 'Lemongrass Chunks', href: '/offering/lemongrass' },
         ]
@@ -36,11 +37,11 @@ const navLinks = [
         href: '#',
         subLinks: [
             { name: 'Investors Corner', href: '/investors' },
-            { name: 'Shareholding Pattern', href: 'https://www.bseindia.com/stock-share-price/mrc-agrotech-ltd/mrcagro/540809/flag/7/shp' },
-            // { name: 'Policy on Related Party Transactions', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/Notice.pdf' },
-            // { name: 'Code of Conduct Policy', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/code.pdf' },
-            // { name: 'Dividend Distribution Policy', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/Dividend.pdf' },
-            // { name: 'Nomination and Remuneration', href: 'https://www.mrcagro.com/resource/Investors_Corner/Image/nomination.pdf' }
+            { name: 'Shareholding Pattern', href: 'https://www.bseindia.com/stock-share-price/mrc-agrotech-ltd/mrcagro/540809/qtrid/128.00/shareholding-pattern/Dec-2025/' },
+            { name: 'Policy on Related Party Transactions', href: '/Policy on Related Party Transactions - MRC.pdf' },
+            { name: 'Code of Conduct Policy', href: '/Code of Conduct Policy.pdf' },
+            { name: 'Dividend Distribution Policy', href: '/Dividend Distribution Policy.pdf' },
+            { name: 'Nomination and Remuneration', href: '/Nomination and Remuneration Policy.pdf' }
         ]
     },
     { name: 'Farmer Education', href: '/farmer-education' },
@@ -62,7 +63,7 @@ export const Navbar = () => {
         setActiveDropdown(null);
     };
 
-    const isExternalLink = (href: string) => href.startsWith('http');
+    const isExternalLink = (href: string) => href.startsWith('http') || href.endsWith('.pdf');
 
     return (
         <>
@@ -130,13 +131,25 @@ export const Navbar = () => {
                                             >
                                                 <div className="bg-white rounded-xl shadow-lg border border-brand-100 overflow-hidden py-2">
                                                     {link.subLinks.map((subLink) => (
-                                                        <Link
-                                                            key={subLink.name}
-                                                            to={subLink.href}
-                                                            className="block px-4 py-2 text-sm text-gray-600 hover:text-brand-700 hover:bg-brand-50 transition-colors"
-                                                        >
-                                                            {subLink.name}
-                                                        </Link>
+                                                        isExternalLink(subLink.href) ? (
+                                                            <a
+                                                                key={subLink.name}
+                                                                href={subLink.href}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="block px-4 py-2 text-sm text-gray-600 hover:text-brand-700 hover:bg-brand-50 transition-colors"
+                                                            >
+                                                                {subLink.name}
+                                                            </a>
+                                                        ) : (
+                                                            <Link
+                                                                key={subLink.name}
+                                                                to={subLink.href}
+                                                                className="block px-4 py-2 text-sm text-gray-600 hover:text-brand-700 hover:bg-brand-50 transition-colors"
+                                                            >
+                                                                {subLink.name}
+                                                            </Link>
+                                                        )
                                                     ))}
                                                 </div>
                                             </motion.div>
@@ -172,14 +185,27 @@ export const Navbar = () => {
                                             <div className="text-lg font-medium text-brand-900">{link.name}</div>
                                             <div className="pl-4 border-l border-brand-100 space-y-3">
                                                 {link.subLinks.map(subLink => (
-                                                    <Link
-                                                        key={subLink.name}
-                                                        to={subLink.href}
-                                                        className="block text-base text-gray-600"
-                                                        onClick={() => setIsMobileMenuOpen(false)}
-                                                    >
-                                                        {subLink.name}
-                                                    </Link>
+                                                    isExternalLink(subLink.href) ? (
+                                                        <a
+                                                            key={subLink.name}
+                                                            href={subLink.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="block text-base text-gray-600"
+                                                            onClick={() => setIsMobileMenuOpen(false)}
+                                                        >
+                                                            {subLink.name}
+                                                        </a>
+                                                    ) : (
+                                                        <Link
+                                                            key={subLink.name}
+                                                            to={subLink.href}
+                                                            className="block text-base text-gray-600"
+                                                            onClick={() => setIsMobileMenuOpen(false)}
+                                                        >
+                                                            {subLink.name}
+                                                        </Link>
+                                                    )
                                                 ))}
                                             </div>
                                         </>

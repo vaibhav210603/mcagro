@@ -36,11 +36,10 @@ const products = [
             { label: "Applications", value: "Poultry, Aquaculture, Dairy & Cattle" }
         ],
         uses: "Improved digestibility, reduced anti-nutritional factors, better palatability."
-    },
-    
+    }
 ];
 
-export const Others = () => {
+export const GuarGum = () => {
     const [isContactOpen, setIsContactOpen] = useState(false);
     
     return (
@@ -49,34 +48,34 @@ export const Others = () => {
                 <SectionWrapper>
                     <div className="max-w-6xl mx-auto space-y-8">
                         <div className="text-center space-y-4 mb-12">
-                            <h1 className="text-4xl md:text-5xl font-bold text-dark">Other Offerings</h1>
+                            <h1 className="text-4xl md:text-5xl font-bold text-dark">Guar Gum Products</h1>
                             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                                Beyond our core agricultural products, MRC Agrotech also deals in a range of specialized ingredients and Fast-Moving Consumer Goods (FMCGs), including our premium Guar Gum extracts.
+                                MRC Agrotech specializes in guar-based food and feed ingredients, manufactured with a focus on quality, consistency, and reliability.
                             </p>
                         </div>
                         
-                        <div className="grid lg:grid-cols-2 gap-8">
+                        <div className="grid lg:grid-cols-3 gap-8">
                             {products.map((product, index) => (
                                 <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                                    <div className="h-64 overflow-hidden flex items-center justify-center p-6 relative bg-brand-50/50">
+                                    <div className="h-48 overflow-hidden flex items-center justify-center p-6 relative bg-brand-50/50">
                                         <img src={product.image} alt={product.name} className="h-full w-full object-cover rounded-xl hover:scale-105 transition-transform duration-500" />
                                     </div>
                                     <div className="p-6 flex-1 flex flex-col">
-                                        <h3 className="text-2xl font-bold text-brand-900 mb-3">{product.name}</h3>
+                                        <h3 className="text-xl font-bold text-brand-900 mb-3">{product.name}</h3>
                                         <p className="text-gray-600 text-sm mb-6 flex-1">
                                             {product.description}
                                         </p>
                                         
                                         <div className="space-y-4 mb-6">
                                             <div className="bg-brand-50/30 rounded-xl p-4 border border-brand-100/50">
-                                                <h4 className="flex items-center gap-2 text-sm font-semibold text-brand-800 mb-3">
-                                                    <Info className="w-4 h-4" /> Product Details
+                                                <h4 className="flex items-center gap-2 text-sm font-semibold text-brand-800 mb-2">
+                                                    <Info className="w-4 h-4" /> Details
                                                 </h4>
-                                                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                                                <dl className="grid gap-1 text-sm">
                                                     {product.details.map((detail, i) => (
-                                                        <div key={i}>
+                                                        <div key={i} className="flex justify-between border-b border-brand-100/30 pb-1 last:border-0">
                                                             <dt className="text-gray-500">{detail.label}</dt>
-                                                            <dd className="font-medium text-gray-900">{detail.value}</dd>
+                                                            <dd className="font-medium text-gray-900 text-right max-w-[60%]">{detail.value}</dd>
                                                         </div>
                                                     ))}
                                                 </dl>
@@ -90,11 +89,11 @@ export const Others = () => {
                                             </div>
                                         </div>
                                         
-                                        <div className="flex items-center gap-3 pt-4 border-t border-gray-100 mt-auto">
-                                            <Button className="flex-1" onClick={() => setIsContactOpen(true)}>
+                                        <div className="flex flex-col gap-2 pt-4 border-t border-gray-100 mt-auto">
+                                            <Button className="w-full justify-center" onClick={() => setIsContactOpen(true)}>
                                                 Get Quotation
                                             </Button>
-                                            <Button variant="outline" className="flex-1 border-brand-200 text-brand-700 hover:bg-brand-50" onClick={() => setIsContactOpen(true)}>
+                                            <Button variant="outline" className="w-full justify-center border-brand-200 text-brand-700 hover:bg-brand-50" onClick={() => setIsContactOpen(true)}>
                                                 Send Sample
                                             </Button>
                                         </div>

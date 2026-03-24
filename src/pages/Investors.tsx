@@ -57,11 +57,12 @@ const investorsData: Category[] = [
         ]
     },
     {
-        title: "Corporate Governance",
+        title: "Corporate Governance / Policies",
         subcategories: [
-            { title: "Dividend Distribution Policy", url: "https://www.mrcagro.com/Image/dividend-distribution-policy.pdf" },
-            { title: "NRC Policy 2021", url: "https://www.mrcagro.com/Image/nrc-policy-2021.pdf" },
-            { title: "Code of Conduct", url: "https://www.mrcagro.com/Image/code-of-conduct-reg17.pdf" }
+            { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
+            { title: "Nomination and Remuneration Policy", url: "/Nomination and Remuneration Policy.pdf" },
+            { title: "Code of Conduct Policy", url: "/Code of Conduct Policy.pdf" },
+            { title: "Policy on Related Party Transactions - MRC", url: "/Policy on Related Party Transactions - MRC.pdf" }
         ]
     },
     {

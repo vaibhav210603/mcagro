@@ -1,33 +1,89 @@
+import { useState } from 'react';
 import { SectionWrapper } from '../../components/ui/SectionWrapper';
+import { Button } from '../../components/ui/Button';
+import { ContactModal } from '../../components/ui/ContactModal';
+import { Droplets, Info } from 'lucide-react';
 
-const teas = [
-    { name: "Oolong Tea", description: "Rich and robust flavor profile." },
-    { name: "Green Tea", description: "Classic green tea known for its health benefits." },
-    { name: "Ginger Tea", description: "Spicy and refreshing blend." },
+const products = [
+    {
+        name: "Temi Tea Collection",
+        image: "https://images.unsplash.com/photo-1576092762791-dd9e2220abd4?w=800&auto=format&fit=crop&q=60", // Placeholder for Tea
+        description: "Finest aromatic experiences grown in pristine environments. Carefully processed to retain natural aroma and flavor.",
+        details: [
+            { label: "Category", value: "Beverages / Tea" },
+            { label: "Variants", value: "Green Tea, Orthodox Black Tea, Ginger Dips" },
+            { label: "Quality", value: "Export Grade" }
+        ],
+        uses: "Refreshing beverage, antioxidant properties, and known health benefits depending on the variant."
+    }
 ];
 
 export const Tea = () => {
+    const [isContactOpen, setIsContactOpen] = useState(false);
+    
     return (
-        <div className="pt-20">
-            <SectionWrapper>
-                <div className="max-w-4xl mx-auto space-y-8">
-                    <h1 className="text-4xl font-bold text-dark">Temi Tea</h1>
-                    <div className="prose prose-lg text-gray-600 mb-8">
-                        <p>
-                            Our selection of Temi Tea brings you the finest aromatic experiences.
-                            Grown in pristine environments, our teas are carefully processed to retain their natural aroma and flavor.
-                        </p>
+        <>
+            <div className="pt-20">
+                <SectionWrapper>
+                    <div className="max-w-4xl mx-auto space-y-8">
+                        <div className="text-center space-y-4 mb-12">
+                            <h1 className="text-4xl md:text-5xl font-bold text-dark">Temi Tea</h1>
+                            <p className="text-xl text-gray-600 mx-auto">
+                                Our selection of Temi Tea brings you the finest aromatic experiences directly from pristine tea estates.
+                            </p>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 gap-8">
+                            {products.map((product, index) => (
+                                <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                                    <div className="md:w-1/2 h-64 md:h-auto overflow-hidden flex items-center justify-center p-6 relative bg-brand-50/50">
+                                        <img src={product.image} alt={product.name} className="h-full w-full object-cover rounded-xl hover:scale-105 transition-transform duration-500" />
+                                    </div>
+                                    <div className="p-6 md:p-8 md:w-1/2 flex flex-col">
+                                        <h3 className="text-2xl font-bold text-brand-900 mb-3">{product.name}</h3>
+                                        <p className="text-gray-600 text-sm mb-6 flex-1">
+                                            {product.description}
+                                        </p>
+                                        
+                                        <div className="space-y-4 mb-8">
+                                            <div className="bg-brand-50/30 rounded-xl p-4 border border-brand-100/50">
+                                                <h4 className="flex items-center gap-2 text-sm font-semibold text-brand-800 mb-3">
+                                                    <Info className="w-4 h-4" /> Product Details
+                                                </h4>
+                                                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                                                    {product.details.map((detail, i) => (
+                                                        <div key={i}>
+                                                            <dt className="text-gray-500">{detail.label}</dt>
+                                                            <dd className="font-medium text-gray-900">{detail.value}</dd>
+                                                        </div>
+                                                    ))}
+                                                </dl>
+                                            </div>
+                                            
+                                            <div>
+                                                <h4 className="flex items-center gap-2 text-sm font-semibold text-brand-800 mb-2">
+                                                    <Droplets className="w-4 h-4" /> Uses & Benefits
+                                                </h4>
+                                                <p className="text-sm text-gray-600">{product.uses}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="flex items-center gap-3 pt-4 border-t border-gray-100 mt-auto">
+                                            <Button className="flex-1" onClick={() => setIsContactOpen(true)}>
+                                                Get Quotation
+                                            </Button>
+                                            <Button variant="outline" className="flex-1 border-brand-200 text-brand-700 hover:bg-brand-50" onClick={() => setIsContactOpen(true)}>
+                                                Send Sample
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {teas.map((tea, index) => (
-                            <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                <h3 className="text-xl font-semibold text-primary mb-2">{tea.name}</h3>
-                                <p className="text-gray-600">{tea.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </SectionWrapper>
-        </div>
+                </SectionWrapper>
+            </div>
+            <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+        </>
     );
 };

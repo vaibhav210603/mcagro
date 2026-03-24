@@ -8,11 +8,14 @@ interface LoadingContextType {
 const LoadingContext = createContext<LoadingContextType | undefined>(undefined);
 
 export const LoadingProvider = ({ children }: { children: ReactNode }) => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-    const [minTimeElapsed, setMinTimeElapsed] = useState(false);
+    const hasLoadedBefore = sessionStorage.getItem('mrcagro_loaded') === 'true';
+    const [isLoading, setIsLoading] = useState(!hasLoadedBefore);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(hasLoadedBefore);
+    const [minTimeElapsed, setMinTimeElapsed] = useState(hasLoadedBefore);
 
     useEffect(() => {
+        if (hasLoadedBefore) return;
+
         // Minimum display time for loader (e.g., 2s) to prevent flashing users
         const timer = setTimeout(() => {
             setMinTimeElapsed(true);
@@ -30,16 +33,22 @@ export const LoadingProvider = ({ children }: { children: ReactNode }) => {
             clearTimeout(timer);
             clearTimeout(fallbackTimer);
         };
-    }, [isVideoLoaded]);
+    }, [isVideoLoaded, hasLoadedBefore]);
 
     useEffect(() => {
-        if (isVideoLoaded && minTimeElapsed) {
+        if (isVideoLoaded && minTimeElapsed && !hasLoadedBefore) {
             setIsLoading(false);
+            sessionStorage.setItem('mrcagro_loaded', 'true');
         }
-    }, [isVideoLoaded, minTimeElapsed]);
+    }, [isVideoLoaded, minTimeElapsed, hasLoadedBefore]);
 
     return (
-        <LoadingContext.Provider value={{ isLoading, setVideoLoaded: () => setIsVideoLoaded(true) }}>
+        <LoadingContext.Provider value={{ 
+            isLoading, 
+            setVideoLoaded: () => {
+                if (!hasLoadedBefore) setIsVideoLoaded(true);
+            } 
+        }}>
             {children}
         </LoadingContext.Provider>
     );

@@ -20,6 +20,7 @@ import { Seeds } from './pages/offering/Seeds';
 import { Fertilizers } from './pages/offering/Fertilizers';
 import { Others } from './pages/offering/Others';
 import { Lemongrass } from './pages/offering/Lemongrass';
+import { GuarGum } from './pages/offering/GuarGum';
 import { FarmerEducation } from './pages/FarmerEducation';
 import { MrcMall } from './pages/MrcMall'; // New Import
 
@@ -93,6 +94,7 @@ function App() {
               <Route path="/offering/fertilizers" element={<Fertilizers />} />
               <Route path="/offering/others" element={<Others />} />
               <Route path="/offering/lemongrass" element={<Lemongrass />} />
+              <Route path="/offering/guar-gum" element={<GuarGum />} />
               <Route path="/farmer-education" element={<FarmerEducation />} />
               <Route path="/mrc-mall" element={<MrcMall />} /> {/* New Route */}
 
