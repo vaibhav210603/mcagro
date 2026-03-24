@@ -6,16 +6,28 @@ import { Droplets, Info } from 'lucide-react';
 
 const products = [
     {
-        name: "Lemongrass Chunks & Tea Cuts",
-        image: "/offerings/lemongrass_chunks.png",
+        name: "Lemongrass Tea Cuts",
+        image: "/Lemongrass-Tea-cut.jpg",
         description: "Dried stalks used for tea; known for anti-inflammatory and antioxidant properties.",
         details: [
             { label: "Botanical Name", value: "Cymbopogon citratus" },
-            { label: "Format", value: "Dried Chunks / Cuts" },
+            { label: "Format", value: "Tea Cuts" },
             { label: "Process", value: "Sun & Mechanically Dried" },
             { label: "Quality", value: "Aromatic / Export Grade" }
         ],
-        uses: "Perfect for use in herbal teas, culinary applications, infusions, and natural health remedies."
+        uses: "Perfect for use in herbal teas, infusions, and natural health remedies."
+    },
+    {
+        name: "Lemongrass Chunks",
+        image: "/Lemongrass-Chunks.jpg",
+        description: "Larger dried stalks; known for robust flavor and aromatic properties.",
+        details: [
+            { label: "Botanical Name", value: "Cymbopogon citratus" },
+            { label: "Format", value: "Dried Chunks" },
+            { label: "Process", value: "Sun & Mechanically Dried" },
+            { label: "Quality", value: "Aromatic / Export Grade" }
+        ],
+        uses: "Ideal for culinary applications, broths, and essential oil extraction."
     }
 ];
 
