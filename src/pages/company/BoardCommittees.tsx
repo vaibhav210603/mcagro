@@ -28,7 +28,17 @@ export const BoardCommittees = () => {
         <div className="pt-20">
             <SectionWrapper>
                 <div className="max-w-4xl mx-auto space-y-8">
-                    <h1 className="text-4xl font-bold text-dark">Board Committees</h1>
+                    <div className="flex justify-between items-end">
+                        <h1 className="text-4xl font-bold text-dark">Board Committees</h1>
+                        <a 
+                            href="/documentforwebsiteupdate/MRC_reconstitutionofcommittees.pdf" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-brand-600 hover:text-brand-800 font-medium flex items-center gap-2 border-b border-brand-600"
+                        >
+                            Reconstitution of Committees Report
+                        </a>
+                    </div>
                     <div className="space-y-8">
                         {committees.map((committee, index) => (
                             <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">

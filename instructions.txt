@@ -1,14 +1,14 @@
-nano fertilizers images are not present/displayed
+there is a chatbot integrated in the website, 
 
-get guar gum relavant images from the internet for allsections in guar gum and others section in offerings.
-
-
-Also in the investor sections, 
-Update the policies
-Policy on Related Party Transactions - MRC
-Code of Conduct Policy
-Dividend Distribution Policy
+when ever someone types "Ashokk" or "ashokk"
+It should open an admin console
+First request password
+"Hi mr.ashok please enter the password"
+password is 007
 
 
-All these pdfs for policies are present in the public folder,
-links should open pdf in new tab
+when entered
+
+you display 4 webpages
+
+

@@ -45,6 +45,9 @@ const investorsData: Category[] = [
                 { title: "ANNUAL REPORT 2019", url: "https://www.mrcagro.com/Image/annual-report-2019.pdf" },
                 { title: "ANNUAL REPORT 2018", url: "https://www.mrcagro.com/Image/annual-report-2018.pdf" }
             ],
+            "Valuation Reports": [
+                { title: "Valuation Report", url: "/documentforwebsiteupdate/MRC_Valuation.pdf" }
+            ],
             "RPT Disclosure": [
                 { title: "RPT Disclosure", url: "https://www.mrcagro.com/Image/RPT%20Disclosure.pdf" }
             ]
@@ -53,7 +56,8 @@ const investorsData: Category[] = [
     {
         title: "Compliance",
         subcategories: [
-            { title: "Annual Secretarial Compliance Certificate", url: "https://www.mrcagro.com/Image/annual-secretarial-compliance-certificate.pdf" }
+            { title: "Annual Secretarial Compliance Certificate", url: "https://www.mrcagro.com/Image/annual-secretarial-compliance-certificate.pdf" },
+            { title: "Scrutinizer Report", url: "/documentforwebsiteupdate/MRC_CS_scutinizer-report.pdf" }
         ]
     },
     {
@@ -62,7 +66,9 @@ const investorsData: Category[] = [
             { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
             { title: "Nomination and Remuneration Policy", url: "/Nomination and Remuneration Policy.pdf" },
             { title: "Code of Conduct Policy", url: "/Code of Conduct Policy.pdf" },
-            { title: "Policy on Related Party Transactions - MRC", url: "/Policy on Related Party Transactions - MRC.pdf" }
+            { title: "Policy on Related Party Transactions - MRC", url: "/Policy on Related Party Transactions - MRC.pdf" },
+            { title: "Memorandum & Articles of Association", url: "/documentforwebsiteupdate/MRC_MOA_AOA.pdf" },
+            { title: "Reconstitution of Committees", url: "/documentforwebsiteupdate/MRC_reconstitutionofcommittees.pdf" }
         ]
     },
     {
