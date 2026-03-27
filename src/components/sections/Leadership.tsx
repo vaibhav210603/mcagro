@@ -109,13 +109,14 @@ export const Leadership = () => {
                         className="flex-none w-[75%] sm:w-[45%] md:w-[32%] lg:w-[32%] snap-start bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
                         onClick={() => navigate('/company/team')}
                     >
-                        <div className="h-52 md:h-60 overflow-hidden bg-gray-100">
+                        <div className="aspect-[3/4] overflow-hidden bg-gray-100">
                             <img
                                 src={member.image}
                                 alt={member.name}
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                                 onError={(e) => { (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(member.name) + '&background=random&size=256' }}
                             />
+
                         </div>
                         <div className="p-5">
                             <h3 className="text-lg font-bold text-gray-900 truncate">{member.name}</h3>
