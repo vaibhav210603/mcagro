@@ -1,14 +1,45 @@
-there is a chatbot integrated in the website, 
+1. make mrc mall to mrc lounge everywhere
 
-when ever someone types "Ashokk" or "ashokk"
-It should open an admin console
-First request password
-"Hi mr.ashok please enter the password"
-password is 007
+2. remove organic tag from lemongrass inthe home page and everywhere else.
+
+3. add new cards on the home page next to essential oils and lemongrass, in our offerings section inthe home page 
+ie seeds and agrochemicals (generate images from gemini, seeds are cotton maize and mustard )
+refer to pesticide in our offerings page for a thumbnail view of pesticides by mrc agro
+also when clicked on these cards, they shuold redirect to respective offerings
+elable this funcitonality for all cards 
+
+4. In the leadership section add new(if required) cards for 
+mr ashok
+mr vishal  
+mrs sudha navin agarwal
+mr jainendra baxi
+mrs swati sharma
+mrs shweta mundra
+mr rahul mathur
+
+if card already present for respective peprson skip it, 
+
+order of cards should remain same.
+
+in mobile view, it should be a horizontal slider for these, with a view for 3 cards at a time.
 
 
-when entered
 
-you display 4 webpages
+5. Research and Create appropriate terms and conditions for the website, and add a link to it in the footer.
+
+6. in all pages specially in the abot us and our team cards, fix the text lighment issue,
+text is centered but it should be justified.
+
+all text in the entire website shuold be justified alighned.
+
+7. in the Board commities section, make the cards more visually appealing and premium, also
+use correct data available in the reconsitution of committes pdf. link available at the page
+
+8. in the offerings section, use seperate cards for all three seeds instad of just one for all
+
+9. Make the formal education tab more premium and interactive and visually appealing
+
+10. It shuold show agonica seeds on group companies navbar link  instead of directly  navigating to  the agronicaseeds webpage on first click.
 
 
+TAKE CARE OF MOBILE VIEW IN ALL THE ABOVE CHANGES

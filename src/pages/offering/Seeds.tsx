@@ -6,15 +6,37 @@ import { Droplets, Info } from 'lucide-react';
 
 const products = [
     {
-        name: "Premium Agricultural Seeds",
-        image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&auto=format&fit=crop&q=60", // Placeholder for seeds
-        description: "High-yield, disease-resistant seeds tailored for global agricultural success. Includes premium Cotton, Maize, and Mustard variants.",
+        name: "Premium Cotton Seeds",
+        image: "/cotton.png",
+        description: "High-yield, disease-resistant cotton seeds tailored for high productivity in diverse climates. Ensures excellent fiber quality.",
         details: [
             { label: "Category", value: "Agriculture / Sowing" },
-            { label: "Variants", value: "Cotton, Maize, Mustard" },
+            { label: "Variant", value: "Cotton" },
             { label: "Quality", value: "High Germination Rate" }
         ],
-        uses: "Commercial farming, maximizing crop yields, and sustainable agricultural practices."
+        uses: "Commercial farming, maximizing fiber yield, and high resistance to pests."
+    },
+    {
+        name: "Golden Maize Seeds",
+        image: "/maize.png",
+        description: "Superior quality maize seeds promoting robust growth and exceptional grain development. Ideal for sustainable farming.",
+        details: [
+            { label: "Category", value: "Agriculture / Sowing" },
+            { label: "Variant", value: "Maize (Corn)" },
+            { label: "Quality", value: "Premium Grain Size" }
+        ],
+        uses: "Food production, animal feed, and ethanol production with high per-acre yield."
+    },
+    {
+        name: "Pure Mustard Seeds",
+        image: "/mustard.png",
+        description: "Finest mustard seeds cultivated for high oil content and strong aromatic profile. Thrives in various conditions.",
+        details: [
+            { label: "Category", value: "Agriculture / Sowing" },
+            { label: "Variant", value: "Mustard" },
+            { label: "Quality", value: "High Oil Content" }
+        ],
+        uses: "Edible oil extraction, culinary spices, and robust seasonal harvesting."
     }
 ];
 

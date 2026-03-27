@@ -15,6 +15,10 @@
     @apply bg-white text-dark font-sans overflow-x-hidden;
   }
 
+  p {
+    @apply text-justify;
+  }
+
   /* Lenis Scroll Setup */
   html.lenis, html.lenis body {
     height: auto;
@@ -39,4 +43,13 @@
 
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-900 to-brand-600;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

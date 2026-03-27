@@ -28,7 +28,7 @@ const navLinks = [
             { name: 'Seeds', href: '/offering/seeds' },
             { name: 'Nano Fertilizers', href: '/offering/fertilizers' },
             { name: 'Guar Gum', href: '/offering/guar-gum' },
-            { name: 'Others', href: '/offering/others' },
+           // { name: 'Others', href: '/offering/others' },
             { name: 'Lemongrass Chunks', href: '/offering/lemongrass' },
         ]
     },
@@ -47,7 +47,13 @@ const navLinks = [
         ]
     },
     { name: 'Farmer Education', href: '/farmer-education' },
-    { name: 'Group Companies', href: 'https://agronicaseeds.com/' },
+    { 
+        name: 'Group Companies', 
+        href: '#',
+        subLinks: [
+            { name: 'Agronica Seeds', href: 'https://agronicaseeds.com/' }
+        ]
+    },
     { name: 'Careers', href: '/careers' },
 ];
 
@@ -75,7 +81,7 @@ export const Navbar = () => {
                         <Link to="/" className="flex items-center gap-3 group">
                             <img src="/MRC.png" alt="MRCAgrotech ltd logo" className="h-12 md:h-12 w-auto object-contain" />
                             <span className="text-xl md:text-2xl font-bold tracking-tight text-brand-900 group-hover:text-brand-700 transition-colors">
-                                MRCAgrotech ltd
+                                MRCAgrotech
                             </span>
                         </Link>
 

@@ -78,7 +78,7 @@ export const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-base md:text-xl text-white/85 mb-10 max-w-md md:max-w-xl font-light leading-relaxed"
+                    className="text-base md:text-xl text-white/85 mb-10 max-w-md md:max-w-xl font-light leading-relaxed text-center"
                 >
                     Using technology to protect nature and provide quality organic products from the hearts of India.
                     <br /><br />
@@ -104,7 +104,7 @@ export const Hero = () => {
                         className="bg-gradient-to-r from-amber-400 to-yellow-600 text-white hover:from-amber-500 hover:to-yellow-700 border-none shadow-lg hover:shadow-amber-500/20 transition-all duration-300 transform hover:scale-105"
                         onClick={() => navigate('/mrc-mall')}
                     >
-                        <span className="mr-2">🛍️</span> Visit MRC Mall
+                        <span className="mr-2">🛍️</span> Visit MRC Lounge
                     </Button>
                 </motion.div>
             </div>

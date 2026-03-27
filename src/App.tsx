@@ -23,6 +23,7 @@ import { Lemongrass } from './pages/offering/Lemongrass';
 import { GuarGum } from './pages/offering/GuarGum';
 import { FarmerEducation } from './pages/FarmerEducation';
 import { MrcMall } from './pages/MrcMall'; // New Import
+import { TermsAndConditions } from './pages/TermsAndConditions';
 
 import { ChatWidget } from './components/ui/ChatWidget';
 
@@ -97,6 +98,7 @@ function App() {
               <Route path="/offering/guar-gum" element={<GuarGum />} />
               <Route path="/farmer-education" element={<FarmerEducation />} />
               <Route path="/mrc-mall" element={<MrcMall />} /> {/* New Route */}
+              <Route path="/terms" element={<TermsAndConditions />} />
 
             </Routes>
           </main>
