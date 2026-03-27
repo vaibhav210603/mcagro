@@ -61,6 +61,7 @@ export const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isContactOpen, setIsContactOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
     const location = useLocation();
 
     const handleMouseEnter = (name: string) => {
@@ -72,6 +73,10 @@ export const Navbar = () => {
     };
 
     const isExternalLink = (href: string) => href.startsWith('http') || href.endsWith('.pdf');
+
+    const toggleMobileDropdown = (name: string) => {
+        setMobileDropdown(mobileDropdown === name ? null : name);
+    };
 
     return (
         <>
@@ -173,74 +178,104 @@ export const Navbar = () => {
                         {/* Mobile Toggle */}
                         <button
                             className="lg:hidden p-2 text-brand-900"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            onClick={() => { setIsMobileMenuOpen(!isMobileMenuOpen); setMobileDropdown(null); }}
                         >
                             {isMobileMenuOpen ? <X /> : <Menu />}
                         </button>
                     </div>
 
                     {/* Mobile Menu */}
-                    <motion.div
-                        initial={false}
-                        animate={isMobileMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
-                        className="lg:hidden overflow-hidden bg-white border-b border-brand-100/20"
-                    >
-                        <div className="px-6 py-8 flex flex-col gap-6 max-h-[80vh] overflow-y-auto">
-                            {navLinks.map((link) => (
-                                <div key={link.name} className="space-y-4">
-                                    {link.subLinks ? (
-                                        <>
-                                            <div className="text-lg font-medium text-brand-900">{link.name}</div>
-                                            <div className="pl-4 border-l border-brand-100 space-y-3">
-                                                {link.subLinks.map(subLink => (
-                                                    isExternalLink(subLink.href) ? (
-                                                        <a
-                                                            key={subLink.name}
-                                                            href={subLink.href}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="block text-base text-gray-600"
-                                                            onClick={() => setIsMobileMenuOpen(false)}
-                                                        >
-                                                            {subLink.name}
-                                                        </a>
-                                                    ) : (
-                                                        <Link
-                                                            key={subLink.name}
-                                                            to={subLink.href}
-                                                            className="block text-base text-gray-600"
-                                                            onClick={() => setIsMobileMenuOpen(false)}
-                                                        >
-                                                            {subLink.name}
-                                                        </Link>
-                                                    )
-                                                ))}
-                                            </div>
-                                        </>
-                                    ) : (
-                                        <Link
-                                            to={link.href}
-                                            className="text-lg font-medium text-brand-900 block"
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    )}
-                                </div>
-                            ))}
-                            <Button
-                                className="w-full"
-                                onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    setIsContactOpen(true);
-                                }}
+                    <AnimatePresence>
+                        {isMobileMenuOpen && (
+                            <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                className="lg:hidden overflow-hidden bg-white border-b border-brand-100/20"
                             >
-                                Get In Touch
-                            </Button>
-                        </div>
-                    </motion.div>
+                                <div className="px-6 py-4 flex flex-col max-h-[80vh] overflow-y-auto">
+                                    {navLinks.map((link) => (
+                                        <div key={link.name} className="border-b border-gray-100 last:border-0">
+                                            {link.subLinks ? (
+                                                <>
+                                                    <button
+                                                        onClick={() => toggleMobileDropdown(link.name)}
+                                                        className="w-full flex items-center justify-between py-3.5 text-base font-semibold text-brand-900"
+                                                    >
+                                                        {link.name}
+                                                        <ChevronDown className={cn(
+                                                            "w-5 h-5 text-gray-400 transition-transform duration-300",
+                                                            mobileDropdown === link.name ? "rotate-180 text-brand-600" : ""
+                                                        )} />
+                                                    </button>
+                                                    <AnimatePresence>
+                                                        {mobileDropdown === link.name && (
+                                                            <motion.div
+                                                                initial={{ height: 0, opacity: 0 }}
+                                                                animate={{ height: 'auto', opacity: 1 }}
+                                                                exit={{ height: 0, opacity: 0 }}
+                                                                transition={{ duration: 0.25 }}
+                                                                className="overflow-hidden"
+                                                            >
+                                                                <div className="pl-4 pb-3 space-y-1 border-l-2 border-brand-200 ml-1">
+                                                                    {link.subLinks.map(subLink => (
+                                                                        isExternalLink(subLink.href) ? (
+                                                                            <a
+                                                                                key={subLink.name}
+                                                                                href={subLink.href}
+                                                                                target="_blank"
+                                                                                rel="noopener noreferrer"
+                                                                                className="block py-2 text-sm text-gray-600 hover:text-brand-700 transition-colors"
+                                                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                                            >
+                                                                                {subLink.name}
+                                                                            </a>
+                                                                        ) : (
+                                                                            <Link
+                                                                                key={subLink.name}
+                                                                                to={subLink.href}
+                                                                                className="block py-2 text-sm text-gray-600 hover:text-brand-700 transition-colors"
+                                                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                                            >
+                                                                                {subLink.name}
+                                                                            </Link>
+                                                                        )
+                                                                    ))}
+                                                                </div>
+                                                            </motion.div>
+                                                        )}
+                                                    </AnimatePresence>
+                                                </>
+                                            ) : (
+                                                <Link
+                                                    to={link.href}
+                                                    className="block py-3.5 text-base font-semibold text-brand-900"
+                                                    onClick={() => setIsMobileMenuOpen(false)}
+                                                >
+                                                    {link.name}
+                                                </Link>
+                                            )}
+                                        </div>
+                                    ))}
+                                    <div className="pt-4 pb-2">
+                                        <Button
+                                            className="w-full"
+                                            onClick={() => {
+                                                setIsMobileMenuOpen(false);
+                                                setIsContactOpen(true);
+                                            }}
+                                        >
+                                            Get In Touch
+                                        </Button>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </nav>
             </header>
+
 
             <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
         </>
