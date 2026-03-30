@@ -6,11 +6,11 @@ import { useNavigate } from 'react-router-dom';
 
 const teamMembers = [
     { name: "Mr. Ashokk Singh", role: "Chairman & Director", image: "/team/ashokk_singh.jpg" },
-    { name: "Parmar Vishal Surendra", role: "Independent Director", image: "/team/vishal.jpeg" },
+    { name: "Mr. Parmar Vishal Surendra", role: "Additional Director", image: "/team/vishal.jpeg" },
     { name: "Mrs. Sudha Navin Agarwal", role: "Non-Executive - Independent Director", image: "/team/sudha.jpeg" },
     { name: "Mr. Jainendra Baxi", role: "Independent Director", image: "/team/jainendra_baxi.jpg" },
     { name: "Ms. Swati Sharma", role: "Independent Director", image: "/team/swati.jpg" },
-    { name: "Shweta Mundra", role: "Independent Director", image: "/team/shweta.jpg" },
+    { name: "Mrs. Shweta Mundra", role: "Independent Director", image: "/team/shweta.jpg" },
     { name: "Mr. Rahul Mathur", role: "Company Secretary and Compliance Officer", image: "/team/rahul_mathur.jpg" },
     //{ name: "Mr. Tyler Beaver", role: "Technology Consultant", image: "/team/tyler.jpg" },
     //{ name: "Mehul Kamdar", role: "Global Business Consultant", image: "/team/mehul.jpg" },
