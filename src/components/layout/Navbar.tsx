@@ -24,12 +24,13 @@ const navLinks = [
         href: '#',
         subLinks: [
             { name: 'Natural Essential Oils', href: '/offering/essential-oils' },
+            { name: 'Lemongrass Chunks', href: '/offering/lemongrass' },
             { name: 'Temi Tea', href: 'https://temiteaestate.com' },
             { name: 'Seeds', href: '/offering/seeds' },
             { name: 'Nano Fertilizers', href: '/offering/fertilizers' },
             { name: 'Guar Gum', href: '/offering/guar-gum' },
            // { name: 'Others', href: '/offering/others' },
-            { name: 'Lemongrass Chunks', href: '/offering/lemongrass' },
+            
         ]
     },
     { 
