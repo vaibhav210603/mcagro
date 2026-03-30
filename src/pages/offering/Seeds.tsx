@@ -7,7 +7,7 @@ import { Droplets, Info } from 'lucide-react';
 const products = [
     {
         name: "Premium Cotton Seeds",
-        image: "/cotton.png",
+        image: "/offerings/cotton.jpg",
         description: "High-yield, disease-resistant cotton seeds tailored for high productivity in diverse climates. Ensures excellent fiber quality.",
         details: [
             { label: "Category", value: "Agriculture / Sowing" },
@@ -18,7 +18,7 @@ const products = [
     },
     {
         name: "Golden Maize Seeds",
-        image: "/maize.png",
+        image: "/offerings/maize.jpg",
         description: "Superior quality maize seeds promoting robust growth and exceptional grain development. Ideal for sustainable farming.",
         details: [
             { label: "Category", value: "Agriculture / Sowing" },
@@ -29,7 +29,7 @@ const products = [
     },
     {
         name: "Pure Mustard Seeds",
-        image: "/mustard.png",
+        image: "/offerings/mustard.jpg",
         description: "Finest mustard seeds cultivated for high oil content and strong aromatic profile. Thrives in various conditions.",
         details: [
             { label: "Category", value: "Agriculture / Sowing" },
@@ -37,6 +37,28 @@ const products = [
             { label: "Quality", value: "High Oil Content" }
         ],
         uses: "Edible oil extraction, culinary spices, and robust seasonal harvesting."
+    },
+    {
+        name: "Paddy Seeds",
+        image: "/offerings/paddy.jpg",
+        description: "High-yield, disease-resistant paddy seeds tailored for high productivity in diverse climates. Ensures excellent grain quality.",
+        details: [
+            { label: "Category", value: "Agriculture / Sowing" },
+            { label: "Variant", value: "Paddy" },
+            { label: "Quality", value: "High Germination Rate" }
+        ],
+        uses: "Commercial farming, maximizing grain yield, and high resistance to pests."
+    },
+    {
+        name: "Wheat Seeds",
+        image: "/offerings/wheat.jpg",
+        description: "Superior quality wheat seeds promoting robust growth and exceptional grain development. Ideal for sustainable farming.",
+        details: [
+            { label: "Category", value: "Agriculture / Sowing" },
+            { label: "Variant", value: "Wheat" },
+            { label: "Quality", value: "Premium Grain Size" }
+        ],
+        uses: "Food production, animal feed, and ethanol production with high per-acre yield."
     }
 ];
 

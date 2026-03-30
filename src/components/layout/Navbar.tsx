@@ -43,7 +43,7 @@ const navLinks = [
             { name: 'Code of Conduct Policy', href: '/Code of Conduct Policy.pdf' },
             { name: 'Dividend Distribution Policy', href: '/Dividend Distribution Policy.pdf' },
             { name: 'Nomination and Remuneration', href: '/Nomination and Remuneration Policy.pdf' },
-            { name: 'Memorandum & Articles of Association', href: '/documentforwebsiteupdate/MRC_MOA_AOA.pdf' },
+            //{ name: 'Memorandum & Articles of Association', href: '/documentforwebsiteupdate/MRC_MOA_AOA.pdf' },
             { name: 'Reconstitution of Committees', href: '/documentforwebsiteupdate/MRC_reconstitutionofcommittees.pdf' }
         ]
     },

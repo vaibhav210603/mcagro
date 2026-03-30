@@ -26,50 +26,49 @@ const investorsData: Category[] = [
                 { title: "Financial statements for quarter ended on 30 June 2025", url: "/quaterlies/MRC_april_june_2025.pdf" },
                 { title: "Financial statements for quarter ended on 31 March 2025", url: "/quaterlies/MRC_Jan_march 2025_ result.pdf" },
                 { title: "Financial statements for quarter ended on 31 Dec 2024", url: "/quaterlies/MRC_oct to dec 2024_ result.pdf" },
-                { title: "Financial statements for quarter ended on 30 September 2024", url: "https://www.mrcagro.com/Image/Financial_statements_30_Sep_2024.pdf" },
-                { title: "Financial statements for quarter ended on 30 June 2024", url: "https://www.mrcagro.com/Image/Financial%20statements%2030%20June%202024.pdf" },
-                { title: "Financial statements for quarter ended on 31 Mar 2024", url: "https://www.mrcagro.com/Image/Annual%20report.pdf" },
-                { title: "Financial statements for quarter ended on 31 Dec 2023", url: "https://www.mrcagro.com/Image/MRC30092023.pdf" },
-                { title: "Financial statements for quarter ended on 30 Sep 2023", url: "https://www.mrcagro.com/Image/MRC30092023.pdf" },
-                { title: "Financial statements for quarter ended on 30 June 2023", url: "https://www.mrcagro.com/Image/financial-statements-for-quarter-ended-on-30-june-2023.pdf" },
-                { title: "Financial statements for quarter ended on 31 March 2023", url: "https://www.mrcagro.com/Image/Financial-statements-for-quarter-ended-on-31-March-2023.pdf" },
-                { title: "Financial Results for Quarter Ended on 31 December 2022", url: "https://www.mrcagro.com/Image/financial-results-for-quarter-ended-on-31-12-2022.pdf" }
+                { title: "Financial statements for quarter ended on 30 September 2024", url: "/quaterlies/Financial_statements_30_Sep_2024.pdf" },
+                { title: "Financial statements for quarter ended on 30 June 2024", url: "/quaterlies/Financial_statements_30_June_2024.pdf" },
+                { title: "Financial statements for quarter ended on 31 Mar 2024", url: "/quaterlies/Annual_report_Mar_2024.pdf" },
+                { title: "Financial statements for quarter ended on 31 Dec 2023", url: "/quaterlies/MRC30092023.pdf" },
+                { title: "Financial statements for quarter ended on 30 Sep 2023", url: "/quaterlies/MRC30092023.pdf" },
+                { title: "Financial statements for quarter ended on 30 June 2023", url: "/quaterlies/financial-statements-for-quarter-ended-on-30-june-2023.pdf" },
+                { title: "Financial statements for quarter ended on 31 March 2023", url: "/quaterlies/Financial-statements-for-quarter-ended-on-31-March-2023.pdf" },
+                { title: "Financial Results for Quarter Ended on 31 December 2022", url: "/quaterlies/financial-results-for-quarter-ended-on-31-12-2022.pdf" }
             ],
             "Annual Reports": [
-                { title: "ANNUAL REPORT 2025", url: "https://www.mrcagro.com/Image/annual-report-2025.pdf" },
-                { title: "ANNUAL REPORT 2024", url: "https://www.mrcagro.com/Image/23-24.pdf" },
-                { title: "ANNUAL REPORT 2023", url: "https://www.mrcagro.com/Image/22-23.pdf" },
-                { title: "ANNUAL REPORT 2022", url: "https://www.mrcagro.com/Image/annual-report-2022.pdf" },
-                { title: "ANNUAL REPORT 2021", url: "https://www.mrcagro.com/Image/annual-report-2021.pdf" },
-                { title: "ANNUAL REPORT 2020", url: "https://www.mrcagro.com/Image/annual-report-2020.pdf" },
-                { title: "ANNUAL REPORT 2019", url: "https://www.mrcagro.com/Image/annual-report-2019.pdf" },
-                { title: "ANNUAL REPORT 2018", url: "https://www.mrcagro.com/Image/annual-report-2018.pdf" }
+                { title: "ANNUAL REPORT 2025", url: "/annual-reports/annual-report-2025.pdf" },
+                { title: "ANNUAL REPORT 2024", url: "/annual-reports/annual-report-2024.pdf" },
+                { title: "ANNUAL REPORT 2023", url: "/annual-reports/annual-report-2023.pdf" },
+                { title: "ANNUAL REPORT 2022", url: "/annual-reports/annual-report-2022.pdf" },
+                { title: "ANNUAL REPORT 2021", url: "/annual-reports/annual-report-2021.pdf" },
+                { title: "ANNUAL REPORT 2020", url: "/annual-reports/annual-report-2020.pdf" },
+                { title: "ANNUAL REPORT 2019", url: "/annual-reports/annual-report-2019.pdf" },
+                { title: "ANNUAL REPORT 2018", url: "/annual-reports/annual-report-2018.pdf" }
             ],
             "Valuation Reports": [
                 { title: "Valuation Report", url: "/documentforwebsiteupdate/MRC_Valuation.pdf" }
             ],
             "RPT Disclosure": [
-                { title: "RPT Disclosure", url: "https://www.mrcagro.com/Image/RPT%20Disclosure.pdf" }
+                { title: "RPT Disclosure", url: "/documentforwebsiteupdate/RPT_Disclosure.pdf" }
             ]
         }
     },
     {
-        title: "Compliance",
-        subcategories: [
-            { title: "Annual Secretarial Compliance Certificate", url: "https://www.mrcagro.com/Image/annual-secretarial-compliance-certificate.pdf" },
-            { title: "Scrutinizer Report", url: "/documentforwebsiteupdate/MRC_CS_scutinizer-report.pdf" }
-        ]
-    },
-    {
-        title: "Corporate Governance / Policies",
-        subcategories: [
-            { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
-            { title: "Nomination and Remuneration Policy", url: "/Nomination and Remuneration Policy.pdf" },
-            { title: "Code of Conduct Policy", url: "/Code of Conduct Policy.pdf" },
-            { title: "Policy on Related Party Transactions - MRC", url: "/Policy on Related Party Transactions - MRC.pdf" },
-            { title: "Memorandum & Articles of Association", url: "/documentforwebsiteupdate/MRC_MOA_AOA.pdf" },
-            { title: "Reconstitution of Committees", url: "/documentforwebsiteupdate/MRC_reconstitutionofcommittees.pdf" }
-        ]
+        title: "Compliance & Policies",
+        subcategories: {
+            "Compliance": [
+                { title: "Annual Secretarial Compliance Certificate", url: "/documentforwebsiteupdate/annual-secretarial-compliance-certificate.pdf" },
+                { title: "Scrutinizer Report", url: "/documentforwebsiteupdate/MRC_CS_scutinizer-report.pdf" }
+            ],
+            "Corporate Governance / Policies": [
+                { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
+                { title: "Nomination and Remuneration Policy", url: "/Nomination and Remuneration Policy.pdf" },
+                { title: "Code of Conduct Policy", url: "/Code of Conduct Policy.pdf" },
+                { title: "Policy on Related Party Transactions - MRC", url: "/Policy on Related Party Transactions - MRC.pdf" },
+                { title: "Memorandum & Articles of Association", url: "/documentforwebsiteupdate/MRC_MOA_AOA.pdf" },
+                { title: "Reconstitution of Committees", url: "/documentforwebsiteupdate/MRC_reconstitutionofcommittees.pdf" }
+            ]
+        }
     },
     {
         title: "Group Companies",
