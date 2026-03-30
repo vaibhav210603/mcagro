@@ -46,6 +46,7 @@ const investorsData: Category[] = [
                 { title: "ANNUAL REPORT 2018", url: "/annual-reports/annual-report-2018.pdf" }
             ],
             "Valuation Reports": [
+                { title: "Valuation Report 2024", url: "/documentforwebsiteupdate/MRC_Valuation Report_06032024 (1).pdf" },
                 { title: "Valuation Report", url: "/documentforwebsiteupdate/MRC_Valuation.pdf" }
             ],
             "RPT Disclosure": [
