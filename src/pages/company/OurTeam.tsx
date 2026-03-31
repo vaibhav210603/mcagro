@@ -11,8 +11,13 @@ const teamMembers = [
     { name: "Shweta Mundra", role: "Non-Executive - Independent Woman Director", image: "/team/shweta.jpg", bio: "She has a rich experience and exposure in corporates since long time. She is working as Compliance Professional and Eminent Management Advisor for many Companies and Corporates from different sectors such as finance, Media, Real estate, Petroleum, IT, Trading and Manufacturing. Overall, she has a diverse and wide- ranging experience and knowledge of various corporate affairs. Currently serving MRC as an Independent Director" },
     { name: "Mr. Rahul Mathur", role: "Company Secretary and Compliance Officer", image: "/team/rahul_mathur.jpg", bio: "Rahul Mathur is appointed Company Secretary and Compliance Officer of the company." },
     { name: "Deepak Kilania", role: "President - Global Affairs", image: "/team/deepak_kilania.jpg", bio: "He is a 1st Gen Entrepreneur with several years of hands-on experience in the real estate and agro-industry sectors. With a strong foundation in Law after completing his bachelor's from NLU Patiala, he combines legal expertise with deep knowledge of Overseas Trade and Agricultural Business Management. As the President of MRC Agrotech, he is recognized for his professionalism, honesty, and commitment towards delivering the highest quality services. He is a strategic leader known for his ability to drive growth and build effective teams in dynamic business environments." },
-    { name: "Mr. Vijay Patil", role: "Operations", image: "/team/vijay.png", bio: "Vijay Patil oversees day-to-day operations at MRC Agrotech, ensuring seamless coordination across supply chain, logistics, and production. With a strong background in operational management and process optimization, he plays a vital role in maintaining quality standards and driving efficiency across all business verticals." },
-    { name: "Mr. Vaibhav Upadhyay", role: "Technology and Operations Associate", image: "/team/vaibhav.png", bio: "Vaibhav Upadhyay spearheads MRC Agrotech's digital transformation and technology operations. He is responsible for building and maintaining the company's web presence, internal systems, and digital workflows. With expertise in modern web technologies and a keen eye for user experience, he ensures that MRC's digital infrastructure supports seamless business growth." },
+   {
+  name: "Mr. Vaibhav Upadhyay",
+  role: "Technology and Operations Associate",
+  image: "/team/vaibhav.png",
+  bio: "Vaibhav Upadhyay holds a B.Tech from the Indian Institute of Information Technology, Himachal Pradesh (9 CGPA), with strong academic performance. He has experience across both hardware and software technologies. He builds scalable systems and software that optimize operational workflows and reduce day-to-day costs."
+},
+    { name: "Mr. Vijay Patil", role: "Operations", image: "/team/VIJAY3.png", bio: "Vijay Patil oversees day-to-day operations at MRC Agrotech, ensuring seamless coordination across supply chain, logistics, and production. With a strong background in operational management and process optimization, he plays a vital role in maintaining quality standards and driving efficiency across all business verticals." },
 ];
 
 const advisoryBoard = [
@@ -59,7 +64,7 @@ const TeamCard = ({ member }: { member: typeof teamMembers[0] }) => (
                 </div>
             </div>
             <div className="relative group/bio">
-                <p className="text-gray-500 text-sm leading-relaxed text-justify line-clamp-4 group-hover:line-clamp-none transition-all duration-700 ease-in-out">
+                <p className="text-gray-500 text-sm leading-relaxed text-left line-clamp-4 group-hover:line-clamp-none transition-all duration-700 ease-in-out">
                     {member.bio}
                 </p>
             </div>
