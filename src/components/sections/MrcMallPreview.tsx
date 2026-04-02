@@ -24,11 +24,11 @@ export const MrcMallPreview = () => {
                             <Star className="w-4 h-4 fill-amber-300" /> Premium Collection
                         </div>
                         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">MRC Lounge</span> is Now Open
+                            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">MRC Living</span> is Now Open
                         </h2>
                         <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            Discover a curated selection of nature's finest. From the misty hills of Temi Tea Estate to our own aromatic extractions,
-                            experience purity delivered to your doorstep.
+                            India’s First Farm-Origin Lifestyle Emporium
+From Our Soil to Your Life
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -57,7 +57,7 @@ export const MrcMallPreview = () => {
                         <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-transparent rounded-[2rem] transform rotate-3" />
                         <img
                             src="/temi1.jpg"
-                            alt="MRC Lounge Preview"
+                            alt="MRC Living Preview"
                             className="relative z-10 rounded-[2rem] shadow-2xl border border-white/10 w-full object-cover transform transition-transform hover:scale-[1.02] duration-500"
                         />
                         {/* Floating badges */}

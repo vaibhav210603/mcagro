@@ -16,7 +16,7 @@ export const MrcMall = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
                         >
-                            MRC Lounge
+                            MRC LIVING
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export const MrcMall = () => {
                             transition={{ delay: 0.1 }}
                             className="text-xl text-gray-600 max-w-2xl mx-auto"
                         >
-                            Premium products from the heart of nature to your doorstep
+                             India's First Farm-Origin Lifestyle Emporium — From Our Soil to Your Life
                         </motion.p>
                     </div>
 
