@@ -34,17 +34,16 @@ const navLinks = [
         ]
     },
     { 
-        name: 'Investors', 
+        name: 'Investors Corner', 
         href: '#',
         subLinks: [
-            { name: 'Investors Corner', href: '/investors' },
-            { name: 'Shareholding Pattern', href: 'https://www.bseindia.com/stock-share-price/mrc-agrotech-ltd/mrcagro/540809/qtrid/128.00/shareholding-pattern/Dec-2025/' },
-            { name: 'Policy on Related Party Transactions', href: '/Policy on Related Party Transactions - MRC.pdf' },
-            { name: 'Code of Conduct Policy', href: '/Code of Conduct Policy.pdf' },
-            { name: 'Dividend Distribution Policy', href: '/Dividend Distribution Policy.pdf' },
-            { name: 'Nomination and Remuneration', href: '/Nomination and Remuneration Policy.pdf' },
-            //{ name: 'Memorandum & Articles of Association', href: '/documentforwebsiteupdate/MRC_MOA_AOA.pdf' },
-            { name: 'Reconstitution of Committees', href: '/documentforwebsiteupdate/MRC_reconstitutionofcommittees.pdf' }
+            { name: 'Code Of Conduct & Policy', href: '/investors/code-of-conduct' },
+            { name: 'Financial Reporting', href: '/investors/financial-reporting' },
+            { name: 'Shareholders Information', href: '/investors/shareholders-info' },
+            { name: 'Corporate Announcement', href: '/investors/corporate-announcement' },
+            { name: 'Investors Contact', href: '/investors/contact' },
+            { name: 'Prospectus', href: '/investors/prospectus' },
+            { name: 'REG.46 & 62', href: '/investors/reg-46-62' }
         ]
     },
     { name: 'Farmer Education', href: '/farmer-education' },
@@ -92,7 +91,7 @@ export const Navbar = () => {
                         </Link>
 
                         {/* Desktop Nav */}
-                        <div className="hidden lg:flex items-center gap-8">
+                        <div className="hidden lg:flex items-center gap-5">
                             {navLinks.map((link) => (
                                 <div
                                     key={link.name}

@@ -7,6 +7,7 @@ import { Charity } from '../components/sections/Charity';
 import { MrcMallPreview } from '../components/sections/MrcMallPreview';
 import { Leadership } from '../components/sections/Leadership';
 import { NewsHighlight } from '../components/sections/NewsHighlight';
+import { NoticesSection } from '../components/sections/NoticesSection';
 import { Associations } from '../components/sections/Associations';
 
 export const Home = () => {
@@ -20,6 +21,7 @@ export const Home = () => {
             <Sustainability />
             <Products />
             <NewsHighlight />
+            <NoticesSection />
             <Associations />
             <Contact />
         </>

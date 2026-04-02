@@ -8,7 +8,14 @@ import { Loader } from './components/ui/Loader';
 import { Home } from './pages/Home';
 import { AboutUs } from './pages/AboutUs';
 import { Careers } from './pages/Careers';
-import { Investors as InvestorsPage } from './pages/Investors';
+import { InvestorsLanding } from './pages/investors/InvestorsLanding';
+import { CodeOfConduct } from './pages/investors/CodeOfConduct';
+import { FinancialReporting } from './pages/investors/FinancialReporting';
+import { ShareholdersInfo } from './pages/investors/ShareholdersInfo';
+import { CorporateAnnouncement } from './pages/investors/CorporateAnnouncement';
+import { InvestorsContact } from './pages/investors/InvestorsContact';
+import { Prospectus } from './pages/investors/Prospectus';
+import { Reg4662 } from './pages/investors/Reg4662';
 import { GetInTouch } from './pages/GetInTouch';
 import { OurTeam } from './pages/company/OurTeam';
 import { BoardCommittees } from './pages/company/BoardCommittees';
@@ -83,7 +90,14 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/careers" element={<Careers />} />
-              <Route path="/investors" element={<InvestorsPage />} />
+              <Route path="/investors" element={<InvestorsLanding />} />
+              <Route path="/investors/code-of-conduct" element={<CodeOfConduct />} />
+              <Route path="/investors/financial-reporting" element={<FinancialReporting />} />
+              <Route path="/investors/shareholders-info" element={<ShareholdersInfo />} />
+              <Route path="/investors/corporate-announcement" element={<CorporateAnnouncement />} />
+              <Route path="/investors/contact" element={<InvestorsContact />} />
+              <Route path="/investors/prospectus" element={<Prospectus />} />
+              <Route path="/investors/reg-46-62" element={<Reg4662 />} />
               <Route path="/get-in-touch" element={<GetInTouch />} />
               <Route path="/company/team" element={<OurTeam />} />
               <Route path="/company/board" element={<BoardCommittees />} />
