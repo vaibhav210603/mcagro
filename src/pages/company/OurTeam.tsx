@@ -17,7 +17,7 @@ const teamMembers = [
   image: "/team/vaibhav.png",
   bio: "Vaibhav Upadhyay holds a B.Tech from the Indian Institute of Information Technology, Himachal Pradesh (9 CGPA), with strong academic performance. He has experience across both hardware and software technologies. He builds scalable systems and software that optimize operational workflows and reduce day-to-day costs."
 },
-    { name: "Mr. Vijay Patil", role: "Operations", image: "/team/VIJAY3.png", bio: "Vijay Patil oversees day-to-day operations at MRC Agrotech, ensuring seamless coordination across supply chain, logistics, and production. With a strong background in operational management and process optimization, he plays a vital role in maintaining quality standards and driving efficiency across all business verticals." },
+    { name: "Mr. Vijay Patil", role: "Operations", image: "/team/vijay5.jpeg", bio: "Vijay Patil oversees day-to-day operations at MRC Agrotech, ensuring seamless coordination across supply chain, logistics, and production. With a strong background in operational management and process optimization, he plays a vital role in maintaining quality standards and driving efficiency across all business verticals." },
 ];
 
 const advisoryBoard = [
