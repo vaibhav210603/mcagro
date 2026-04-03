@@ -22,21 +22,21 @@ const products = [
     {
         title: 'Cotton Seeds',
         description: 'Premium quality cotton seeds for maximum agricultural yield.',
-        image: '/cotton.png',
+        image: '/offerings/cotton.jpg',
         tag: 'Premium',
         link: '/offering/seeds'
     },
     {
         title: 'Maize Seeds',
         description: 'High-grade golden maize seeds for superior farming results.',
-        image: '/maize.png',
+        image: '/offerings/maize.jpg',
         tag: 'Premium',
         link: '/offering/seeds'
     },
     {
         title: 'Mustard Seeds',
         description: 'Fine quality mustard seeds ensuring excellent harvest.',
-        image: '/mustard.png',
+        image: '/offerings/mustard.jpg',
         tag: 'Premium',
         link: '/offering/seeds'
     },
