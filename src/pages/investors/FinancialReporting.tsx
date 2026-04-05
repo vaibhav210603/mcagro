@@ -59,8 +59,14 @@ export const FinancialReporting = () => (
                 <DocumentList documents={annualReports} />
             </AccordionItem>
             <AccordionItem title="Financials of Subsidiary">
-                <div className="p-4 bg-gray-50 rounded-lg text-gray-500 italic text-sm border border-gray-100 mt-2">
-                    There are no subsidiaries.
+                <div className="space-y-4 mt-2">
+                    <div className="border border-emerald-100 rounded-xl p-5 bg-emerald-50/30">
+                        <div className="flex items-center justify-between mb-3">
+                            <h3 className="text-lg font-bold text-emerald-900">Agronica Seeds Private Limited</h3>
+                            <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full uppercase tracking-wider">Subsidiary</span>
+                        </div>
+                        <DocumentList documents={[{ title: "Visit Agronica Seeds Official Website", url: "https://agronicaseeds.com" }]} />
+                    </div>
                 </div>
             </AccordionItem>
             <AccordionItem title="RPT Disclosure">
