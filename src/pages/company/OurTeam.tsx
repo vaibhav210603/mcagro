@@ -21,6 +21,7 @@ const teamMembers = [
 ];
 
 const advisoryBoard = [
+    { name: "Mr. Sanjay Kumar Singh", role: "Global advisor", image: "/team/sanjay_kumar_singh.jpg", bio: "Sanjay Kumar Singh have more than 25 years of experience in various consulting domains like Finance, Sales, Marketing and Business Advisory. He is known for his precise analysis, practical insights and razor-sharp strategy. As a Director of the firm, he is deeply involved in consulting with clients and associates. Educational Qualification- MBA from Patna University." },
     { name: "Mr. Tyler Beaver", role: "Technology Consultant", image: "/team/tyler.jpg", bio: "Is an accomplished strategist and business development expert with a proven track record in governmental affairs, public policy, and international business. As a Principal at Executive Strategies, Tyler specializes in helping clients navigate complex legislative and regulatory environments while securing strategic partnerships that drive growth. With extensive experience across sectors such as agriculture, technology, energy, space, AI, and smart cities, Tyler has successfully managed high-profile political campaigns and crafted targeted media messaging that generates grassroots enthusiasm for both candidates and policy initiatives. His lobbying successes include working with notable organizations founded by members of the Kennedy family and collaborating with influential super PACs. In addition to his political expertise, Tyler has brokered over $100 million in agricultural trade and protein sourcing across the United States." },
     { name: "Mehul Kamdar", role: "Consultant for Global Business", image: "/team/mehul.jpg", bio: "Has over 25 years of experience in research, strategy, planning and licensing. Speaker of nine languages who started his working career as a radio journalist, Mehul has most recently been involved in the organic ingredients, health foods, natural cosmetics and seed and growing supplies industries. For a long time before this, he was an Associate and later a Partner at a Technology licensing practice." },
 ];
@@ -158,7 +159,7 @@ export const OurTeam = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="flex overflow-x-auto gap-6 md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 pb-10 snap-x snap-mandatory overflow-y-hidden hide-scrollbar max-w-4xl mx-auto"
+                            className="flex overflow-x-auto gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pb-10 snap-x snap-mandatory overflow-y-hidden hide-scrollbar max-w-7xl mx-auto"
                         >
                             {advisoryBoard.map((member, index) => (
                                 <TeamCard key={index} member={member} />
