@@ -50,7 +50,7 @@ export const Hero = () => {
                     className="mb-2 md:mb-4"
                 >
                     <img
-                        src="/MRC.png"
+                        src="/MRC LOGO.png"
                         alt="MRC Agrotech Logo"
                         className="w-64 md:w-56 md:h-56 object-contain select-none pointer-events-none"
                         style={{
