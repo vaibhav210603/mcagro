@@ -14,7 +14,7 @@ export const Footer = () => {
                 </div>
 
                 <div className="text-sm text-gray-400">
-                    © 2023 MRC Agrotech Ltd. All Rights Reserved.
+                    © 2026 MRC Agrotech Ltd. All Rights Reserved.
                 </div>
             </div>
         </footer>

@@ -52,8 +52,8 @@ export const InvestorsContact = () => (
                         </div>
                         <div className="flex items-center gap-2">
                             <Mail size={16} className="text-gray-400 shrink-0" />
-                            <a href="mailto:info@mrcagro.com" className="text-emerald-600 hover:text-emerald-800 transition-colors font-medium">
-                                info@mrcagro.com
+                            <a href="mailto:connect@mrcagro.com" className="text-emerald-600 hover:text-emerald-800 transition-colors font-medium">
+                                connect@mrcagro.com
                             </a>
                         </div>
                     </div>

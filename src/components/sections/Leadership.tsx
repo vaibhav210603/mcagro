@@ -13,7 +13,6 @@ const teamMembers = [
     { name: "Mrs. Shweta Mundra", role: "Independent Director", image: "/team/shweta.jpg" },
     { name: "Mr. Rahul Mathur", role: "Company Secretary and Compliance Officer", image: "/team/rahul_mathur.jpg" },
     { name: "Mr. Sanjay Kumar Singh", role: "Agri-finance advisor", image: "/team/sanjay_kumar_singh.jpg", bio: "Sanjay Kumar Singh have more than 25 years of experience in consulting domains like Agri-Finance and agriculture. He is known for his precise analysis, practical insights and razor-sharp strategy. As a Director of the firm, he is deeply involved in consulting with clients and associates. Educational Qualification- MBA from Patna University." },
-
     
     //{ name: "Mr. Tyler Beaver", role: "Technology Consultant", image: "/team/tyler.jpg" },
     //{ name: "Mehul Kamdar", role: "Global Business Consultant", image: "/team/mehul.jpg" },

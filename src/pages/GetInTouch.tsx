@@ -43,8 +43,8 @@ export const GetInTouch = () => {
                                     <div>
                                         <h3 className="text-xl font-semibold text-brand-800 mb-2">E-mail</h3>
                                         <p className="text-gray-600 text-lg">
-                                            <a href="mailto:info@mrcagro.com" className="hover:text-brand-600 transition-colors">
-                                                info@mrcagro.com
+                                            <a href="mailto:" className="hover:text-brand-600 transition-colors">
+
                                             </a>
                                         </p>
                                     </div>

@@ -42,7 +42,7 @@ export const Contact = () => {
                 {[
                     { label: 'Visit', content: 'Block 404, 4th floor, Sagar Tech Plaza, Mumbai, 400072' },
                     { label: 'Call', content: '022 - 40156765' },
-                    { label: 'Email', content: 'info@mrcagro.com' }
+                    { label: 'Email', content: 'connect@mrcagro.com' }
                 ].map((item, i) => (
                     <motion.div
                         key={item.label}
