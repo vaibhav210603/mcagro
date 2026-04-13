@@ -172,7 +172,7 @@ Join us in our journey towards a greener, healthier future. Experience the essen
                                 Our Mission
                             </h3>
                             <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                                To produce high-quality agricultural products through sustainable practices that prioritize soil conservation
+                                To produce high-quality agricultural products and natural essential oils through sustainable practices that prioritize soil conservation
                                 and biodiversity.
                             </p>
                             <ul className="space-y-4">
