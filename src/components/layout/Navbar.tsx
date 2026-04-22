@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { cn } from '../../utils/cn';
 import { Link, useLocation } from 'react-router-dom';
@@ -81,6 +81,29 @@ export const Navbar = () => {
     return (
         <>
             <header className="fixed top-0 w-full z-50">
+                {/* Top Social Bar */}
+                <div className="bg-brand-900 text-white border-b border-white/10 py-1.5">
+                    <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-[10px] sm:text-xs uppercase tracking-widest font-medium">
+                        <div className="flex items-center gap-2">
+                            <span className="text-white/80">Find us on social media</span>
+                        </div>
+                        <div className="flex items-center gap-5">
+                            <a href="https://www.linkedin.com/company/mrcagrotech" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors flex items-center gap-1.5">
+                                <Linkedin className="w-3.5 h-3.5" />
+                                <span className="hidden sm:inline">LinkedIn</span>
+                            </a>
+                            <a href="https://www.facebook.com/people/MRC-Agrotech-Ltd/61581326431597/?mibextid=wwXIfr&rdid=YnniAiuU2bcqpIPP&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18HrcBXHxT%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors flex items-center gap-1.5">
+                                <Facebook className="w-3.5 h-3.5" />
+                                <span className="hidden sm:inline">Facebook</span>
+                            </a>
+                            <a href="https://www.instagram.com/mrcagrotech/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors flex items-center gap-1.5">
+                                <Instagram className="w-3.5 h-3.5" />
+                                <span className="hidden sm:inline">Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <nav className="w-full bg-white border-b border-brand-100/20 py-3 shadow-sm">
                     <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                         <Link to="/" className="flex items-center gap-3 group">
