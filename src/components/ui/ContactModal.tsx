@@ -94,7 +94,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                                         value={formData.fullName}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 outline-none transition-all"
-                                        placeholder="John Doe"
+                                        placeholder=""
                                     />
                                 </div>
                                 <div>
@@ -118,7 +118,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 outline-none transition-all"
-                                            placeholder="john@example.com"
+                                            placeholder="j"
                                         />
                                     </div>
                                     <div>
