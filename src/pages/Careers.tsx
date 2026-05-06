@@ -84,7 +84,7 @@ export const Careers = () => {
                                         value={formData.fullName}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all bg-white"
-                                        placeholder="John Doe"
+                                        placeholder=""
                                     />
                                 </div>
 
@@ -98,7 +98,7 @@ export const Careers = () => {
                                         value={formData.email}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all bg-white"
-                                        placeholder="john@example.com"
+                                        placeholder=""
                                     />
                                 </div>
 
@@ -112,7 +112,7 @@ export const Careers = () => {
                                         value={formData.phone}
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-all bg-white"
-                                        placeholder="+91 98765 43210"
+
                                     />
                                 </div>
 
