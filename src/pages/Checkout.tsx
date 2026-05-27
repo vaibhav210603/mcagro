@@ -12,7 +12,7 @@ const getMockPrice = (itemId: string): number => {
 };
 
 export const Checkout = () => {
-    const { items, updateQuantity, removeFromCart, clearCart } = useCart();
+    const { items, clearCart } = useCart();
     const navigate = useNavigate();
     
     const [emailOrPhone, setEmailOrPhone] = useState('');

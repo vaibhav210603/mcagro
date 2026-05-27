@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Plus, Sparkles, Leaf, Droplet, Minus, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -37,10 +37,6 @@ const FERTILIZERS = [
     { id: 'f6', name: 'Nano Multi-Nutrient Solution',     price: 0, category: 'Advanced Nano Tech', image: '/offerings/nano_fertilizer.png' },
 ];
 
-const GlowingOrb = ({ color, className }: { color: string, className: string }) => (
-    <div className={`absolute rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-pulse ${color} ${className}`} />
-);
-
 // --- FALLING LEAVES COMPONENT ---
 const FallingLeaves = () => {
     return (
@@ -72,7 +68,7 @@ const FallingLeaves = () => {
 
 export const MrcMall = () => {
     const navigate = useNavigate();
-    const { items, addToCart, removeFromCart, updateQuantity, itemCount } = useCart();
+    const { items, addToCart, updateQuantity, itemCount } = useCart();
     
     const [cartGlow, setCartGlow] = useState(false);
     const [showAllTeas, setShowAllTeas] = useState(false);
