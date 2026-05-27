@@ -22,7 +22,7 @@ const BESTSELLERS = ['t4', 't5', 't1', 't6']; // Classic, Special, First Pluck, 
 const OILS = [
     { id: 'o1', name: 'Ajwain Essential Oil',      price: 0, category: 'Pure Extract', image: '/offerings/ajwain.png' },
     { id: 'o2', name: 'Cinnamon Essential Oil',    price: 0, category: 'Pure Extract', image: '/offerings/cinnamon.png' },
-    { id: 'o3', name: 'Cumin Seed Essential Oil',  price: 0, category: 'Pure Extract', image: '/images/product_oil.png' },
+    { id: 'o3', name: 'Cumin Seed Essential Oil',  price: 0, category: 'Pure Extract', image: null },
     { id: 'o4', name: 'Lemongrass Essential Oil',  price: 0, category: 'Pure Extract', image: '/offerings/lemongrass.png' },
     { id: 'o5', name: 'Palmarosa Essential Oil',   price: 0, category: 'Pure Extract', image: '/offerings/palmarosa.png' },
     { id: 'o6', name: 'Peppermint Essential Oil',  price: 0, category: 'Pure Extract', image: '/offerings/peppermint.png' },
@@ -470,17 +470,26 @@ const ProductCard = ({ product, cartItems, onAdd, onUpdate, theme = 'dark' }: an
                     ${isLight ? 'bg-emerald-600/10' : 'bg-emerald-500/20'}
                 `}></div>
                 
-                <motion.img
-                    src={product.image}
-                    alt={product.name}
-                    className={`
-                        ${product.image.includes('temi-tea-card')
-                            ? 'absolute inset-0 object-cover'
-                            : 'absolute inset-4 object-contain'}
-                        w-full h-full z-20 transition-all duration-700 ease-out transform group-hover:scale-105 group-hover:-translate-y-2
-                        ${isLight ? 'drop-shadow-[0_20px_30px_rgba(30,64,45,0.15)]' : 'drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]'}
-                    `}
-                />
+                {product.image ? (
+                    <motion.img
+                        src={product.image}
+                        alt={product.name}
+                        className={`
+                            ${product.image.includes('temi-tea-card')
+                                ? 'absolute inset-0 object-cover'
+                                : 'absolute inset-4 object-contain'}
+                            w-full h-full z-20 transition-all duration-700 ease-out transform group-hover:scale-105 group-hover:-translate-y-2
+                            ${isLight ? 'drop-shadow-[0_20px_30px_rgba(30,64,45,0.15)]' : 'drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]'}
+                        `}
+                    />
+                ) : (
+                    <div className={`absolute inset-4 z-20 flex flex-col items-center justify-center rounded-2xl border-2 border-dashed transition-all duration-700 group-hover:scale-105 group-hover:-translate-y-2
+                        ${isLight ? 'border-emerald-200 bg-emerald-50/60' : 'border-white/10 bg-white/5'}
+                    `}>
+                        <Droplet className={`w-12 h-12 mb-2 ${isLight ? 'text-emerald-300' : 'text-white/20'}`} />
+                        <span className={`text-xs font-medium tracking-wider uppercase ${isLight ? 'text-emerald-400' : 'text-white/20'}`}>Image Coming Soon</span>
+                    </div>
+                )}
             </div>
             
             <div className="px-8 pb-8 pt-4 relative z-30 flex flex-col flex-grow">
