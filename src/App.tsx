@@ -31,8 +31,10 @@ import { GuarGum } from './pages/offering/GuarGum';
 import { FarmerEducation } from './pages/FarmerEducation';
 import { MrcMall } from './pages/MrcMall'; // New Import
 import { TermsAndConditions } from './pages/TermsAndConditions';
+import { Checkout } from './pages/Checkout'; // New Import
 
-import { ChatWidget } from './components/ui/ChatWidget';
+// import { ChatWidget } from './components/ui/ChatWidget';
+import { CartProvider } from './context/CartContext';
 
 // ScrollToTop component to handle route changes
 const ScrollToTop = () => {
@@ -78,6 +80,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <CartProvider>
       <div className="bg-white min-h-screen">
         <AnimatePresence mode="wait">
           {isLoading && <Loader key="loader" />}
@@ -112,14 +115,15 @@ function App() {
               <Route path="/offering/guar-gum" element={<GuarGum />} />
               <Route path="/farmer-education" element={<FarmerEducation />} />
               <Route path="/mrc-mall" element={<MrcMall />} /> {/* New Route */}
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/terms" element={<TermsAndConditions />} />
 
             </Routes>
           </main>
           <Footer />
-          <ChatWidget />
         </div>
       </div>
+      </CartProvider>
     </Router>
   );
 }

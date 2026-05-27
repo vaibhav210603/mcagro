@@ -15,9 +15,6 @@
     @apply bg-white text-dark font-sans overflow-x-hidden;
   }
 
-  p {
-    @apply text-justify;
-  }
 
   /* Lenis Scroll Setup */
   html.lenis, html.lenis body {
