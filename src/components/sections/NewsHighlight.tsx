@@ -3,6 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SectionWrapper } from '../ui/SectionWrapper';
 import { Newspaper, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 
+type NewsImage = {
+    src: string;
+    alt: string;
+    caption: string;
+    naturalRatio?: boolean;
+};
+
 type NewsItem = {
     id: number;
     badge: string;
@@ -13,9 +20,7 @@ type NewsItem = {
     headlineSuffix: string;
     summary: string;
     quote?: { text: string; author: string; role: string; initial: string };
-    image: string;
-    imageAlt: string;
-    imageCaption: string;
+    images: NewsImage[];
     articleUrl?: string;
     articleLabel?: string;
 };
@@ -36,9 +41,9 @@ const newsItems: NewsItem[] = [
             role: 'Chairman & Director, MRC Agrotech Ltd.',
             initial: 'A'
         },
-        image: '/news_partnership.png',
-        imageAlt: 'MRC Agrotech Strategic Partnership',
-        imageCaption: 'Strategic Partnership for Precision Agriculture',
+        images: [
+            { src: '/news_partnership.png', alt: 'MRC Agrotech Strategic Partnership', caption: 'Strategic Partnership for Precision Agriculture' }
+        ],
         articleUrl: 'https://www.business-standard.com/content/press-releases-ani/precision-farming-and-sustainable-development-is-here-for-the-farmers-125053001183_1.html',
         articleLabel: 'Read Full Article on Business Standard'
     },
@@ -57,13 +62,53 @@ const newsItems: NewsItem[] = [
             role: 'Chairman, MRC Agrotech Ltd.',
             initial: 'A'
         },
-        image: '/temi-tea.jpeg',
-        imageAlt: 'Temi Tea Estate E-Commerce Launch - Newspaper Coverage',
-        imageCaption: 'Temi Tea Estate E-Commerce Website Launch Coverage',
+        images: [
+            { src: '/temi-tea.jpeg', alt: 'Temi Tea Estate E-Commerce Launch - Newspaper Coverage', caption: 'Temi Tea Estate E-Commerce Website Launch Coverage' },
+            { src: '/temi-tea-certificate.jpg', alt: 'Temi Tea Estate Official Certificate', caption: 'Temi Tea Estate Certificate of Quality & Recognition', naturalRatio: true }
+        ],
         articleUrl: 'https://temiteaestate.com',
         articleLabel: 'Visit Temi Tea E-Commerce Store'
     },
 ];
+
+const ImagePanel = ({ images }: { images: NewsImage[] }) => {
+    if (images.length === 1) {
+        const img = images[0];
+        return (
+            <div className="relative group">
+                <div className="rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl shadow-black/30 group-hover:border-amber-400/30 transition-all duration-500">
+                    <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
+                <div className="absolute -bottom-4 left-4 right-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-5 py-3 text-center">
+                    <p className="text-white/80 text-xs md:text-sm font-medium">{img.caption}</p>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="flex flex-col gap-6">
+            {images.map((img) => (
+                <div key={img.src} className="flex flex-col group">
+                    <div className={`${img.naturalRatio ? '' : 'aspect-square'} rounded-2xl overflow-hidden border-2 border-white/10 shadow-xl shadow-black/30 group-hover:border-amber-400/30 transition-all duration-500`}>
+                        <img
+                            src={img.src}
+                            alt={img.alt}
+                            className={`w-full ${img.naturalRatio ? 'h-auto' : 'h-full'} object-cover group-hover:scale-105 transition-transform duration-700`}
+                        />
+                    </div>
+                    <div className="mt-2.5 px-1">
+                        <p className="text-white/60 text-xs font-medium text-center leading-snug">{img.caption}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+};
 
 export const NewsHighlight = () => {
     const [current, setCurrent] = useState(0);
@@ -74,7 +119,6 @@ export const NewsHighlight = () => {
         setCurrent((prev) => (prev + dir + newsItems.length) % newsItems.length);
     }, []);
 
-    // Auto-advance every 8 seconds
     useEffect(() => {
         const timer = setInterval(() => paginate(1), 8000);
         return () => clearInterval(timer);
@@ -90,7 +134,6 @@ export const NewsHighlight = () => {
 
     return (
         <SectionWrapper id="news" className="bg-gradient-to-br from-brand-900 via-brand-800 to-emerald-900 text-white relative overflow-hidden">
-            {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-400/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-400/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
@@ -152,20 +195,9 @@ export const NewsHighlight = () => {
                                 )}
                             </div>
 
-                            {/* Right: Image (2 cols) */}
-                            <div className="lg:col-span-2 relative group">
-                                <div className="rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl shadow-black/30 group-hover:border-amber-400/30 transition-all duration-500">
-                                    <img
-                                        src={item.image}
-                                        alt={item.imageAlt}
-                                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                </div>
-                                <div className="absolute -bottom-4 left-4 right-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-5 py-3 text-center">
-                                    <p className="text-white/80 text-xs md:text-sm font-medium text-center">
-                                        {item.imageCaption}
-                                    </p>
-                                </div>
+                            {/* Right: Image(s) (2 cols) */}
+                            <div className="lg:col-span-2">
+                                <ImagePanel images={item.images} />
                             </div>
                         </div>
                     </motion.div>
@@ -173,7 +205,6 @@ export const NewsHighlight = () => {
 
                 {/* Navigation Controls */}
                 <div className="flex items-center justify-between mb-10">
-                    {/* Dots */}
                     <div className="flex items-center gap-3">
                         {newsItems.map((_, i) => (
                             <button
@@ -184,7 +215,6 @@ export const NewsHighlight = () => {
                         ))}
                     </div>
 
-                    {/* Arrows */}
                     <div className="flex items-center gap-3">
                         <button
                             onClick={() => paginate(-1)}
