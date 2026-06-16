@@ -66,7 +66,7 @@ export const FinancialReporting = () => (
                             <h3 className="text-lg font-bold text-emerald-900">Agronica Seeds Spark Private Limited</h3>
                             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full uppercase tracking-wider">Subsidiary</span>
                         </div>
-                        <DocumentList documents={[{ title: "Visit Agronica Seeds Official Website", url: "https://agronicaseeds.com" }]} />
+                        <DocumentList documents={[{ title: "Visit Agronica Seeds Spark Official Website", url: "https://agronicaseeds.com" }]} />
                     </div>
                     <div className="border border-emerald-100 rounded-xl p-5 bg-emerald-50/30">
                         <div className="flex items-center justify-between mb-3">
