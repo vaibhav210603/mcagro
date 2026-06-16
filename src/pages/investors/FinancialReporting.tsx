@@ -1,6 +1,7 @@
 import { InvestorPageWrapper, AccordionItem, DocumentList } from './InvestorComponents';
 
 const quarterlyFinancials = [
+    { title: "Financial statements for quarter ended on 31 March 2026", url: "/quaterlies/MRC_Jan_March_2026.pdf" },
     { title: "Financial statements for quarter ended on 31 Dec 2025", url: "/quaterlies/MRC_Oct_Dec_2025.pdf" },
     { title: "Financial statements for quarter ended on 30 Sep 2025", url: "/quaterlies/MRC_july_september_2025.pdf" },
     { title: "Financial statements for quarter ended on 30 June 2025", url: "/quaterlies/MRC_april_june_2025.pdf" },
