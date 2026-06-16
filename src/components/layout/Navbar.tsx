@@ -47,11 +47,12 @@ const navLinks = [
         ]
     },
     { name: 'Farmer Education', href: '/farmer-education' },
-    { 
-        name: 'Group Companies', 
+    {
+        name: 'Group Companies',
         href: '#',
         subLinks: [
-            { name: 'Agronica Seeds', href: 'https://agronicaseeds.com/' }
+            { name: 'Agronica Seeds', href: 'https://agronicaseeds.com/' },
+            { name: 'Mars Pharma', href: 'https://www.marspharma.in/' }
         ]
     },
     { name: 'Careers', href: '/careers' },
