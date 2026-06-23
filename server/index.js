@@ -234,11 +234,13 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// ─── /api/bse-announcements  (BSE live feed · stale-while-revalidate) ─────────
+// ─── /api/bse-announcements  (per-FY lazy fetch · per-FY 12 h cache) ──────────
+// Client passes ?fy=2026 (the FY start year). Only 4 quarters are fetched in
+// parallel — ~300 ms per request instead of 14 s for all years at once.
 
 const BSE_CACHE_TTL = 12 * 60 * 60 * 1000;
-let bseCache = { data: null, fetchedAt: 0 };
-let bseFetchInProgress = false;
+const fyCache = new Map();          // fyStart (number) → { data, fetchedAt }
+const fyFetchInProgress = new Set();
 
 const BSE_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -251,45 +253,33 @@ const BSE_HEADERS = {
 function bsePad(n) { return String(n).padStart(2, '0'); }
 function bseFmt(y, m, d) { return `${y}${bsePad(m)}${bsePad(d)}`; }
 
-async function fetchBseAllData() {
-    const today = new Date();
-    const currentFYStart = (today.getMonth() + 1) >= 4 ? today.getFullYear() : today.getFullYear() - 1;
+async function fetchBseFY(fyStart) {
+    // 4 quarters for the given FY, all fetched in parallel
+    const quarters = [
+        [bseFmt(fyStart,     4,  1), bseFmt(fyStart,     6, 30)],
+        [bseFmt(fyStart,     7,  1), bseFmt(fyStart,     9, 30)],
+        [bseFmt(fyStart,    10,  1), bseFmt(fyStart,    12, 31)],
+        [bseFmt(fyStart + 1, 1,  1), bseFmt(fyStart + 1, 3, 31)],
+    ];
 
-    // Build quarter ranges from current FY back to FY 2019-20
-    const quarters = [];
-    for (let fy = currentFYStart; fy >= 2019; fy--) {
-        quarters.push(
-            [bseFmt(fy, 4, 1),   bseFmt(fy, 6, 30)],
-            [bseFmt(fy, 7, 1),   bseFmt(fy, 9, 30)],
-            [bseFmt(fy, 10, 1),  bseFmt(fy, 12, 31)],
-            [bseFmt(fy+1, 1, 1), bseFmt(fy+1, 3, 31)],
-        );
-    }
+    const results = await Promise.allSettled(quarters.map(async ([from, to]) => {
+        const url =
+            'https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?' +
+            `strCat=-1&strPrevDate=${from}&strScrip=540809&strSearch=P&strToDate=${to}&strType=C&subcategory=-1`;
+        const r = await fetch(url, { headers: BSE_HEADERS });
+        if (!r.ok) return [];
+        const raw = await r.json().catch(() => ({}));
+        return raw.Table || [];
+    }));
 
-    // Fetch in parallel batches of 5 — ~3s total instead of 14s sequential
-    const BATCH = 5;
     const seen = new Set();
     const allRows = [];
-
-    for (let i = 0; i < quarters.length; i += BATCH) {
-        const batch = quarters.slice(i, i + BATCH);
-        const results = await Promise.allSettled(batch.map(async ([from, to]) => {
-            const url =
-                'https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?' +
-                `strCat=-1&strPrevDate=${from}&strScrip=540809&strSearch=P&strToDate=${to}&strType=C&subcategory=-1`;
-            const r = await fetch(url, { headers: BSE_HEADERS });
-            if (!r.ok) return [];
-            const raw = await r.json().catch(() => ({}));
-            return raw.Table || [];
-        }));
-
-        for (const result of results) {
-            if (result.status !== 'fulfilled') continue;
-            for (const row of result.value) {
-                if (row.NEWSID && seen.has(row.NEWSID)) continue;
-                if (row.NEWSID) seen.add(row.NEWSID);
-                allRows.push(row);
-            }
+    for (const result of results) {
+        if (result.status !== 'fulfilled') continue;
+        for (const row of result.value) {
+            if (row.NEWSID && seen.has(row.NEWSID)) continue;
+            if (row.NEWSID) seen.add(row.NEWSID);
+            allRows.push(row);
         }
     }
 
@@ -308,39 +298,46 @@ async function fetchBseAllData() {
         .sort((a, b) => b.date.localeCompare(a.date));
 }
 
-function triggerBseRefresh() {
-    if (bseFetchInProgress) return;
-    bseFetchInProgress = true;
-    fetchBseAllData()
-        .then(data => { bseCache = { data, fetchedAt: Date.now() }; })
-        .catch(err => console.error('BSE refresh failed:', err.message))
-        .finally(() => { bseFetchInProgress = false; });
-}
-
 app.get('/api/bse-announcements', async (req, res) => {
-    const age = Date.now() - bseCache.fetchedAt;
-    const isFresh = bseCache.data && age < BSE_CACHE_TTL;
+    const today = new Date();
+    const defaultFY = (today.getMonth() + 1) >= 4 ? today.getFullYear() : today.getFullYear() - 1;
+    const fyParam = parseInt(req.query.fy, 10);
+    const fyStart = Number.isFinite(fyParam) && fyParam >= 2010 && fyParam <= defaultFY + 1
+        ? fyParam : defaultFY;
 
-    // Stale-while-revalidate: if we have ANY cached data, return it immediately
-    // and refresh in the background — the user never waits for BSE.
-    if (bseCache.data) {
-        if (!isFresh) triggerBseRefresh();
+    const cached = fyCache.get(fyStart);
+    const now = Date.now();
+
+    if (cached) {
+        const isFresh = (now - cached.fetchedAt) < BSE_CACHE_TTL;
+        // Stale-while-revalidate — always return what we have, refresh in background if stale
+        if (!isFresh && !fyFetchInProgress.has(fyStart)) {
+            fyFetchInProgress.add(fyStart);
+            fetchBseFY(fyStart)
+                .then(data => fyCache.set(fyStart, { data, fetchedAt: Date.now() }))
+                .catch(err => console.error(`BSE FY ${fyStart} refresh:`, err.message))
+                .finally(() => fyFetchInProgress.delete(fyStart));
+        }
         res.set('Cache-Control', 'public, s-maxage=43200');
-        return res.json({ success: true, data: bseCache.data, fromCache: true, fetchedAt: bseCache.fetchedAt });
+        return res.json({ success: true, data: cached.data, fromCache: true, fetchedAt: cached.fetchedAt });
     }
 
-    // First-ever load on a cold server — no cache yet. Fetch and wait (~3s).
+    // Cold cache — fetch and wait (~300-500 ms for 4 parallel quarters)
+    if (fyFetchInProgress.has(fyStart)) {
+        // Another request is already fetching this FY; wait briefly and return empty
+        return res.status(503).json({ success: false, message: 'Fetch in progress, retry shortly.' });
+    }
     try {
-        bseFetchInProgress = true;
-        const data = await fetchBseAllData();
-        bseCache = { data, fetchedAt: Date.now() };
+        fyFetchInProgress.add(fyStart);
+        const data = await fetchBseFY(fyStart);
+        fyCache.set(fyStart, { data, fetchedAt: now });
         res.set('Cache-Control', 'public, s-maxage=43200');
-        return res.json({ success: true, data, fromCache: false, fetchedAt: bseCache.fetchedAt });
+        return res.json({ success: true, data, fromCache: false, fetchedAt: now });
     } catch (err) {
-        console.error('BSE initial fetch failed:', err.message);
+        console.error(`BSE FY ${fyStart} initial fetch failed:`, err.message);
         return res.status(502).json({ success: false, message: 'BSE is currently unreachable.' });
     } finally {
-        bseFetchInProgress = false;
+        fyFetchInProgress.delete(fyStart);
     }
 });
 
