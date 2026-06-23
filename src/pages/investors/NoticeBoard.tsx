@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { InvestorPageWrapper } from './InvestorComponents';
 import { Search, ExternalLink, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import { API_BASE_URL } from '../../config/api';
@@ -121,6 +121,7 @@ export const NoticeBoard = () => {
     const [fyData, setFyData] = useState<Partial<Record<number, Notice[]>>>({});
     const [search, setSearch] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
+    const preloadStarted = useRef(false);
 
     const localForFY = useCallback((fyStart: number): Notice[] =>
         LOCAL_NOTICES.filter(n => getFYStart(n.date) === fyStart),
@@ -160,6 +161,18 @@ export const NoticeBoard = () => {
 
     // Fetch current FY on mount
     useEffect(() => { fetchFY(CURRENT_FY); }, [fetchFY]);
+
+    // Once current FY is ready, silently preload all other FYs one by one
+    useEffect(() => {
+        if (fyData[CURRENT_FY] === undefined || preloadStarted.current) return;
+        preloadStarted.current = true;
+        const queue = FY_LIST.filter(fy => fy !== CURRENT_FY);
+        (async () => {
+            for (const fy of queue) {
+                await fetchFY(fy);
+            }
+        })();
+    }, [fyData, fetchFY]);
 
     const handleSelectFY = (fyStart: number) => {
         setSelectedFY(fyStart);
@@ -245,16 +258,17 @@ export const NoticeBoard = () => {
                                 </thead>
                                 <tbody>
                                     {isLoading
-                                        ? Array.from({ length: 8 }).map((_, i) => (
-                                            <tr key={i} className="border-b border-gray-100">
-                                                <td className="py-4 px-5">
-                                                    <div className="h-4 w-24 bg-gray-100 rounded animate-pulse" />
-                                                </td>
-                                                <td className="py-4 px-5">
-                                                    <div className="h-4 bg-gray-100 rounded animate-pulse" style={{ width: `${55 + (i * 7) % 35}%` }} />
+                                        ? (
+                                            <tr>
+                                                <td colSpan={2} className="py-20 text-center">
+                                                    <div className="flex flex-col items-center gap-3 text-gray-500">
+                                                        <div className="w-8 h-8 border-2 border-brand-200 border-t-brand-600 rounded-full animate-spin" />
+                                                        <p className="text-sm font-medium text-gray-600">Please wait…</p>
+                                                        <p className="text-xs text-gray-400">Loading FY {fyLabel(selectedFY)} notices</p>
+                                                    </div>
                                                 </td>
                                             </tr>
-                                        ))
+                                        )
                                         : filtered.length === 0
                                             ? (
                                                 <tr>
