@@ -269,12 +269,12 @@ app.get('/api/bse-announcements', async (req, res) => {
 
         // BSE API caps at 50 rows per call regardless of date range.
         // Each FY has ~98-99 records, so we fetch quarter by quarter (~25/quarter).
-        // MRC Agrotech listed April 2022 → fetch back to FY 2022-23.
+        // MRC Agrotech has filings back to FY 2020-21 → fetch from FY 2019-20 to be safe.
         const today = new Date();
         const currentFYStart = (today.getMonth() + 1) >= 4 ? today.getFullYear() : today.getFullYear() - 1;
 
         const quarters = [];
-        for (let fyStart = currentFYStart; fyStart >= 2022; fyStart--) {
+        for (let fyStart = currentFYStart; fyStart >= 2019; fyStart--) {
             quarters.push(
                 [fmt(fyStart,   4,  1), fmt(fyStart,   6, 30)],
                 [fmt(fyStart,   7,  1), fmt(fyStart,   9, 30)],
@@ -287,7 +287,7 @@ app.get('/api/bse-announcements', async (req, res) => {
         const allRows = [];
 
         for (const [from, to] of quarters) {
-            await sleep(300); // avoid BSE rate limiting
+            await sleep(500); // avoid BSE rate limiting
             const url =
                 'https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?' +
                 `strCat=-1&strPrevDate=${from}&strScrip=540809&strSearch=P&strToDate=${to}&strType=C&subcategory=-1`;
