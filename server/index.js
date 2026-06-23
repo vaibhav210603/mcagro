@@ -234,105 +234,113 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// ─── /api/bse-announcements  (BSE live feed · server-side TTL cache) ──────────
-// At most 2 real BSE API calls per day — cached in memory for 12 h.
-// If BSE is unreachable, stale cache is returned so the page never breaks.
+// ─── /api/bse-announcements  (BSE live feed · stale-while-revalidate) ─────────
 
-const BSE_CACHE_TTL = 12 * 60 * 60 * 1000; // 12 hours
+const BSE_CACHE_TTL = 12 * 60 * 60 * 1000;
 let bseCache = { data: null, fetchedAt: 0 };
+let bseFetchInProgress = false;
 
-app.get('/api/bse-announcements', async (req, res) => {
-    const now = Date.now();
-    const age = now - bseCache.fetchedAt;
+const BSE_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Referer': 'https://www.bseindia.com/',
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Origin': 'https://www.bseindia.com',
+};
 
-    if (bseCache.data && age < BSE_CACHE_TTL) {
-        return res.json({
-            success: true,
-            data: bseCache.data,
-            fromCache: true,
-            fetchedAt: bseCache.fetchedAt,
-        });
+function bsePad(n) { return String(n).padStart(2, '0'); }
+function bseFmt(y, m, d) { return `${y}${bsePad(m)}${bsePad(d)}`; }
+
+async function fetchBseAllData() {
+    const today = new Date();
+    const currentFYStart = (today.getMonth() + 1) >= 4 ? today.getFullYear() : today.getFullYear() - 1;
+
+    // Build quarter ranges from current FY back to FY 2019-20
+    const quarters = [];
+    for (let fy = currentFYStart; fy >= 2019; fy--) {
+        quarters.push(
+            [bseFmt(fy, 4, 1),   bseFmt(fy, 6, 30)],
+            [bseFmt(fy, 7, 1),   bseFmt(fy, 9, 30)],
+            [bseFmt(fy, 10, 1),  bseFmt(fy, 12, 31)],
+            [bseFmt(fy+1, 1, 1), bseFmt(fy+1, 3, 31)],
+        );
     }
 
-    try {
-        const headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Referer': 'https://www.bseindia.com/',
-            'Accept': 'application/json, text/plain, */*',
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Origin': 'https://www.bseindia.com',
-        };
+    // Fetch in parallel batches of 5 — ~3s total instead of 14s sequential
+    const BATCH = 5;
+    const seen = new Set();
+    const allRows = [];
 
-        const pad = n => String(n).padStart(2, '0');
-        const fmt = (y, m, d) => `${y}${pad(m)}${pad(d)}`;
-        const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-        // BSE API caps at 50 rows per call regardless of date range.
-        // Each FY has ~98-99 records, so we fetch quarter by quarter (~25/quarter).
-        // MRC Agrotech has filings back to FY 2020-21 → fetch from FY 2019-20 to be safe.
-        const today = new Date();
-        const currentFYStart = (today.getMonth() + 1) >= 4 ? today.getFullYear() : today.getFullYear() - 1;
-
-        const quarters = [];
-        for (let fyStart = currentFYStart; fyStart >= 2019; fyStart--) {
-            quarters.push(
-                [fmt(fyStart,   4,  1), fmt(fyStart,   6, 30)],
-                [fmt(fyStart,   7,  1), fmt(fyStart,   9, 30)],
-                [fmt(fyStart,  10,  1), fmt(fyStart,  12, 31)],
-                [fmt(fyStart+1, 1,  1), fmt(fyStart+1, 3, 31)],
-            );
-        }
-
-        const seen = new Set();
-        const allRows = [];
-
-        for (const [from, to] of quarters) {
-            await sleep(500); // avoid BSE rate limiting
+    for (let i = 0; i < quarters.length; i += BATCH) {
+        const batch = quarters.slice(i, i + BATCH);
+        const results = await Promise.allSettled(batch.map(async ([from, to]) => {
             const url =
                 'https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?' +
                 `strCat=-1&strPrevDate=${from}&strScrip=540809&strSearch=P&strToDate=${to}&strType=C&subcategory=-1`;
-            try {
-                const r = await fetch(url, { headers });
-                if (!r.ok) continue;
-                const raw = await r.json().catch(() => ({}));
-                for (const row of raw.Table || []) {
-                    if (row.NEWSID && seen.has(row.NEWSID)) continue;
-                    if (row.NEWSID) seen.add(row.NEWSID);
-                    allRows.push(row);
-                }
-            } catch { continue; }
+            const r = await fetch(url, { headers: BSE_HEADERS });
+            if (!r.ok) return [];
+            const raw = await r.json().catch(() => ({}));
+            return raw.Table || [];
+        }));
+
+        for (const result of results) {
+            if (result.status !== 'fulfilled') continue;
+            for (const row of result.value) {
+                if (row.NEWSID && seen.has(row.NEWSID)) continue;
+                if (row.NEWSID) seen.add(row.NEWSID);
+                allRows.push(row);
+            }
         }
+    }
 
-        const data = allRows
-            .filter(r => r.NEWSSUB || r.HEADLINE)
-            .map(r => ({
-                title: (r.NEWSSUB || r.HEADLINE || '').trim(),
-                date: (r.DT_TM || r.News_submission_dt || '').split('T')[0],
-                category: (r.CATEGORYNAME || 'Filing').trim(),
-                subcategory: (r.SUBCATNAME || '').trim(),
-                pdfUrl: r.ATTACHMENTNAME
-                    ? `https://www.bseindia.com/xml-data/corpfiling/AttachLive/${r.ATTACHMENTNAME}`
-                    : null,
-                source: 'bse',
-            }))
-            .sort((a, b) => b.date.localeCompare(a.date));
+    return allRows
+        .filter(r => r.NEWSSUB || r.HEADLINE)
+        .map(r => ({
+            title: (r.NEWSSUB || r.HEADLINE || '').trim(),
+            date: (r.DT_TM || '').split('T')[0],
+            category: (r.CATEGORYNAME || 'Filing').trim(),
+            subcategory: (r.SUBCATNAME || '').trim(),
+            pdfUrl: r.ATTACHMENTNAME
+                ? `https://www.bseindia.com/xml-data/corpfiling/AttachLive/${r.ATTACHMENTNAME}`
+                : null,
+            source: 'bse',
+        }))
+        .sort((a, b) => b.date.localeCompare(a.date));
+}
 
-        bseCache = { data, fetchedAt: now };
+function triggerBseRefresh() {
+    if (bseFetchInProgress) return;
+    bseFetchInProgress = true;
+    fetchBseAllData()
+        .then(data => { bseCache = { data, fetchedAt: Date.now() }; })
+        .catch(err => console.error('BSE refresh failed:', err.message))
+        .finally(() => { bseFetchInProgress = false; });
+}
+
+app.get('/api/bse-announcements', async (req, res) => {
+    const age = Date.now() - bseCache.fetchedAt;
+    const isFresh = bseCache.data && age < BSE_CACHE_TTL;
+
+    // Stale-while-revalidate: if we have ANY cached data, return it immediately
+    // and refresh in the background — the user never waits for BSE.
+    if (bseCache.data) {
+        if (!isFresh) triggerBseRefresh();
         res.set('Cache-Control', 'public, s-maxage=43200');
-        return res.json({ success: true, data, fromCache: false, fetchedAt: now });
+        return res.json({ success: true, data: bseCache.data, fromCache: true, fetchedAt: bseCache.fetchedAt });
+    }
 
+    // First-ever load on a cold server — no cache yet. Fetch and wait (~3s).
+    try {
+        bseFetchInProgress = true;
+        const data = await fetchBseAllData();
+        bseCache = { data, fetchedAt: Date.now() };
+        res.set('Cache-Control', 'public, s-maxage=43200');
+        return res.json({ success: true, data, fromCache: false, fetchedAt: bseCache.fetchedAt });
     } catch (err) {
-        console.error('BSE fetch failed:', err.message);
-        if (bseCache.data) {
-            return res.json({
-                success: true,
-                data: bseCache.data,
-                fromCache: true,
-                stale: true,
-                fetchedAt: bseCache.fetchedAt,
-            });
-        }
+        console.error('BSE initial fetch failed:', err.message);
         return res.status(502).json({ success: false, message: 'BSE is currently unreachable.' });
+    } finally {
+        bseFetchInProgress = false;
     }
 });
 
