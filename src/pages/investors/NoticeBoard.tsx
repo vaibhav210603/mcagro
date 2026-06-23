@@ -202,7 +202,7 @@ export const NoticeBoard = () => {
     const bseCount = notices.filter(n => n.source === 'bse').length;
 
     return (
-        <InvestorPageWrapper title="Notice Board">
+        <InvestorPageWrapper title="Notices">
             <div className="space-y-6 pb-12">
 
 
