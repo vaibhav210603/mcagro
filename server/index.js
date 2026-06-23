@@ -255,7 +255,6 @@ app.get('/api/bse-announcements', async (req, res) => {
     }
 
     try {
-        // Fetch all pages — BSE paginates by passing the oldest date seen as strPrevDate
         const headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Referer': 'https://www.bseindia.com/',
@@ -264,41 +263,49 @@ app.get('/api/bse-announcements', async (req, res) => {
             'Origin': 'https://www.bseindia.com',
         };
 
-        const allRows = [];
-        let prevDate = '';
-        let page = 0;
-        const MAX_PAGES = 20; // safety cap
+        const pad = n => String(n).padStart(2, '0');
+        const fmt = (y, m, d) => `${y}${pad(m)}${pad(d)}`;
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-        while (page < MAX_PAGES) {
+        // BSE API caps at 50 rows per call regardless of date range.
+        // Each FY has ~98-99 records, so we fetch quarter by quarter (~25/quarter).
+        // MRC Agrotech listed April 2022 → fetch back to FY 2022-23.
+        const today = new Date();
+        const currentFYStart = (today.getMonth() + 1) >= 4 ? today.getFullYear() : today.getFullYear() - 1;
+
+        const quarters = [];
+        for (let fyStart = currentFYStart; fyStart >= 2022; fyStart--) {
+            quarters.push(
+                [fmt(fyStart,   4,  1), fmt(fyStart,   6, 30)],
+                [fmt(fyStart,   7,  1), fmt(fyStart,   9, 30)],
+                [fmt(fyStart,  10,  1), fmt(fyStart,  12, 31)],
+                [fmt(fyStart+1, 1,  1), fmt(fyStart+1, 3, 31)],
+            );
+        }
+
+        const seen = new Set();
+        const allRows = [];
+
+        for (const [from, to] of quarters) {
+            await sleep(300); // avoid BSE rate limiting
             const url =
                 'https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?' +
-                `strCat=-1&strPrevDate=${encodeURIComponent(prevDate)}&strScrip=540809&strSearch=P&strToDate=&strType=C&subcategory=-1`;
-
-            const bseRes = await fetch(url, { headers });
-            if (!bseRes.ok) throw new Error(`BSE responded with status ${bseRes.status}`);
-
-            const raw = await bseRes.json();
-            const rows = raw.Table || raw.table || [];
-            if (rows.length === 0) break;
-
-            allRows.push(...rows);
-
-            // If we've fetched everything, stop
-            const totalCount = raw.Table1?.[0]?.ROWCNT ?? 0;
-            if (allRows.length >= totalCount || rows.length === 0) break;
-
-            // Next page: use the oldest DT_TM in this batch as the cursor
-            const oldest = rows[rows.length - 1];
-            const nextPrevDate = oldest.DT_TM || oldest.News_submission_dt || '';
-            if (!nextPrevDate || nextPrevDate === prevDate) break;
-            prevDate = nextPrevDate;
-            page++;
+                `strCat=-1&strPrevDate=${from}&strScrip=540809&strSearch=P&strToDate=${to}&strType=C&subcategory=-1`;
+            try {
+                const r = await fetch(url, { headers });
+                if (!r.ok) continue;
+                const raw = await r.json().catch(() => ({}));
+                for (const row of raw.Table || []) {
+                    if (row.NEWSID && seen.has(row.NEWSID)) continue;
+                    if (row.NEWSID) seen.add(row.NEWSID);
+                    allRows.push(row);
+                }
+            } catch { continue; }
         }
 
         const data = allRows
             .filter(r => r.NEWSSUB || r.HEADLINE)
             .map(r => ({
-                // NEWSSUB is the actual announcement subject; HEADLINE is the email body
                 title: (r.NEWSSUB || r.HEADLINE || '').trim(),
                 date: (r.DT_TM || r.News_submission_dt || '').split('T')[0],
                 category: (r.CATEGORYNAME || 'Filing').trim(),
@@ -307,7 +314,8 @@ app.get('/api/bse-announcements', async (req, res) => {
                     ? `https://www.bseindia.com/xml-data/corpfiling/AttachLive/${r.ATTACHMENTNAME}`
                     : null,
                 source: 'bse',
-            }));
+            }))
+            .sort((a, b) => b.date.localeCompare(a.date));
 
         bseCache = { data, fetchedAt: now };
         res.set('Cache-Control', 'public, s-maxage=43200');
