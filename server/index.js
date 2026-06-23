@@ -241,16 +241,6 @@ app.post('/api/chat', async (req, res) => {
 const BSE_CACHE_TTL = 12 * 60 * 60 * 1000; // 12 hours
 let bseCache = { data: null, fetchedAt: 0 };
 
-function parseBseDate(raw) {
-    if (!raw) return '';
-    // DD/MM/YYYY HH:MM:SS
-    const ddmm = raw.match(/^(\d{2})\/(\d{2})\/(\d{4})/);
-    if (ddmm) return `${ddmm[3]}-${ddmm[2]}-${ddmm[1]}`;
-    // YYYYMMDD or YYYYMMDDHHMMSS
-    if (/^\d{8,14}$/.test(raw)) return `${raw.slice(0, 4)}-${raw.slice(4, 6)}-${raw.slice(6, 8)}`;
-    return raw;
-}
-
 app.get('/api/bse-announcements', async (req, res) => {
     const now = Date.now();
     const age = now - bseCache.fetchedAt;
@@ -265,34 +255,56 @@ app.get('/api/bse-announcements', async (req, res) => {
     }
 
     try {
-        const bseRes = await fetch(
-            'https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?' +
-            'strCat=-1&strPrevDate=&strScrip=540809&strSearch=P&strToDate=&strType=C&subcategory=-1',
-            {
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Referer': 'https://www.bseindia.com/',
-                    'Accept': 'application/json, text/plain, */*',
-                    'Accept-Language': 'en-US,en;q=0.9',
-                    'Origin': 'https://www.bseindia.com',
-                },
-            }
-        );
+        // Fetch all pages — BSE paginates by passing the oldest date seen as strPrevDate
+        const headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Referer': 'https://www.bseindia.com/',
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Origin': 'https://www.bseindia.com',
+        };
 
-        if (!bseRes.ok) throw new Error(`BSE responded with status ${bseRes.status}`);
+        const allRows = [];
+        let prevDate = '';
+        let page = 0;
+        const MAX_PAGES = 20; // safety cap
 
-        const raw = await bseRes.json();
-        const rows = raw.Table || raw.table || [];
+        while (page < MAX_PAGES) {
+            const url =
+                'https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?' +
+                `strCat=-1&strPrevDate=${encodeURIComponent(prevDate)}&strScrip=540809&strSearch=P&strToDate=&strType=C&subcategory=-1`;
 
-        const data = rows
-            .filter(r => r.HEADLINE || r.headline)
+            const bseRes = await fetch(url, { headers });
+            if (!bseRes.ok) throw new Error(`BSE responded with status ${bseRes.status}`);
+
+            const raw = await bseRes.json();
+            const rows = raw.Table || raw.table || [];
+            if (rows.length === 0) break;
+
+            allRows.push(...rows);
+
+            // If we've fetched everything, stop
+            const totalCount = raw.Table1?.[0]?.ROWCNT ?? 0;
+            if (allRows.length >= totalCount || rows.length === 0) break;
+
+            // Next page: use the oldest DT_TM in this batch as the cursor
+            const oldest = rows[rows.length - 1];
+            const nextPrevDate = oldest.DT_TM || oldest.News_submission_dt || '';
+            if (!nextPrevDate || nextPrevDate === prevDate) break;
+            prevDate = nextPrevDate;
+            page++;
+        }
+
+        const data = allRows
+            .filter(r => r.NEWSSUB || r.HEADLINE)
             .map(r => ({
-                date: parseBseDate(r.DT_TM || r.News_submission_dt || ''),
-                title: (r.HEADLINE || r.headline || '').trim(),
-                category: (r.CATEGORYNAME || r.categoryname || 'Filing').trim(),
-                subcategory: (r.SUBCATEGORYNAME || r.subcategoryname || '').trim(),
-                pdfUrl: (r.ATTACHMENTNAME || r.attachmentname)
-                    ? `https://www.bseindia.com/xml-data/corpfiling/AttachLive/${r.ATTACHMENTNAME || r.attachmentname}`
+                // NEWSSUB is the actual announcement subject; HEADLINE is the email body
+                title: (r.NEWSSUB || r.HEADLINE || '').trim(),
+                date: (r.DT_TM || r.News_submission_dt || '').split('T')[0],
+                category: (r.CATEGORYNAME || 'Filing').trim(),
+                subcategory: (r.SUBCATNAME || '').trim(),
+                pdfUrl: r.ATTACHMENTNAME
+                    ? `https://www.bseindia.com/xml-data/corpfiling/AttachLive/${r.ATTACHMENTNAME}`
                     : null,
                 source: 'bse',
             }));
