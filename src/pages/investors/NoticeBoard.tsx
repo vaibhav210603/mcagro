@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { InvestorPageWrapper } from './InvestorComponents';
-import { FileText, Download, Search, Clock, ExternalLink } from 'lucide-react';
+import { FileText, Download, Search, Clock, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { API_BASE_URL } from '../../config/api';
 
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 hours — at most 2 BSE calls/day
 const CACHE_KEY = 'mrc_bse_notices_v1';
+const ITEMS_PER_PAGE = 15;
 
 type Notice = {
     date: string;        // YYYY-MM-DD
@@ -138,6 +139,7 @@ export const NoticeBoard = () => {
 
     const [selectedFY, setSelectedFY] = useState<string>('all');
     const [search, setSearch] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         const loadNotices = async () => {
@@ -180,6 +182,9 @@ export const NoticeBoard = () => {
         loadNotices();
     }, []);
 
+    // Reset to page 1 whenever filters change
+    useEffect(() => { setCurrentPage(1); }, [selectedFY, search]);
+
     // Derive unique financial years from current notices, newest first
     const financialYears = [...new Set(
         notices.map(n => getFinancialYear(n.date)).filter((fy): fy is string => fy !== null)
@@ -200,6 +205,9 @@ export const NoticeBoard = () => {
     });
 
     const bseCount = notices.filter(n => n.source === 'bse').length;
+
+    const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+    const paginated = filtered.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
     return (
         <InvestorPageWrapper title="Notices">
@@ -277,7 +285,7 @@ export const NoticeBoard = () => {
                                                 </td>
                                             </tr>
                                         )
-                                        : filtered.map((notice, i) => {
+                                        : paginated.map((notice, i) => {
                                             const s = getCategoryStyle(notice.category);
                                             return (
                                                 <tr
@@ -335,11 +343,58 @@ export const NoticeBoard = () => {
                     </div>
                 </div>
 
+                {/* ── Pagination controls ───────────────────────────────── */}
+                {!loading && filtered.length > ITEMS_PER_PAGE && (
+                    <div className="flex items-center justify-center gap-1">
+                        <button
+                            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                            disabled={currentPage === 1}
+                            className="p-2 rounded-lg border border-gray-200 text-gray-500 hover:border-brand-400 hover:text-brand-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                        >
+                            <ChevronLeft size={16} />
+                        </button>
+
+                        {Array.from({ length: totalPages }, (_, i) => i + 1)
+                            .filter(p => p === 1 || p === totalPages || Math.abs(p - currentPage) <= 2)
+                            .reduce<(number | '…')[]>((acc, p, idx, arr) => {
+                                if (idx > 0 && p - (arr[idx - 1] as number) > 1) acc.push('…');
+                                acc.push(p);
+                                return acc;
+                            }, [])
+                            .map((item, idx) =>
+                                item === '…'
+                                    ? <span key={`ellipsis-${idx}`} className="px-2 text-gray-400 text-sm">…</span>
+                                    : (
+                                        <button
+                                            key={item}
+                                            onClick={() => setCurrentPage(item as number)}
+                                            className={`min-w-[36px] h-9 rounded-lg text-sm font-semibold border transition-colors ${
+                                                currentPage === item
+                                                    ? 'bg-brand-700 text-white border-brand-700'
+                                                    : 'bg-white text-gray-600 border-gray-200 hover:border-brand-400 hover:text-brand-700'
+                                            }`}
+                                        >
+                                            {item}
+                                        </button>
+                                    )
+                            )
+                        }
+
+                        <button
+                            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                            disabled={currentPage === totalPages}
+                            className="p-2 rounded-lg border border-gray-200 text-gray-500 hover:border-brand-400 hover:text-brand-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                        >
+                            <ChevronRight size={16} />
+                        </button>
+                    </div>
+                )}
+
                 {/* ── Footer status bar ─────────────────────────────────── */}
                 {!loading && (
                     <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-gray-400 px-1">
                         <span>
-                            Showing {filtered.length} of {notices.length} notices
+                            Showing {filtered.length === 0 ? 0 : (currentPage - 1) * ITEMS_PER_PAGE + 1}–{Math.min(currentPage * ITEMS_PER_PAGE, filtered.length)} of {filtered.length} notices
                             {bseCount > 0 && ` · ${bseCount} from BSE`}
                         </span>
                         {fetchedAt && (
