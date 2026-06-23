@@ -16,6 +16,7 @@ import { CorporateAnnouncement } from './pages/investors/CorporateAnnouncement';
 import { InvestorsContact } from './pages/investors/InvestorsContact';
 import { Prospectus } from './pages/investors/Prospectus';
 import { Reg4662 } from './pages/investors/Reg4662';
+import { NoticeBoard } from './pages/investors/NoticeBoard';
 import { GetInTouch } from './pages/GetInTouch';
 import { OurTeam } from './pages/company/OurTeam';
 import { BoardCommittees } from './pages/company/BoardCommittees';
@@ -101,6 +102,7 @@ function App() {
               <Route path="/investors/contact" element={<InvestorsContact />} />
               <Route path="/investors/prospectus" element={<Prospectus />} />
               <Route path="/investors/reg-46-62" element={<Reg4662 />} />
+              <Route path="/investors/notice-board" element={<NoticeBoard />} />
               <Route path="/get-in-touch" element={<GetInTouch />} />
               <Route path="/company/team" element={<OurTeam />} />
               <Route path="/company/board" element={<BoardCommittees />} />

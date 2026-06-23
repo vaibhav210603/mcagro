@@ -41,6 +41,7 @@ const navLinks = [
             { name: 'Financial Reporting', href: '/investors/financial-reporting' },
             { name: 'Shareholders Information', href: '/investors/shareholders-info' },
             { name: 'Corporate Announcement', href: '/investors/corporate-announcement' },
+            { name: 'Notice Board', href: '/investors/notice-board' },
             { name: 'Investors Contact', href: '/investors/contact' },
             { name: 'Prospectus', href: '/investors/prospectus' },
             { name: 'REG.46 & 62', href: '/investors/reg-46-62' }
