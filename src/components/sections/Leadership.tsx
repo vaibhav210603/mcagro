@@ -8,7 +8,6 @@ const teamMembers = [
     { name: "Mr. Ashokk Singh", role: "Chairman & Director", image: "/team/ashokk_singh.jpg" },
     { name: "Mr. Parmar Vishal Surendra", role: "Additional Director", image: "/team/vishal.jpeg" },
     { name: "Ms. Swati Sharma", role: "Independent Director", image: "/team/swati.jpg" },
-    { name: "Mr. Jainendra Baxi", role: "Independent Director", image: "/team/jainendra_baxi.jpg" },
     { name: "Mrs. Sudha Navin Agarwal", role: "Non-Executive - Independent Director", image: "/team/sudha.jpeg" },
     { name: "Mrs. Shweta Mundra", role: "Independent Director", image: "/team/shweta.jpg" },
     { name: "Mr. Rahul Mathur", role: "Company Secretary and Compliance Officer", image: "/team/rahul_mathur.jpg" },

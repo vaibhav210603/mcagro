@@ -4,23 +4,23 @@ import { Users, UserCircle2, FileText } from 'lucide-react';
 const committees = [
     {
         name: "Audit Committee",
-        members: ["Jainendra Baxi (Chairperson)", "Shweta Mundra (Member)", "Swati Sharma (Member)"]
+        members: ["Shweta Mundra (Member)", "Swati Sharma (Member)"]
     },
     {
         name: "Nomination and Remuneration Committee",
-        members: ["Swati Sharma (Chairperson)", "Shweta Mundra (Member)", "Jainendra Baxi (Member)"]
+        members: ["Swati Sharma (Chairperson)", "Shweta Mundra (Member)"]
     },
     {
         name: "Stakeholders Relationship Committee",
-        members: ["Swati Sharma (Chairperson)", "Jainendra Baxi (Member)", "Shweta Mundra (Member)"]
+        members: ["Swati Sharma (Chairperson)", "Shweta Mundra (Member)"]
     },
     {
         name: "Risk Management Committee",
-        members: ["Sudha Navin Agrawal (Chairperson)", "Jainendra Baxi (Member)", "Ashok Kumar Singh (Member)", "Shweta Mundra (Member)"]
+        members: ["Sudha Navin Agrawal (Chairperson)", "Ashok Kumar Singh (Member)", "Shweta Mundra (Member)"]
     },
     {
         name: "Corporate Social Responsibility Committee",
-        members: ["Sudha Navin Agrawal (Chairperson)", "Jainendra Baxi (Member)", "Swati Sharma (Member)", "Shweta Mundra (Member)"]
+        members: ["Sudha Navin Agrawal (Chairperson)", "Swati Sharma (Member)", "Shweta Mundra (Member)"]
     }
 ];
 

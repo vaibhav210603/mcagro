@@ -14,12 +14,6 @@ const team = [
     },
     
     {
-        name: 'Mr. Jainendra Baxi',
-        role: 'Non-Executive - Independent Director',
-        image: '/leadership_1.jpg',
-        bio: "He has more than 25 years of experience in various consulting domains like Finance, Business Development (Media & Entertainment), Marketing and Business Advisory. Studied Film Production from the Prestigious & Renowned Notre Dame Communication Centre Patna (Year 1999). He has been an integral part in the complete making of the film based on the Best Selling Novel, 'Carnage by Angels', authored by Mr. Y.P Singh Ex IPS."
-    },
-    {
         name: 'Ms. Swati Sharma',
         role: 'Non-Executive - Independent Woman Director',
         image: '/swati_sharma.jpg',
