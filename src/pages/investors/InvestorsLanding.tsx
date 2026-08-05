@@ -1,57 +1,50 @@
 import { motion } from 'framer-motion';
 import { SectionWrapper } from '../../components/ui/SectionWrapper';
 import { Link } from 'react-router-dom';
-import { FileText, ArrowRight, Shield, BarChart3, Users, Megaphone, Phone, BookOpen, Scale } from 'lucide-react';
+import { FileText, ArrowRight, BarChart3, Users, Megaphone, Phone, Bell, Gavel } from 'lucide-react';
 
 const sections = [
     {
-        title: "Code Of Conduct & Policy",
-        href: "/investors/code-of-conduct",
-        icon: Shield,
-        description: "Corporate governance policies including code of conduct, dividend distribution, nomination and remuneration.",
-        color: "from-blue-500 to-indigo-600"
-    },
-    {
-        title: "Financial Reporting",
+        title: "Financial Information",
         href: "/investors/financial-reporting",
         icon: BarChart3,
-        description: "Quarterly financials, annual reports, AGM/EGM notices, RPT disclosure and subsidiary financials.",
-        color: "from-emerald-500 to-teal-600"
+        description: "Annual reports, quarterly results, related party transactions, subsidiary financials and general meetings.",
+        color: "from-sky-500 to-blue-600"
     },
     {
-        title: "Shareholders Information",
+        title: "Shareholding Information",
         href: "/investors/shareholders-info",
         icon: Users,
-        description: "Shareholding pattern and investor-related information.",
+        description: "Shareholding pattern — the latest statement plus the year-wise, quarter-wise archive.",
         color: "from-violet-500 to-purple-600"
     },
     {
-        title: "Corporate Announcement",
+        title: "Statutory Communication & Announcements",
         href: "/investors/corporate-announcement",
         icon: Megaphone,
-        description: "Committee reconstitution, valuation reports, MOA/AOA, scrutinizer reports and announcements.",
+        description: "Compliance certificates, corporate governance policies, code of conduct and Reg. 46 & 62 disclosures.",
         color: "from-amber-500 to-orange-600"
     },
     {
-        title: "Investors Contact",
+        title: "Investor Contact",
         href: "/investors/contact",
         icon: Phone,
-        description: "RTA details, Company Secretary and compliance officer contact information.",
-        color: "from-rose-500 to-pink-600"
-    },
-    {
-        title: "Prospectus",
-        href: "/investors/prospectus",
-        icon: BookOpen,
-        description: "Company prospectus and related documents.",
+        description: "Registrar & Transfer Agent, Company Secretary and Compliance Officer contact details.",
         color: "from-cyan-500 to-sky-600"
     },
     {
-        title: "REG.46 & 62",
-        href: "/investors/reg-46-62",
-        icon: Scale,
-        description: "Regulatory compliance under Regulation 46 & 62 of SEBI LODR.",
+        title: "Smart ODR & SEBI SCORES",
+        href: "/investors/grievance-redressal",
+        icon: Gavel,
+        description: "Investor grievance redressal through the SEBI SCORES and Smart ODR platforms.",
         color: "from-slate-500 to-gray-600"
+    },
+    {
+        title: "Notices",
+        href: "/investors/notice-board",
+        icon: Bell,
+        description: "Latest notices and stock-exchange filings, searchable by financial year.",
+        color: "from-rose-500 to-pink-600"
     },
 ];
 

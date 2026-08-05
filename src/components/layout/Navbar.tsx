@@ -37,14 +37,12 @@ const navLinks = [
         name: 'Investors Corner', 
         href: '#',
         subLinks: [
-            { name: 'Code Of Conduct & Policy', href: '/investors/code-of-conduct' },
-            { name: 'Financial Reporting', href: '/investors/financial-reporting' },
+            { name: 'Financial Information', href: '/investors/financial-reporting' },
+            { name: 'Shareholding Information', href: '/investors/shareholders-info' },
+            { name: 'Statutory Communication & Announcements', href: '/investors/corporate-announcement' },
+            { name: 'Investor Contact', href: '/investors/contact' },
+            { name: 'Smart ODR & SEBI SCORES', href: '/investors/grievance-redressal' },
             { name: 'Notices', href: '/investors/notice-board' },
-            { name: 'Shareholders Information', href: '/investors/shareholders-info' },
-            { name: 'Corporate Announcement', href: '/investors/corporate-announcement' },
-            { name: 'Investors Contact', href: '/investors/contact' },
-            { name: 'Prospectus', href: '/investors/prospectus' },
-            { name: 'REG.46 & 62', href: '/investors/reg-46-62' }
         ]
     },
     { name: 'Farmer Education', href: '/farmer-education' },

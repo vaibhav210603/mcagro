@@ -1,7 +1,7 @@
 import { InvestorPageWrapper, ComingSoon } from './InvestorComponents';
 
-export const Prospectus = () => (
-    <InvestorPageWrapper title="Prospectus">
+export const GrievanceRedressal = () => (
+    <InvestorPageWrapper title="Smart ODR & SEBI SCORES">
         <ComingSoon />
     </InvestorPageWrapper>
 );

@@ -1,20 +1,33 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionWrapper } from '../../components/ui/SectionWrapper';
-import { ChevronDown, FileText, ExternalLink, ArrowLeft } from 'lucide-react';
+import { ChevronDown, FileText, ExternalLink, ArrowLeft, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-type DocumentLink = {
+export type DocumentLink = {
     title: string;
-    url: string;
+    /** Omit / leave empty to render a disabled "Coming soon" row. */
+    url?: string;
+    /** Small right-aligned tag, e.g. a period label like "Q1 FY 2025-26". */
+    tag?: string;
 };
 
 // Shared components for all investor sub-pages
 
-export const InvestorPageWrapper = ({ title, children }: { title: string; children: React.ReactNode }) => (
+export const InvestorPageWrapper = ({
+    title,
+    intro,
+    children,
+    wide = false,
+}: {
+    title: string;
+    intro?: string;
+    children: React.ReactNode;
+    wide?: boolean;
+}) => (
     <div className="pt-20 bg-gray-50 min-h-screen">
         <SectionWrapper id="investor-section">
-            <div className="max-w-4xl mx-auto">
+            <div className={`${wide ? 'max-w-5xl' : 'max-w-4xl'} mx-auto`}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -29,6 +42,9 @@ export const InvestorPageWrapper = ({ title, children }: { title: string; childr
                             Back to Investors Corner
                         </Link>
                         <h1 className="text-3xl md:text-4xl font-bold text-dark">{title}</h1>
+                        {intro && (
+                            <p className="mt-3 text-gray-600 leading-relaxed max-w-3xl">{intro}</p>
+                        )}
                     </div>
                     {children}
                 </motion.div>
@@ -39,23 +55,44 @@ export const InvestorPageWrapper = ({ title, children }: { title: string; childr
 
 export const DocumentList = ({ documents }: { documents: DocumentLink[] }) => (
     <div className="grid gap-3 pt-4 pb-2">
-        {documents.map((doc, idx) => (
-            <a
-                key={idx}
-                href={doc.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group"
-            >
-                <div className="p-2 bg-brand-100 text-brand-600 rounded-md group-hover:bg-brand-200 transition-colors">
-                    <FileText size={18} />
+        {documents.map((doc, idx) =>
+            doc.url ? (
+                <a
+                    key={idx}
+                    href={doc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group"
+                >
+                    <div className="p-2 bg-brand-100 text-brand-600 rounded-md group-hover:bg-brand-200 transition-colors shrink-0">
+                        <FileText size={18} />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 group-hover:text-brand-800 flex-1">
+                        {doc.title}
+                    </span>
+                    {doc.tag && (
+                        <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide whitespace-nowrap">
+                            {doc.tag}
+                        </span>
+                    )}
+                    <ExternalLink size={14} className="text-gray-400 group-hover:text-brand-500 opacity-0 group-hover:opacity-100 transition-all shrink-0" />
+                </a>
+            ) : (
+                <div
+                    key={idx}
+                    className="flex items-center gap-3 p-3 rounded-lg border border-dashed border-gray-200 bg-gray-50/60 cursor-default"
+                    title="Document will be published soon"
+                >
+                    <div className="p-2 bg-gray-100 text-gray-400 rounded-md shrink-0">
+                        <FileText size={18} />
+                    </div>
+                    <span className="text-sm font-medium text-gray-400 flex-1">{doc.title}</span>
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-gray-400 uppercase tracking-wide whitespace-nowrap">
+                        <Clock size={11} /> Coming soon
+                    </span>
                 </div>
-                <span className="text-sm font-medium text-gray-700 group-hover:text-brand-800 flex-1">
-                    {doc.title}
-                </span>
-                <ExternalLink size={14} className="text-gray-400 group-hover:text-brand-500 opacity-0 group-hover:opacity-100 transition-all" />
-            </a>
-        ))}
+            ),
+        )}
     </div>
 );
 
