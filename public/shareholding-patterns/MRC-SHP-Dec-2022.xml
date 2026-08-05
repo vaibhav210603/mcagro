@@ -1,0 +1,1323 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:in-bse-shp="http://www.bseindia.com/xbrl/shp/2022-09-30/in-bse-shp" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:in-bse-shp-types="http://www.bseindia.com/xbrl/shp/2022-09-30/in-bse-shp-types" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:net="http://www.xbrl.org/2009/role/net" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:negated="http://www.xbrl.org/2009/role/negated" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xl="http://www.xbrl.org/2003/XLink">
+  <link:schemaRef xlink:type="simple" xlink:href="in-bse-shp-2022-09-30.xsd" />
+  <xbrli:context id="MainD">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="MainI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="IndividualsOrHinduUndividedFamily_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:IndividualsOrHinduUndividedFamilyMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="Indian_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:IndianMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ShareholdingOfPromoterAndPromoterGroup_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:ShareholdingOfPromoterAndPromoterGroupMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakhMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="NonResidentIndians_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:NonResidentIndiansMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BodiesCorporate_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:BodiesCorporateMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="OtherNonInstitutions_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:OtherNonInstitutionsMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="NonInstitutions_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:NonInstitutionsMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="PublicShareholding_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:PublicShareholdingMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ShareholdingPattern_ContextI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="in-bse-shp:CategoryOfShareholdersAxis">in-bse-shp:ShareholdingPatternMember</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_IndividualsOrHUF_Context15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context15</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="IndividualsOrHUF_Context15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context15</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_IndividualsOrHUF_Context16">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context16</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="IndividualsOrHUF_Context16">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context16</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_IndividualsOrHUF_Context17">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context17</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="IndividualsOrHUF_Context17">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context17</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_IndividualsOrHUF_Context18">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context18</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="IndividualsOrHUF_Context18">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context18</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_IndividualsOrHUF_Context19">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context19</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="IndividualsOrHUF_Context19">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context19</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_IndividualsOrHUF_Context20">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context20</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="IndividualsOrHUF_Context20">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context20</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_IndividualsOrHUF_Context21">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context21</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="IndividualsOrHUF_Context21">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsSharesHeldByIndividualsOrHUFAxis">
+        <in-bse-shp:IndividualsOrHUFDomain>IndividualsOrHUF_Context21</in-bse-shp:IndividualsOrHUFDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByBodiesCorporate_Context15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByBodiesCorporateAxis">
+        <in-bse-shp:DetailsOfSharesHeldByBodiesCorporateDomain>DetailsOfSharesHeldByBodiesCorporate_Context15</in-bse-shp:DetailsOfSharesHeldByBodiesCorporateDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByBodiesCorporate_Context15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByBodiesCorporateAxis">
+        <in-bse-shp:DetailsOfSharesHeldByBodiesCorporateDomain>DetailsOfSharesHeldByBodiesCorporate_Context15</in-bse-shp:DetailsOfSharesHeldByBodiesCorporateDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhAxis">
+        <in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25</in-bse-shp:DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakhDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_OtherNonInstitutions_Context15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context15</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="OtherNonInstitutions_Context15">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context15</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_OtherNonInstitutions_Context16">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context16</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="OtherNonInstitutions_Context16">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context16</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_OtherNonInstitutions_Context17">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context17</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="OtherNonInstitutions_Context17">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context17</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_OtherNonInstitutions_Context18">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context18</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="OtherNonInstitutions_Context18">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context18</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="D_OtherNonInstitutions_Context19">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2022-10-01</xbrli:startDate>
+      <xbrli:endDate>2022-12-31</xbrli:endDate>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context19</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="OtherNonInstitutions_Context19">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-12-31</xbrli:instant>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:typedMember dimension="in-bse-shp:DetailsOfSharesHeldByOtherNonInstitutionsAxis">
+        <in-bse-shp:OtherNonInstitutionsDomain>OtherNonInstitutions_Context19</in-bse-shp:OtherNonInstitutionsDomain>
+      </xbrldi:typedMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="MainPYI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-09-30</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="MainPPYI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-06-30</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="MainPPPYI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2022-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="MainPPPPYI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com/bse-shp/ScripCode">540809</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2021-12-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="pure">
+    <xbrli:measure>xbrli:pure</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="shares">
+    <xbrli:measure>xbrli:shares</xbrli:measure>
+  </xbrli:unit>
+  <in-bse-shp:ScripCode contextRef="MainD">540809</in-bse-shp:ScripCode>
+  <in-bse-shp:ISIN contextRef="MainD">INE333Y01017</in-bse-shp:ISIN>
+  <in-bse-shp:NameOfTheCompany contextRef="MainD">MRC AGROTECH LIMITED</in-bse-shp:NameOfTheCompany>
+  <in-bse-shp:WhetherCompanyIsSME contextRef="MainI">false</in-bse-shp:WhetherCompanyIsSME>
+  <in-bse-shp:ClassOfSecurity contextRef="MainD">Equity Shares</in-bse-shp:ClassOfSecurity>
+  <in-bse-shp:TypeOfReport contextRef="MainD">Quarterly</in-bse-shp:TypeOfReport>
+  <in-bse-shp:DateOfReport contextRef="MainI">2022-12-31</in-bse-shp:DateOfReport>
+  <in-bse-shp:ShareholdingPatternFiledUnder contextRef="MainD">Regulation 31 (1) (b)</in-bse-shp:ShareholdingPatternFiledUnder>
+  <in-bse-shp:WhetherTheListedEntityIsPublicSectorUndertaking contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityIsPublicSectorUndertaking>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyPartlyPaidUpShares contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyPartlyPaidUpShares>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForPromoterAndPromoterGroup contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForPromoterAndPromoterGroup>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForPublicShareHolder contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForPublicShareHolder>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForNonPromoterNonPublic contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyPartlyPaidUpSharesForNonPromoterNonPublic>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyConvertibleSecurities contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyConvertibleSecurities>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForPromoterAndPromoterGroup contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForPromoterAndPromoterGroup>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForPublicShareHolder contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForPublicShareHolder>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForNonPromoterNonPublic contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyConvertibleSecuritiesForNonPromoterNonPublic>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyWarrants contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyWarrants>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyWarrantsForPromoterAndPromoterGroup contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyWarrantsForPromoterAndPromoterGroup>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyWarrantsForPublicShareHolder contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyWarrantsForPublicShareHolder>
+  <in-bse-shp:WhetherTheListedEntityHasIssuedAnyWarrantsForNonPromoterNonPublic contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasIssuedAnyWarrantsForNonPromoterNonPublic>
+  <in-bse-shp:WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssued contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssued>
+  <in-bse-shp:WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForPromoterAndPromoterGroup contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForPromoterAndPromoterGroup>
+  <in-bse-shp:WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForPublicShareHolder contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForPublicShareHolder>
+  <in-bse-shp:WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForNonPromoterNonPublic contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySharesAgainstWhichDepositoryReceiptsAreIssuedForNonPromoterNonPublic>
+  <in-bse-shp:WhetherTheListedEntityHasAnySharesInLockedIn contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySharesInLockedIn>
+  <in-bse-shp:WhetherTheListedEntityHasAnySharesInLockedInForPromoterAndPromoterGroup contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySharesInLockedInForPromoterAndPromoterGroup>
+  <in-bse-shp:WhetherTheListedEntityHasAnySharesInLockedInForPublicShareHolder contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySharesInLockedInForPublicShareHolder>
+  <in-bse-shp:WhetherTheListedEntityHasAnySharesInLockedInForNonPromoterNonPublic contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySharesInLockedInForNonPromoterNonPublic>
+  <in-bse-shp:WhetherAnySharesHeldByPromotersArePledgeOrOtherwiseEncumbered contextRef="MainI">true</in-bse-shp:WhetherAnySharesHeldByPromotersArePledgeOrOtherwiseEncumbered>
+  <in-bse-shp:WhetherAnySharesHeldByPromotersArePledgeOrOtherwiseEncumberedForPromoterAndPromoterGroup contextRef="MainI">true</in-bse-shp:WhetherAnySharesHeldByPromotersArePledgeOrOtherwiseEncumberedForPromoterAndPromoterGroup>
+  <in-bse-shp:WhetherCompanyHasEquitySharesWithDifferentialVotingRights contextRef="MainI">false</in-bse-shp:WhetherCompanyHasEquitySharesWithDifferentialVotingRights>
+  <in-bse-shp:WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForPromoterAndPromoterGroup contextRef="MainI">false</in-bse-shp:WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForPromoterAndPromoterGroup>
+  <in-bse-shp:WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForPublicShareHolder contextRef="MainI">false</in-bse-shp:WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForPublicShareHolder>
+  <in-bse-shp:WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForNonPromoterNonPublic contextRef="MainI">false</in-bse-shp:WhetherCompanyHasEquitySharesWithDifferentialVotingRightsForNonPromoterNonPublic>
+  <in-bse-shp:WhetherTheListedEntityHasAnySignificantBeneficialOwner contextRef="MainI">false</in-bse-shp:WhetherTheListedEntityHasAnySignificantBeneficialOwner>
+  <in-bse-shp:NumberOfShareholders contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="pure" decimals="INF">7</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="pure" decimals="INF">2874200</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="pure" decimals="INF">2874200</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="shares" decimals="INF">7750</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="pure" decimals="INF">0.27</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="IndividualsOrHinduUndividedFamily_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareholders contextRef="Indian_ContextI" unitRef="pure" decimals="INF">7</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="Indian_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="Indian_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="Indian_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="Indian_ContextI" unitRef="pure" decimals="INF">2874200</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="Indian_ContextI" unitRef="pure" decimals="INF">2874200</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="Indian_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="Indian_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="Indian_ContextI" unitRef="shares" decimals="INF">7750</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="Indian_ContextI" unitRef="pure" decimals="INF">0.27</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="Indian_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareholders contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="pure" decimals="INF">7</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="pure" decimals="INF">2874200</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="pure" decimals="INF">2874200</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="pure" decimals="INF">27.58</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="shares" decimals="INF">7750</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="pure" decimals="INF">0.27</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="ShareholdingOfPromoterAndPromoterGroup_ContextI" unitRef="shares" decimals="INF">2874200</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareholders contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="pure" decimals="INF">374</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="shares" decimals="INF">2090600</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="shares" decimals="INF">2090600</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="pure" decimals="INF">20.06</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="pure" decimals="INF">2090600</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="pure" decimals="INF">2090600</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="pure" decimals="INF">20.06</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="pure" decimals="INF">20.06</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="shares" decimals="INF">2090600</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalUpToRsTwoLakh_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="pure" decimals="INF">58</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="shares" decimals="INF">4390100</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="shares" decimals="INF">4390100</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="pure" decimals="INF">42.13</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="pure" decimals="INF">4390100</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="pure" decimals="INF">4390100</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="pure" decimals="INF">42.13</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="pure" decimals="INF">42.13</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="shares" decimals="INF">4390100</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="ResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="NonResidentIndians_ContextI" unitRef="pure" decimals="INF">6</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="NonResidentIndians_ContextI" unitRef="shares" decimals="INF">94000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="NonResidentIndians_ContextI" unitRef="shares" decimals="INF">94000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="NonResidentIndians_ContextI" unitRef="pure" decimals="INF">0.9</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="NonResidentIndians_ContextI" unitRef="pure" decimals="INF">94000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="NonResidentIndians_ContextI" unitRef="pure" decimals="INF">94000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="NonResidentIndians_ContextI" unitRef="pure" decimals="INF">0.9</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="NonResidentIndians_ContextI" unitRef="pure" decimals="INF">0.9</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="NonResidentIndians_ContextI" unitRef="shares" decimals="INF">94000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="NonResidentIndians_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="NonResidentIndians_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="NonResidentIndians_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="BodiesCorporate_ContextI" unitRef="pure" decimals="INF">9</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="BodiesCorporate_ContextI" unitRef="shares" decimals="INF">444000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="BodiesCorporate_ContextI" unitRef="shares" decimals="INF">444000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="BodiesCorporate_ContextI" unitRef="pure" decimals="INF">4.26</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="BodiesCorporate_ContextI" unitRef="pure" decimals="INF">444000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="BodiesCorporate_ContextI" unitRef="pure" decimals="INF">444000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="BodiesCorporate_ContextI" unitRef="pure" decimals="INF">4.26</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="BodiesCorporate_ContextI" unitRef="pure" decimals="INF">4.26</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="BodiesCorporate_ContextI" unitRef="shares" decimals="INF">444000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="BodiesCorporate_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="BodiesCorporate_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="BodiesCorporate_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="OtherNonInstitutions_ContextI" unitRef="pure" decimals="INF">28</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="OtherNonInstitutions_ContextI" unitRef="shares" decimals="INF">528000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="OtherNonInstitutions_ContextI" unitRef="shares" decimals="INF">528000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="OtherNonInstitutions_ContextI" unitRef="pure" decimals="INF">5.07</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="OtherNonInstitutions_ContextI" unitRef="pure" decimals="INF">528000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="OtherNonInstitutions_ContextI" unitRef="pure" decimals="INF">528000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="OtherNonInstitutions_ContextI" unitRef="pure" decimals="INF">5.07</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="OtherNonInstitutions_ContextI" unitRef="pure" decimals="INF">5.07</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="OtherNonInstitutions_ContextI" unitRef="shares" decimals="INF">528000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="OtherNonInstitutions_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="OtherNonInstitutions_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="OtherNonInstitutions_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="NonInstitutions_ContextI" unitRef="pure" decimals="INF">475</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="NonInstitutions_ContextI" unitRef="shares" decimals="INF">7546700</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="NonInstitutions_ContextI" unitRef="shares" decimals="INF">7546700</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="NonInstitutions_ContextI" unitRef="pure" decimals="INF">72.42</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="NonInstitutions_ContextI" unitRef="pure" decimals="INF">7546700</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="NonInstitutions_ContextI" unitRef="pure" decimals="INF">7546700</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="NonInstitutions_ContextI" unitRef="pure" decimals="INF">72.42</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="NonInstitutions_ContextI" unitRef="pure" decimals="INF">72.42</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="NonInstitutions_ContextI" unitRef="shares" decimals="INF">7546700</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="NonInstitutions_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="NonInstitutions_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="NonInstitutions_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="PublicShareholding_ContextI" unitRef="pure" decimals="INF">475</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="PublicShareholding_ContextI" unitRef="shares" decimals="INF">7546700</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="PublicShareholding_ContextI" unitRef="shares" decimals="INF">7546700</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="PublicShareholding_ContextI" unitRef="pure" decimals="INF">72.42</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="PublicShareholding_ContextI" unitRef="pure" decimals="INF">7546700</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="PublicShareholding_ContextI" unitRef="pure" decimals="INF">7546700</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="PublicShareholding_ContextI" unitRef="pure" decimals="INF">72.42</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="PublicShareholding_ContextI" unitRef="pure" decimals="INF">72.42</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="PublicShareholding_ContextI" unitRef="shares" decimals="INF">7546700</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="PublicShareholding_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="PublicShareholding_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="PublicShareholding_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="ShareholdingPattern_ContextI" unitRef="pure" decimals="INF">482</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="ShareholdingPattern_ContextI" unitRef="shares" decimals="INF">10420900</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="ShareholdingPattern_ContextI" unitRef="shares" decimals="INF">10420900</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="ShareholdingPattern_ContextI" unitRef="pure" decimals="INF">100</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="ShareholdingPattern_ContextI" unitRef="pure" decimals="INF">10420900</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="ShareholdingPattern_ContextI" unitRef="pure" decimals="INF">10420900</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="ShareholdingPattern_ContextI" unitRef="pure" decimals="INF">100</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="ShareholdingPattern_ContextI" unitRef="pure" decimals="INF">100</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="ShareholdingPattern_ContextI" unitRef="shares" decimals="INF">7750</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="ShareholdingPattern_ContextI" unitRef="pure" decimals="INF">0.07</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="ShareholdingPattern_ContextI" unitRef="shares" decimals="INF">10420900</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="ShareholdingPattern_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="ShareholdingPattern_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="ShareholdingPattern_ContextI" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_IndividualsOrHUF_Context15">KIRITKUMAR MADHAVLAL SHAH</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="IndividualsOrHUF_Context15" unitRef="shares" decimals="INF">1657000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="IndividualsOrHUF_Context15" unitRef="shares" decimals="INF">1657000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context15" unitRef="pure" decimals="INF">15.9</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="IndividualsOrHUF_Context15" unitRef="pure" decimals="INF">1657000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="IndividualsOrHUF_Context15" unitRef="pure" decimals="INF">1657000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="IndividualsOrHUF_Context15" unitRef="pure" decimals="INF">15.9</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="IndividualsOrHUF_Context15" unitRef="pure" decimals="INF">15.9</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="IndividualsOrHUF_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context15" unitRef="pure" decimals="INF">0</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="IndividualsOrHUF_Context15" unitRef="shares" decimals="INF">1657000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:TypeOfPromoterShareholding contextRef="D_IndividualsOrHUF_Context15">Promoter</in-bse-shp:TypeOfPromoterShareholding>
+  <in-bse-shp:NumberOfShareholders contextRef="IndividualsOrHUF_Context15" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_IndividualsOrHUF_Context16">CHANDU KESHRIMAL JAIN</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="IndividualsOrHUF_Context16" unitRef="shares" decimals="INF">520750</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="IndividualsOrHUF_Context16" unitRef="shares" decimals="INF">520750</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context16" unitRef="pure" decimals="INF">5</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="IndividualsOrHUF_Context16" unitRef="pure" decimals="INF">520750</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="IndividualsOrHUF_Context16" unitRef="pure" decimals="INF">520750</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="IndividualsOrHUF_Context16" unitRef="pure" decimals="INF">5</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="IndividualsOrHUF_Context16" unitRef="pure" decimals="INF">5</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="IndividualsOrHUF_Context16" unitRef="shares" decimals="INF">0</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context16" unitRef="pure" decimals="INF">0</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="IndividualsOrHUF_Context16" unitRef="shares" decimals="INF">520750</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:TypeOfPromoterShareholding contextRef="D_IndividualsOrHUF_Context16">Promoter</in-bse-shp:TypeOfPromoterShareholding>
+  <in-bse-shp:NumberOfShareholders contextRef="IndividualsOrHUF_Context16" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_IndividualsOrHUF_Context17">HEMALI HEMANT SHAH</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="IndividualsOrHUF_Context17" unitRef="shares" decimals="INF">488700</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="IndividualsOrHUF_Context17" unitRef="shares" decimals="INF">488700</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context17" unitRef="pure" decimals="INF">4.69</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="IndividualsOrHUF_Context17" unitRef="pure" decimals="INF">488700</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="IndividualsOrHUF_Context17" unitRef="pure" decimals="INF">488700</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="IndividualsOrHUF_Context17" unitRef="pure" decimals="INF">4.69</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="IndividualsOrHUF_Context17" unitRef="pure" decimals="INF">4.69</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="IndividualsOrHUF_Context17" unitRef="shares" decimals="INF">0</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context17" unitRef="pure" decimals="INF">0</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="IndividualsOrHUF_Context17" unitRef="shares" decimals="INF">488700</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:TypeOfPromoterShareholding contextRef="D_IndividualsOrHUF_Context17">Promoter Group</in-bse-shp:TypeOfPromoterShareholding>
+  <in-bse-shp:NumberOfShareholders contextRef="IndividualsOrHUF_Context17" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_IndividualsOrHUF_Context18">JIKESH KIRITBHAI SHAH</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="IndividualsOrHUF_Context18" unitRef="shares" decimals="INF">100000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="IndividualsOrHUF_Context18" unitRef="shares" decimals="INF">100000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context18" unitRef="pure" decimals="INF">0.96</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="IndividualsOrHUF_Context18" unitRef="pure" decimals="INF">100000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="IndividualsOrHUF_Context18" unitRef="pure" decimals="INF">100000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="IndividualsOrHUF_Context18" unitRef="pure" decimals="INF">0.96</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="IndividualsOrHUF_Context18" unitRef="pure" decimals="INF">0.96</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="IndividualsOrHUF_Context18" unitRef="shares" decimals="INF">0</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context18" unitRef="pure" decimals="INF">0</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="IndividualsOrHUF_Context18" unitRef="shares" decimals="INF">100000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:TypeOfPromoterShareholding contextRef="D_IndividualsOrHUF_Context18">Promoter Group</in-bse-shp:TypeOfPromoterShareholding>
+  <in-bse-shp:NumberOfShareholders contextRef="IndividualsOrHUF_Context18" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_IndividualsOrHUF_Context19">JIKESH K SHAH HUF</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="IndividualsOrHUF_Context19" unitRef="shares" decimals="INF">100000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="IndividualsOrHUF_Context19" unitRef="shares" decimals="INF">100000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context19" unitRef="pure" decimals="INF">0.96</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="IndividualsOrHUF_Context19" unitRef="pure" decimals="INF">100000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="IndividualsOrHUF_Context19" unitRef="pure" decimals="INF">100000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="IndividualsOrHUF_Context19" unitRef="pure" decimals="INF">0.96</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="IndividualsOrHUF_Context19" unitRef="pure" decimals="INF">0.96</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="IndividualsOrHUF_Context19" unitRef="shares" decimals="INF">0</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context19" unitRef="pure" decimals="INF">0</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="IndividualsOrHUF_Context19" unitRef="shares" decimals="INF">100000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:TypeOfPromoterShareholding contextRef="D_IndividualsOrHUF_Context19">Promoter Group</in-bse-shp:TypeOfPromoterShareholding>
+  <in-bse-shp:NumberOfShareholders contextRef="IndividualsOrHUF_Context19" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_IndividualsOrHUF_Context20">SANTOSH DAULAT PASHTE</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="IndividualsOrHUF_Context20" unitRef="shares" decimals="INF">7250</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="IndividualsOrHUF_Context20" unitRef="shares" decimals="INF">7250</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context20" unitRef="pure" decimals="INF">0.07</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="IndividualsOrHUF_Context20" unitRef="pure" decimals="INF">7250</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="IndividualsOrHUF_Context20" unitRef="pure" decimals="INF">7250</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="IndividualsOrHUF_Context20" unitRef="pure" decimals="INF">0.07</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="IndividualsOrHUF_Context20" unitRef="pure" decimals="INF">0.07</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="IndividualsOrHUF_Context20" unitRef="shares" decimals="INF">7250</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context20" unitRef="pure" decimals="INF">100</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="IndividualsOrHUF_Context20" unitRef="shares" decimals="INF">7250</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:TypeOfPromoterShareholding contextRef="D_IndividualsOrHUF_Context20">Promoter Group</in-bse-shp:TypeOfPromoterShareholding>
+  <in-bse-shp:NumberOfShareholders contextRef="IndividualsOrHUF_Context20" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_IndividualsOrHUF_Context21">SANGEETA CHANDU JAIN</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="IndividualsOrHUF_Context21" unitRef="shares" decimals="INF">500</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="IndividualsOrHUF_Context21" unitRef="shares" decimals="INF">500</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context21" unitRef="pure" decimals="INF">0</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="IndividualsOrHUF_Context21" unitRef="pure" decimals="INF">500</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="IndividualsOrHUF_Context21" unitRef="pure" decimals="INF">500</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="IndividualsOrHUF_Context21" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="IndividualsOrHUF_Context21" unitRef="pure" decimals="INF">0</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:PledgedOrEncumberedNumberOfShares contextRef="IndividualsOrHUF_Context21" unitRef="shares" decimals="INF">500</in-bse-shp:PledgedOrEncumberedNumberOfShares>
+  <in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares contextRef="IndividualsOrHUF_Context21" unitRef="pure" decimals="INF">100</in-bse-shp:PledgedOrEncumberedSharesHeldAsPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="IndividualsOrHUF_Context21" unitRef="shares" decimals="INF">500</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:TypeOfPromoterShareholding contextRef="D_IndividualsOrHUF_Context21">Promoter Group</in-bse-shp:TypeOfPromoterShareholding>
+  <in-bse-shp:NumberOfShareholders contextRef="IndividualsOrHUF_Context21" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByBodiesCorporate_Context15">ESPS FINSERVE PRIVATE LIMITED.</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="shares" decimals="INF">234000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="shares" decimals="INF">234000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="pure" decimals="INF">2.25</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="pure" decimals="INF">234000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="pure" decimals="INF">234000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="pure" decimals="INF">2.25</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="pure" decimals="INF">2.25</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="shares" decimals="INF">234000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByBodiesCorporate_Context15" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15">ASHOK KUMAR SINGH</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="shares" decimals="INF">140000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="shares" decimals="INF">140000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="pure" decimals="INF">1.34</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="pure" decimals="INF">140000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="pure" decimals="INF">140000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="pure" decimals="INF">1.34</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="pure" decimals="INF">1.34</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="shares" decimals="INF">140000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context15" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16">PRATIK VIJAYKUMAR PARIKH</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="shares" decimals="INF">120000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="shares" decimals="INF">120000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="pure" decimals="INF">1.15</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="pure" decimals="INF">120000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="pure" decimals="INF">120000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="pure" decimals="INF">1.15</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="pure" decimals="INF">1.15</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="shares" decimals="INF">120000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context16" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17">URVASHI UMESHBHAI PATEL</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="shares" decimals="INF">110000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="shares" decimals="INF">110000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="pure" decimals="INF">1.06</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="pure" decimals="INF">110000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="pure" decimals="INF">110000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="pure" decimals="INF">1.06</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="pure" decimals="INF">1.06</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="shares" decimals="INF">110000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context17" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18">HEMAL H PATEL</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="shares" decimals="INF">152000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="shares" decimals="INF">152000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="pure" decimals="INF">1.46</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="pure" decimals="INF">152000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="pure" decimals="INF">152000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="pure" decimals="INF">1.46</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="pure" decimals="INF">1.46</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="shares" decimals="INF">152000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context18" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19">PRAKASH BHASKAR SHETTY</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="shares" decimals="INF">379200</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="shares" decimals="INF">379200</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="pure" decimals="INF">3.64</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="pure" decimals="INF">379200</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="pure" decimals="INF">379200</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="pure" decimals="INF">3.64</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="pure" decimals="INF">3.64</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="shares" decimals="INF">379200</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context19" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20">ANAGHA PRAKASH SHETTY</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="shares" decimals="INF">296900</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="shares" decimals="INF">296900</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="pure" decimals="INF">2.85</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="pure" decimals="INF">296900</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="pure" decimals="INF">296900</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="pure" decimals="INF">2.85</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="pure" decimals="INF">2.85</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="shares" decimals="INF">296900</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context20" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21">KALPANA BHUPENDRA MISTRI</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="shares" decimals="INF">208000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="shares" decimals="INF">208000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="pure" decimals="INF">2</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="pure" decimals="INF">208000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="pure" decimals="INF">208000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="pure" decimals="INF">2</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="pure" decimals="INF">2</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="shares" decimals="INF">208000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context21" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22">SAURABH GOSWAMI</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="shares" decimals="INF">178000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="shares" decimals="INF">178000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="pure" decimals="INF">1.71</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="pure" decimals="INF">178000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="pure" decimals="INF">178000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="pure" decimals="INF">1.71</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="pure" decimals="INF">1.71</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="shares" decimals="INF">178000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context22" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23">RAJESH KUMAR SINGH</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="shares" decimals="INF">144000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="shares" decimals="INF">144000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="pure" decimals="INF">1.38</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="pure" decimals="INF">144000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="pure" decimals="INF">144000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="pure" decimals="INF">1.38</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="pure" decimals="INF">1.38</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="shares" decimals="INF">144000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context23" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24">RAJAN GUPTA</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="shares" decimals="INF">248000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="shares" decimals="INF">248000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="pure" decimals="INF">2.38</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="pure" decimals="INF">248000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="pure" decimals="INF">248000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="pure" decimals="INF">2.38</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="pure" decimals="INF">2.38</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="shares" decimals="INF">248000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context24" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25">MANISH I MEHTA</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="shares" decimals="INF">134000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="shares" decimals="INF">134000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="pure" decimals="INF">1.29</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="pure" decimals="INF">134000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="pure" decimals="INF">134000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="pure" decimals="INF">1.29</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="pure" decimals="INF">1.29</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="shares" decimals="INF">134000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:NumberOfShareholders contextRef="DetailsOfSharesHeldByResidentIndividualShareholdersHoldingNominalShareCapitalInExcessOfRsTwoLakh_Context25" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:CategoryOfOtherNonInstitutions contextRef="D_OtherNonInstitutions_Context15">LLP</in-bse-shp:CategoryOfOtherNonInstitutions>
+  <in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding contextRef="D_OtherNonInstitutions_Context15">Category</in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding>
+  <in-bse-shp:NumberOfShareholders contextRef="OtherNonInstitutions_Context15" unitRef="pure" decimals="INF">2</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="OtherNonInstitutions_Context15" unitRef="shares" decimals="INF">28000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="OtherNonInstitutions_Context15" unitRef="shares" decimals="INF">28000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="OtherNonInstitutions_Context15" unitRef="pure" decimals="INF">0.27</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="OtherNonInstitutions_Context15" unitRef="pure" decimals="INF">28000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="OtherNonInstitutions_Context15" unitRef="pure" decimals="INF">28000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="OtherNonInstitutions_Context15" unitRef="pure" decimals="INF">0.27</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="OtherNonInstitutions_Context15" unitRef="pure" decimals="INF">0.27</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="OtherNonInstitutions_Context15" unitRef="shares" decimals="INF">28000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="OtherNonInstitutions_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="OtherNonInstitutions_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="OtherNonInstitutions_Context15" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:CategoryOfOtherNonInstitutions contextRef="D_OtherNonInstitutions_Context16">Market Maker</in-bse-shp:CategoryOfOtherNonInstitutions>
+  <in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding contextRef="D_OtherNonInstitutions_Context16">Category</in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding>
+  <in-bse-shp:NumberOfShareholders contextRef="OtherNonInstitutions_Context16" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="OtherNonInstitutions_Context16" unitRef="shares" decimals="INF">132000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="OtherNonInstitutions_Context16" unitRef="shares" decimals="INF">132000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="OtherNonInstitutions_Context16" unitRef="pure" decimals="INF">1.27</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="OtherNonInstitutions_Context16" unitRef="pure" decimals="INF">132000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="OtherNonInstitutions_Context16" unitRef="pure" decimals="INF">132000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="OtherNonInstitutions_Context16" unitRef="pure" decimals="INF">1.27</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="OtherNonInstitutions_Context16" unitRef="pure" decimals="INF">1.27</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="OtherNonInstitutions_Context16" unitRef="shares" decimals="INF">132000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="OtherNonInstitutions_Context16" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="OtherNonInstitutions_Context16" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="OtherNonInstitutions_Context16" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:CategoryOfOtherNonInstitutions contextRef="D_OtherNonInstitutions_Context17">Market Maker</in-bse-shp:CategoryOfOtherNonInstitutions>
+  <in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding contextRef="D_OtherNonInstitutions_Context17">More than 1 percentage of shareholding</in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding>
+  <in-bse-shp:NameOfTheShareholder contextRef="D_OtherNonInstitutions_Context17">CHOICE  EQUITY BROKING PRIVATE LIMITED</in-bse-shp:NameOfTheShareholder>
+  <in-bse-shp:NumberOfShareholders contextRef="OtherNonInstitutions_Context17" unitRef="pure" decimals="INF">1</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="OtherNonInstitutions_Context17" unitRef="shares" decimals="INF">132000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="OtherNonInstitutions_Context17" unitRef="shares" decimals="INF">132000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="OtherNonInstitutions_Context17" unitRef="pure" decimals="INF">1.27</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="OtherNonInstitutions_Context17" unitRef="pure" decimals="INF">132000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="OtherNonInstitutions_Context17" unitRef="pure" decimals="INF">132000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="OtherNonInstitutions_Context17" unitRef="pure" decimals="INF">1.27</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="OtherNonInstitutions_Context17" unitRef="pure" decimals="INF">1.27</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="OtherNonInstitutions_Context17" unitRef="shares" decimals="INF">132000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="OtherNonInstitutions_Context17" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="OtherNonInstitutions_Context17" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="OtherNonInstitutions_Context17" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:CategoryOfOtherNonInstitutions contextRef="D_OtherNonInstitutions_Context18">Clearing Members</in-bse-shp:CategoryOfOtherNonInstitutions>
+  <in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding contextRef="D_OtherNonInstitutions_Context18">Category</in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding>
+  <in-bse-shp:NumberOfShareholders contextRef="OtherNonInstitutions_Context18" unitRef="pure" decimals="INF">5</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="OtherNonInstitutions_Context18" unitRef="shares" decimals="INF">158000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="OtherNonInstitutions_Context18" unitRef="shares" decimals="INF">158000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="OtherNonInstitutions_Context18" unitRef="pure" decimals="INF">1.52</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="OtherNonInstitutions_Context18" unitRef="pure" decimals="INF">158000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="OtherNonInstitutions_Context18" unitRef="pure" decimals="INF">158000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="OtherNonInstitutions_Context18" unitRef="pure" decimals="INF">1.52</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="OtherNonInstitutions_Context18" unitRef="pure" decimals="INF">1.52</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="OtherNonInstitutions_Context18" unitRef="shares" decimals="INF">158000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="OtherNonInstitutions_Context18" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="OtherNonInstitutions_Context18" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="OtherNonInstitutions_Context18" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:CategoryOfOtherNonInstitutions contextRef="D_OtherNonInstitutions_Context19">HUF</in-bse-shp:CategoryOfOtherNonInstitutions>
+  <in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding contextRef="D_OtherNonInstitutions_Context19">Category</in-bse-shp:WhetherACategoryOrMoreThan1PercentageOfShareHolding>
+  <in-bse-shp:NumberOfShareholders contextRef="OtherNonInstitutions_Context19" unitRef="pure" decimals="INF">20</in-bse-shp:NumberOfShareholders>
+  <in-bse-shp:NumberOfFullyPaidUpEquityShares contextRef="OtherNonInstitutions_Context19" unitRef="shares" decimals="INF">210000</in-bse-shp:NumberOfFullyPaidUpEquityShares>
+  <in-bse-shp:NumberOfShares contextRef="OtherNonInstitutions_Context19" unitRef="shares" decimals="INF">210000</in-bse-shp:NumberOfShares>
+  <in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares contextRef="OtherNonInstitutions_Context19" unitRef="pure" decimals="INF">2.02</in-bse-shp:ShareholdingAsAPercentageOfTotalNumberOfShares>
+  <in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities contextRef="OtherNonInstitutions_Context19" unitRef="pure" decimals="INF">210000</in-bse-shp:NumberOfVotingRightsHeldBySameClassOfSecurities>
+  <in-bse-shp:NumberOfVotingRights contextRef="OtherNonInstitutions_Context19" unitRef="pure" decimals="INF">210000</in-bse-shp:NumberOfVotingRights>
+  <in-bse-shp:PercentageOfTotalVotingRights contextRef="OtherNonInstitutions_Context19" unitRef="pure" decimals="INF">2.02</in-bse-shp:PercentageOfTotalVotingRights>
+  <in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants contextRef="OtherNonInstitutions_Context19" unitRef="pure" decimals="INF">2.02</in-bse-shp:ShareholdingAsAPercentageAssumingFullConversionOfConvertibleSecuritiesAndWarrants>
+  <in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm contextRef="OtherNonInstitutions_Context19" unitRef="shares" decimals="INF">210000</in-bse-shp:NumberOfEquitySharesHeldInDematerializedForm>
+  <in-bse-shp:NumberOfShareUnderSubCategoryOne contextRef="OtherNonInstitutions_Context19" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryOne>
+  <in-bse-shp:NumberOfShareUnderSubCategoryTwo contextRef="OtherNonInstitutions_Context19" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryTwo>
+  <in-bse-shp:NumberOfShareUnderSubCategoryThree contextRef="OtherNonInstitutions_Context19" unitRef="shares" decimals="INF">0</in-bse-shp:NumberOfShareUnderSubCategoryThree>
+  <in-bse-shp:PercentageOfBoardApprovedLimits contextRef="MainI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfBoardApprovedLimits>
+  <in-bse-shp:PercentageOfLimitsUtilized contextRef="MainI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfLimitsUtilized>
+  <in-bse-shp:PercentageOfBoardApprovedLimits contextRef="MainPYI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfBoardApprovedLimits>
+  <in-bse-shp:PercentageOfLimitsUtilized contextRef="MainPYI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfLimitsUtilized>
+  <in-bse-shp:PercentageOfBoardApprovedLimits contextRef="MainPPYI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfBoardApprovedLimits>
+  <in-bse-shp:PercentageOfLimitsUtilized contextRef="MainPPYI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfLimitsUtilized>
+  <in-bse-shp:PercentageOfBoardApprovedLimits contextRef="MainPPPYI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfBoardApprovedLimits>
+  <in-bse-shp:PercentageOfLimitsUtilized contextRef="MainPPPYI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfLimitsUtilized>
+  <in-bse-shp:PercentageOfBoardApprovedLimits contextRef="MainPPPPYI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfBoardApprovedLimits>
+  <in-bse-shp:PercentageOfLimitsUtilized contextRef="MainPPPPYI" unitRef="pure" decimals="INF">0</in-bse-shp:PercentageOfLimitsUtilized>
+</xbrli:xbrl>
