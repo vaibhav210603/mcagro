@@ -65,7 +65,7 @@ export const FinancialReporting = () => (
         intro="Annual reports, quarterly financial results, related party transactions, subsidiary financials and general meeting documents of MRC Agrotech Limited."
     >
         <div className="space-y-2 mt-4">
-            <AccordionItem title="Annual Reports" defaultOpen>
+            <AccordionItem title="Annual Reports">
                 <DocumentList documents={annualReports} />
             </AccordionItem>
 
@@ -84,14 +84,14 @@ export const FinancialReporting = () => (
                             <h3 className="text-lg font-bold text-emerald-900">Agronica Seeds Spark Private Limited</h3>
                             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full uppercase tracking-wider">Subsidiary</span>
                         </div>
-                        <DocumentList documents={[{ title: "Visit Agronica Seeds Spark Official Website", url: "https://agronicaseeds.com" }]} />
+                        <DocumentList documents={[{ title: "Financial Statements" }]} />
                     </div>
                     <div className="border border-emerald-100 rounded-xl p-5 bg-emerald-50/30">
                         <div className="flex items-center justify-between mb-3">
                             <h3 className="text-lg font-bold text-emerald-900">Mars Pharma Private Limited</h3>
                             <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full uppercase tracking-wider">Subsidiary</span>
                         </div>
-                        <DocumentList documents={[{ title: "Visit Mars Pharma Official Website", url: "https://www.marspharma.in/" }]} />
+                        <DocumentList documents={[{ title: "Financial Statements" }]} />
                     </div>
                 </div>
             </AccordionItem>
@@ -101,7 +101,7 @@ export const FinancialReporting = () => (
                     <div className="border border-emerald-100 rounded-xl p-4 bg-emerald-50/30">
                         <h3 className="text-base font-bold text-emerald-800 mb-3">Annual General Meeting (AGM)</h3>
                         <div className="space-y-2 ml-1">
-                            <AccordionItem title="Notice of AGM" defaultOpen>
+                            <AccordionItem title="Notice of AGM">
                                 <DocumentList documents={noticeOfAGM} />
                             </AccordionItem>
                             <AccordionItem title="Outcome of AGM">
@@ -113,7 +113,7 @@ export const FinancialReporting = () => (
                     <div className="border border-amber-100 rounded-xl p-4 bg-amber-50/30">
                         <h3 className="text-base font-bold text-amber-800 mb-3">Extra-Ordinary General Meeting (EGM)</h3>
                         <div className="space-y-2 ml-1">
-                            <AccordionItem title="Notice of EGM" defaultOpen>
+                            <AccordionItem title="Notice of EGM">
                                 <DocumentList documents={noticeOfEGM} />
                             </AccordionItem>
                             <AccordionItem title="Outcome of EGM">

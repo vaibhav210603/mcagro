@@ -81,7 +81,7 @@ export const CorporateAnnouncement = () => (
         wide
     >
         <div className="space-y-2 mt-4">
-            <AccordionItem title="Announcements" defaultOpen>
+            <AccordionItem title="Announcements">
                 <div className="space-y-2 mt-2">
                     <AccordionItem title="Reconstitution of Committees">
                         <DocumentList documents={reconstitution} />
