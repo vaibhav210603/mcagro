@@ -7,14 +7,14 @@ type GridRow = { fy: string; q1?: string; q2?: string; q3?: string; q4?: string 
 const shpGrid: GridRow[] = [
     { fy: "2026-27", q1: "/shareholding-patterns/MRC-SHP-Jun-2026.html", q2: undefined, q3: undefined, q4: undefined },
     { fy: "2025-26", q1: "/shareholding-patterns/MRC-SHP-Jun-2025.html", q2: "/shareholding-patterns/MRC-SHP-Sep-2025.html", q3: "/shareholding-patterns/MRC-SHP-Dec-2025.html", q4: "/shareholding-patterns/MRC-SHP-Mar-2026.html" },
-    { fy: "2024-25", q1: "/shareholding-patterns/MRC-SHP-Jun-2024.xml", q2: "/shareholding-patterns/MRC-SHP-Sep-2024.xml", q3: "/shareholding-patterns/MRC-SHP-Dec-2024.xml", q4: "/shareholding-patterns/MRC-SHP-Mar-2025.xml" },
-    { fy: "2023-24", q1: "/shareholding-patterns/MRC-SHP-Jun-2023.xml", q2: "/shareholding-patterns/MRC-SHP-Sep-2023.xml", q3: "/shareholding-patterns/MRC-SHP-Dec-2023.xml", q4: "/shareholding-patterns/MRC-SHP-Mar-2024.xml" },
-    { fy: "2022-23", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2022.xml", q3: "/shareholding-patterns/MRC-SHP-Dec-2022.xml", q4: "/shareholding-patterns/MRC-SHP-Mar-2023.xml" },
-    { fy: "2021-22", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2021.xml", q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2022.xml" },
-    { fy: "2020-21", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2020.xml", q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2021.xml" },
-    { fy: "2019-20", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2019.xml", q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2020.xml" },
-    { fy: "2018-19", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2018.xml", q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2019.xml" },
-    { fy: "2017-18", q1: undefined, q2: undefined, q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2018.xml" },
+    { fy: "2024-25", q1: "/shareholding-patterns/MRC-SHP-Jun-2024.html", q2: "/shareholding-patterns/MRC-SHP-Sep-2024.html", q3: "/shareholding-patterns/MRC-SHP-Dec-2024.html", q4: "/shareholding-patterns/MRC-SHP-Mar-2025.html" },
+    { fy: "2023-24", q1: "/shareholding-patterns/MRC-SHP-Jun-2023.html", q2: "/shareholding-patterns/MRC-SHP-Sep-2023.html", q3: "/shareholding-patterns/MRC-SHP-Dec-2023.html", q4: "/shareholding-patterns/MRC-SHP-Mar-2024.html" },
+    { fy: "2022-23", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2022.html", q3: "/shareholding-patterns/MRC-SHP-Dec-2022.html", q4: "/shareholding-patterns/MRC-SHP-Mar-2023.html" },
+    { fy: "2021-22", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2021.html", q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2022.html" },
+    { fy: "2020-21", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2020.html", q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2021.html" },
+    { fy: "2019-20", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2019.html", q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2020.html" },
+    { fy: "2018-19", q1: undefined, q2: "/shareholding-patterns/MRC-SHP-Sep-2018.html", q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2019.html" },
+    { fy: "2017-18", q1: undefined, q2: undefined, q3: undefined, q4: "/shareholding-patterns/MRC-SHP-Mar-2018.html" },
 ];
 
 const quarterCols: { key: keyof Omit<GridRow, 'fy'>; label: string }[] = [
