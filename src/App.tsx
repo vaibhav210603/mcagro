@@ -98,6 +98,7 @@ function App() {
               <Route path="/investors/shareholders-info" element={<ShareholdersInfo />} />
               <Route path="/investors/corporate-announcement" element={<CorporateAnnouncement />} />
               <Route path="/investors/policies/:slug" element={<PolicyPage />} />
+              <Route path="/investors/disclosures/:slug" element={<PolicyPage />} />
               <Route path="/investors/contact" element={<InvestorsContact />} />
               <Route path="/investors/grievance-redressal" element={<GrievanceRedressal />} />
               <Route path="/investors/notice-board" element={<NoticeBoard />} />

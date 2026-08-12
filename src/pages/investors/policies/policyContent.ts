@@ -465,7 +465,3 @@ export const policies: Policy[] = [
     insiderTrading,
     whistleBlower,
 ];
-
-export const policyBySlug: Record<string, Policy> = Object.fromEntries(
-    policies.map((p) => [p.slug, p]),
-);

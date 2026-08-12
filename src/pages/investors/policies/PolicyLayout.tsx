@@ -14,6 +14,8 @@ export type Policy = {
     title: string;
     /** Statutory reference shown under the title, e.g. "Regulation 16 of SEBI (LODR) Regulations, 2015". */
     reference?: string;
+    /** Controls the closing note. 'policy' (default) = Board-adoption note; 'disclosure' = website-disclosure note. */
+    kind?: 'policy' | 'disclosure';
     blocks: PolicyBlock[];
 };
 
@@ -79,7 +81,7 @@ export const PolicyLayout = ({ policy }: { policy: Policy }) => (
                     className="inline-flex items-center gap-2 text-sm text-brand-600 hover:text-brand-800 transition-colors group"
                 >
                     <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-                    Back to Policies
+                    {policy.kind === 'disclosure' ? 'Back to Disclosures' : 'Back to Policies'}
                 </Link>
                 <button
                     onClick={() => window.print()}
@@ -127,15 +129,28 @@ export const PolicyLayout = ({ policy }: { policy: Policy }) => (
                     ))}
                 </div>
 
-                {/* Approval footer */}
+                {/* Closing note */}
                 <footer className="px-8 md:px-12 py-6 border-t border-gray-100 bg-gray-50/60 print:bg-white">
                     <p className="text-xs text-gray-500 leading-relaxed">
-                        This Policy has been approved and adopted by the Board of Directors of {COMPANY.name}.
-                        It shall be reviewed periodically and is subject to amendment by the Board to give effect
-                        to any change in law or regulation. In the event of any conflict between this Policy and
-                        the applicable statute, rules or regulations, the provisions of such statute, rules or
-                        regulations shall prevail. For clarifications, contact {COMPANY.complianceOfficer}
-                        {' '}({COMPANY.email}).
+                        {policy.kind === 'disclosure' ? (
+                            <>
+                                This disclosure is made by {COMPANY.name} pursuant to Regulations 46 and 62 of the
+                                SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 and is
+                                updated as and when required. In the event of any conflict between this page and the
+                                applicable statute, rules or regulations, the provisions of such statute, rules or
+                                regulations shall prevail. For clarifications, contact {COMPANY.complianceOfficer}
+                                {' '}({COMPANY.email}).
+                            </>
+                        ) : (
+                            <>
+                                This Policy has been approved and adopted by the Board of Directors of {COMPANY.name}.
+                                It shall be reviewed periodically and is subject to amendment by the Board to give
+                                effect to any change in law or regulation. In the event of any conflict between this
+                                Policy and the applicable statute, rules or regulations, the provisions of such
+                                statute, rules or regulations shall prevail. For clarifications, contact
+                                {' '}{COMPANY.complianceOfficer} ({COMPANY.email}).
+                            </>
+                        )}
                     </p>
                 </footer>
             </motion.article>

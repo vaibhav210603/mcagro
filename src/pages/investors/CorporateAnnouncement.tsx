@@ -48,14 +48,14 @@ const policies: DocumentLink[] = [
 
 // ── Disclosures under Regulation 46 & 62 of SEBI (LODR), 2015 ──
 const reg4662: DocumentLink[] = [
-    { title: "Familiarisation programmes for Independent Directors" },
+    { title: "Familiarisation programmes for Independent Directors", to: "/investors/policies/familiarisation" },
     { title: "Secretarial Compliance Report", url: "/documentforwebsiteupdate/annual-secretarial-compliance-certificate.pdf" },
-    { title: "Press Note" },
+    { title: "Press Releases / Press Notes", to: "/investors/disclosures/press-releases" },
     { title: "Business Details", url: "/about-us" },
-    { title: "Terms and conditions of appointment of Independent Directors" },
+    { title: "Terms and conditions of appointment of Independent Directors", to: "/investors/policies/independent-directors-terms" },
     { title: "Composition of various committees of the Board of Directors", url: "/company/board" },
     { title: "Code of Conduct", url: "/Code of Conduct Policy.pdf" },
-    { title: "Details of establishment of Vigil Mechanism / Whistle Blower Policy" },
+    { title: "Details of establishment of Vigil Mechanism / Whistle Blower Policy", to: "/investors/policies/whistle-blower" },
     { title: "Criteria of making payments to Non-Executive Directors", url: "/Nomination and Remuneration Policy.pdf" },
     { title: "Policy on dealing with Related Party Transactions", url: "/Policy on Related Party Transactions - MRC.pdf" },
     { title: "Email address for grievance redressal and other relevant details", url: "/investors/contact" },
@@ -65,13 +65,13 @@ const reg4662: DocumentLink[] = [
     { title: "Financial results, on conclusion of the Board Meeting where results were approved", url: "/investors/financial-reporting" },
     { title: "Complete copy of the Annual Report", url: "/investors/financial-reporting" },
     { title: "Shareholding Pattern / Unit Holding Pattern", url: "/investors/shareholders-info" },
-    { title: "New name and old name of the listed entity (Date of Name Change)" },
-    { title: "Disclosure of the policy for determination of materiality of events or information" },
+    { title: "New name and old name of the listed entity (Date of Name Change)", to: "/investors/disclosures/name-change" },
+    { title: "Disclosure of the policy for determination of materiality of events or information", to: "/investors/policies/determination-materiality-events" },
     { title: "Contact details of Key Managerial Personnel", url: "/investors/contact" },
-    { title: "Disclosures under sub-regulation (8) of Regulation 30" },
-    { title: "Statements of deviation(s) or variation(s) as specified in Regulation 32" },
-    { title: "Annual Return" },
-    { title: "Newspaper Advertisements" },
+    { title: "Disclosures under sub-regulation (8) of Regulation 30", to: "/investors/disclosures/reg30-8-disclosures" },
+    { title: "Statements of deviation(s) or variation(s) as specified in Regulation 32", to: "/investors/disclosures/reg32-deviation" },
+    { title: "Annual Return", to: "/investors/disclosures/annual-return" },
+    { title: "Newspaper Advertisements", to: "/investors/disclosures/newspaper-advertisements" },
     { title: "Subsidiary Financial Statements", url: "/investors/financial-reporting" },
 ];
 
