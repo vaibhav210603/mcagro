@@ -27,22 +27,23 @@ const complianceCertificates: DocumentLink[] = [
 ];
 
 // ── Policies & Code of Conduct — standard SEBI (LODR) policy set ──
+// Items with `url` link to signed PDFs; items with `to` open the drafted on-site policy page.
 const policies: DocumentLink[] = [
     { title: "NRC Policy and Criteria of making payments to non-executive directors", url: "/Nomination and Remuneration Policy.pdf" },
-    { title: "Policy for determining Material Subsidiaries" },
-    { title: "Familiarisation Policy" },
+    { title: "Policy for determining Material Subsidiaries", to: "/investors/policies/material-subsidiaries" },
+    { title: "Familiarisation Programme for Independent Directors", to: "/investors/policies/familiarisation" },
     { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
-    { title: "Terms and Conditions for Appointment of Independent Directors" },
-    { title: "Policy on Group Company, Material Creditors & Material Litigation" },
-    { title: "Internal Financial Control Policy" },
-    { title: "Archival Policy" },
-    { title: "Policy for Determination of Materiality of Events" },
-    { title: "Policy for Preservation of Documents" },
+    { title: "Terms and Conditions for Appointment of Independent Directors", to: "/investors/policies/independent-directors-terms" },
+    { title: "Policy on Group Companies, Material Creditors & Material Litigation", to: "/investors/policies/group-company-material-litigation" },
+    { title: "Internal Financial Control Policy", to: "/investors/policies/internal-financial-control" },
+    { title: "Archival Policy", to: "/investors/policies/archival" },
+    { title: "Policy for Determination of Materiality of Events", to: "/investors/policies/determination-materiality-events" },
+    { title: "Policy for Preservation of Documents", to: "/investors/policies/preservation-documents" },
     { title: "Policy on Material Related Party Transactions", url: "/Policy on Related Party Transactions - MRC.pdf" },
-    { title: "Risk Management Policy" },
-    { title: "Code of Conduct for Insider Trading & Code of Practices and Procedures for Fair Disclosure of UPSI" },
+    { title: "Risk Management Policy", to: "/investors/policies/risk-management" },
+    { title: "Code of Conduct for Insider Trading & Code of Practices and Procedures for Fair Disclosure of UPSI", to: "/investors/policies/insider-trading-code" },
     { title: "Code of Ethics for Board Members and Senior Management", url: "/Code of Conduct Policy.pdf" },
-    { title: "Vigil Mechanism / Whistle Blower Policy" },
+    { title: "Vigil Mechanism / Whistle Blower Policy", to: "/investors/policies/whistle-blower" },
 ];
 
 // ── Disclosures under Regulation 46 & 62 of SEBI (LODR), 2015 ──

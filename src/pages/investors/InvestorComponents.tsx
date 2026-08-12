@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 
 export type DocumentLink = {
     title: string;
-    /** Omit / leave empty to render a disabled "Coming soon" row. */
+    /** External file / PDF opened in a new tab. Omit / leave empty to render a disabled "Coming soon" row. */
     url?: string;
+    /** Internal SPA route (e.g. a policy page), navigated to in the same tab. Takes precedence over `url`. */
+    to?: string;
     /** Small right-aligned tag, e.g. a period label like "Q1 FY 2025-26". */
     tag?: string;
 };
@@ -53,29 +55,42 @@ export const InvestorPageWrapper = ({
     </div>
 );
 
+const DocumentRowInner = ({ doc }: { doc: DocumentLink }) => (
+    <>
+        <div className="p-2 bg-brand-100 text-brand-600 rounded-md group-hover:bg-brand-200 transition-colors shrink-0">
+            <FileText size={18} />
+        </div>
+        <span className="text-sm font-medium text-gray-700 group-hover:text-brand-800 flex-1">
+            {doc.title}
+        </span>
+        {doc.tag && (
+            <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide whitespace-nowrap">
+                {doc.tag}
+            </span>
+        )}
+        <ExternalLink size={14} className="text-gray-400 group-hover:text-brand-500 opacity-0 group-hover:opacity-100 transition-all shrink-0" />
+    </>
+);
+
+const rowClasses =
+    'flex items-center gap-3 p-3 rounded-lg hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group';
+
 export const DocumentList = ({ documents }: { documents: DocumentLink[] }) => (
     <div className="grid gap-3 pt-4 pb-2">
         {documents.map((doc, idx) =>
-            doc.url ? (
+            doc.to ? (
+                <Link key={idx} to={doc.to} className={rowClasses}>
+                    <DocumentRowInner doc={doc} />
+                </Link>
+            ) : doc.url ? (
                 <a
                     key={idx}
                     href={doc.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-brand-50 border border-transparent hover:border-brand-100 transition-all group"
+                    className={rowClasses}
                 >
-                    <div className="p-2 bg-brand-100 text-brand-600 rounded-md group-hover:bg-brand-200 transition-colors shrink-0">
-                        <FileText size={18} />
-                    </div>
-                    <span className="text-sm font-medium text-gray-700 group-hover:text-brand-800 flex-1">
-                        {doc.title}
-                    </span>
-                    {doc.tag && (
-                        <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide whitespace-nowrap">
-                            {doc.tag}
-                        </span>
-                    )}
-                    <ExternalLink size={14} className="text-gray-400 group-hover:text-brand-500 opacity-0 group-hover:opacity-100 transition-all shrink-0" />
+                    <DocumentRowInner doc={doc} />
                 </a>
             ) : (
                 <div
