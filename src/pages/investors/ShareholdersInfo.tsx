@@ -1,5 +1,4 @@
-import { FileText } from 'lucide-react';
-import { InvestorPageWrapper } from './InvestorComponents';
+import { InvestorPageWrapper, AccordionItem, DocumentList, type DocumentLink } from './InvestorComponents';
 
 // Shareholding pattern reports as filed with BSE (Scrip Code: 540809), by financial year and quarter.
 // url = the filed report for that quarter; undefined = not filed that quarter (early years were half-yearly).
@@ -24,56 +23,30 @@ const quarterCols: { key: keyof Omit<GridRow, 'fy'>; label: string }[] = [
     { key: "q4", label: "Q4 · Mar" },
 ];
 
-const QuarterLink = ({ href, fy, label }: { href?: string; fy: string; label: string }) => {
-    if (!href) return <span className="text-gray-300">—</span>;
-    return (
-        <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-brand-600 hover:text-brand-800 font-medium transition-colors"
-            aria-label={`View shareholding pattern for ${label} FY ${fy}`}
-        >
-            <FileText size={15} /> View
-        </a>
-    );
-};
+const toDocuments = (row: GridRow): DocumentLink[] =>
+    quarterCols.map((q) => ({
+        title: q.label,
+        url: row[q.key],
+        tag: `FY ${row.fy}`,
+    }));
 
 export const ShareholdersInfo = () => (
     <InvestorPageWrapper
         title="Shareholding Information"
-        intro="Shareholding pattern of MRC Agrotech Limited filed with BSE Limited (Scrip Code: 540809) under Regulation 31 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. Select a quarter to view the report."
+        intro="Shareholding pattern of MRC Agrotech Limited filed with BSE Limited (Scrip Code: 540809) under Regulation 31 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. Select a financial year to view the quarterly reports."
         wide
     >
-        <div className="mt-4">
-            <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
-                <table className="w-full text-sm">
-                    <thead>
-                        <tr className="bg-brand-700 text-white">
-                            <th className="text-left py-3.5 px-5 font-semibold text-xs uppercase tracking-wider whitespace-nowrap">Financial Year</th>
-                            {quarterCols.map((q) => (
-                                <th key={q.key} className="text-center py-3.5 px-5 font-semibold text-xs uppercase tracking-wider whitespace-nowrap">{q.label}</th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {shpGrid.map((row) => (
-                            <tr key={row.fy} className="border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors">
-                                <td className="py-4 px-5 font-semibold text-gray-800 whitespace-nowrap">{row.fy}</td>
-                                {quarterCols.map((q) => (
-                                    <td key={q.key} className="py-4 px-5 text-center">
-                                        <QuarterLink href={row[q.key]} fy={row.fy} label={q.label} />
-                                    </td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-            <p className="mt-4 text-xs text-gray-400">
-                Reports are the shareholding patterns filed with BSE Limited. Cells marked “—” are quarters for which no
-                separate pattern was filed (in earlier financial years the pattern was filed on a half-yearly basis).
-            </p>
+        <div className="mt-4 space-y-2">
+            {shpGrid.map((row) => (
+                <AccordionItem key={row.fy} title={`FY ${row.fy}`}>
+                    <DocumentList documents={toDocuments(row)} />
+                </AccordionItem>
+            ))}
         </div>
+        <p className="mt-4 text-xs text-gray-400">
+            Reports are the shareholding patterns filed with BSE Limited. Quarters marked “Coming soon” are periods
+            for which no separate pattern was filed (in earlier financial years the pattern was filed on a
+            half-yearly basis).
+        </p>
     </InvestorPageWrapper>
 );
