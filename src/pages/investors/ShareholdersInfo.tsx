@@ -23,12 +23,15 @@ const quarterCols: { key: keyof Omit<GridRow, 'fy'>; label: string }[] = [
     { key: "q4", label: "Q4 · Mar" },
 ];
 
+// Only quarters with a filed report are shown; unavailable quarters are omitted entirely.
 const toDocuments = (row: GridRow): DocumentLink[] =>
-    quarterCols.map((q) => ({
-        title: q.label,
-        url: row[q.key],
-        tag: `FY ${row.fy}`,
-    }));
+    quarterCols
+        .filter((q) => row[q.key])
+        .map((q) => ({
+            title: q.label,
+            url: row[q.key],
+            tag: `FY ${row.fy}`,
+        }));
 
 export const ShareholdersInfo = () => (
     <InvestorPageWrapper
@@ -44,9 +47,8 @@ export const ShareholdersInfo = () => (
             ))}
         </div>
         <p className="mt-4 text-xs text-gray-400">
-            Reports are the shareholding patterns filed with BSE Limited. Quarters marked “Coming soon” are periods
-            for which no separate pattern was filed (in earlier financial years the pattern was filed on a
-            half-yearly basis).
+            Reports are the shareholding patterns filed with BSE Limited. Only quarters for which a separate
+            pattern was filed are listed (in earlier financial years the pattern was filed on a half-yearly basis).
         </p>
     </InvestorPageWrapper>
 );
