@@ -25,3 +25,7 @@ dist-ssr
 *.sw?
 .vercel
 .env*
+
+# policy-pdf build artifacts
+scripts/policy-pdf/dump.mjs
+scripts/policy-pdf/policies.json

@@ -29,23 +29,24 @@ const complianceCertificates: DocumentLink[] = [
 ];
 
 // ── Policies & Code of Conduct — standard SEBI (LODR) policy set ──
-// Items with `url` link to signed PDFs; items with `to` open the drafted on-site policy page.
+// All items link to PDFs: signed PDFs at the site root, and the drafted policies rendered
+// on the MRC letterhead under /policies/.
 const policies: DocumentLink[] = [
     { title: "NRC Policy and Criteria of making payments to non-executive directors", url: "/Nomination and Remuneration Policy.pdf" },
-    { title: "Policy for determining Material Subsidiaries", to: "/investors/policies/material-subsidiaries" },
-    { title: "Familiarisation Programme for Independent Directors", to: "/investors/policies/familiarisation" },
+    { title: "Policy for determining Material Subsidiaries", url: "/policies/material-subsidiaries.pdf" },
+    { title: "Familiarisation Programme for Independent Directors", url: "/policies/familiarisation.pdf" },
     { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
-    { title: "Terms and Conditions for Appointment of Independent Directors", to: "/investors/policies/independent-directors-terms" },
-    { title: "Policy on Group Companies, Material Creditors & Material Litigation", to: "/investors/policies/group-company-material-litigation" },
-    { title: "Internal Financial Control Policy", to: "/investors/policies/internal-financial-control" },
-    { title: "Archival Policy", to: "/investors/policies/archival" },
-    { title: "Policy for Determination of Materiality of Events", to: "/investors/policies/determination-materiality-events" },
-    { title: "Policy for Preservation of Documents", to: "/investors/policies/preservation-documents" },
+    { title: "Terms and Conditions for Appointment of Independent Directors", url: "/policies/independent-directors-terms.pdf" },
+    { title: "Policy on Group Companies, Material Creditors & Material Litigation", url: "/policies/group-company-material-litigation.pdf" },
+    { title: "Internal Financial Control Policy", url: "/policies/internal-financial-control.pdf" },
+    { title: "Archival Policy", url: "/policies/archival.pdf" },
+    { title: "Policy for Determination of Materiality of Events", url: "/policies/determination-materiality-events.pdf" },
+    { title: "Policy for Preservation of Documents", url: "/policies/preservation-documents.pdf" },
     { title: "Policy on Material Related Party Transactions", url: "/Policy on Related Party Transactions - MRC.pdf" },
-    { title: "Risk Management Policy", to: "/investors/policies/risk-management" },
-    { title: "Code of Conduct for Insider Trading & Code of Practices and Procedures for Fair Disclosure of UPSI", to: "/investors/policies/insider-trading-code" },
+    { title: "Risk Management Policy", url: "/policies/risk-management.pdf" },
+    { title: "Code of Conduct for Insider Trading & Code of Practices and Procedures for Fair Disclosure of UPSI", url: "/policies/insider-trading-code.pdf" },
     { title: "Code of Ethics for Board Members and Senior Management", url: "/Code of Conduct Policy.pdf" },
-    { title: "Vigil Mechanism / Whistle Blower Policy", to: "/investors/policies/whistle-blower" },
+    { title: "Vigil Mechanism / Whistle Blower Policy", url: "/policies/whistle-blower.pdf" },
 ];
 
 export const CorporateAnnouncement = () => (
