@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { InvestorPageWrapper, AccordionItem, DocumentList, type DocumentLink } from './InvestorComponents';
 
 // ── Announcements ──
@@ -46,35 +48,6 @@ const policies: DocumentLink[] = [
     { title: "Vigil Mechanism / Whistle Blower Policy", to: "/investors/policies/whistle-blower" },
 ];
 
-// ── Disclosures under Regulation 46 & 62 of SEBI (LODR), 2015 ──
-const reg4662: DocumentLink[] = [
-    { title: "Familiarisation programmes for Independent Directors", to: "/investors/policies/familiarisation" },
-    { title: "Secretarial Compliance Report", url: "/documentforwebsiteupdate/annual-secretarial-compliance-certificate.pdf" },
-    { title: "Press Releases / Press Notes", to: "/investors/disclosures/press-releases" },
-    { title: "Business Details", url: "/about-us" },
-    { title: "Terms and conditions of appointment of Independent Directors", to: "/investors/policies/independent-directors-terms" },
-    { title: "Composition of various committees of the Board of Directors", url: "/company/board" },
-    { title: "Code of Conduct", url: "/Code of Conduct Policy.pdf" },
-    { title: "Details of establishment of Vigil Mechanism / Whistle Blower Policy", to: "/investors/policies/whistle-blower" },
-    { title: "Criteria of making payments to Non-Executive Directors", url: "/Nomination and Remuneration Policy.pdf" },
-    { title: "Policy on dealing with Related Party Transactions", url: "/Policy on Related Party Transactions - MRC.pdf" },
-    { title: "Email address for grievance redressal and other relevant details", url: "/investors/contact" },
-    { title: "Contact information of designated officials handling investor grievances", url: "/investors/contact" },
-    { title: "Financial Information", url: "/investors/financial-reporting" },
-    { title: "Notice of Board Meeting where financial results are to be discussed", url: "/investors/notice-board" },
-    { title: "Financial results, on conclusion of the Board Meeting where results were approved", url: "/investors/financial-reporting" },
-    { title: "Complete copy of the Annual Report", url: "/investors/financial-reporting" },
-    { title: "Shareholding Pattern / Unit Holding Pattern", url: "/investors/shareholders-info" },
-    { title: "New name and old name of the listed entity (Date of Name Change)", to: "/investors/disclosures/name-change" },
-    { title: "Disclosure of the policy for determination of materiality of events or information", to: "/investors/policies/determination-materiality-events" },
-    { title: "Contact details of Key Managerial Personnel", url: "/investors/contact" },
-    { title: "Disclosures under sub-regulation (8) of Regulation 30", to: "/investors/disclosures/reg30-8-disclosures" },
-    { title: "Statements of deviation(s) or variation(s) as specified in Regulation 32", to: "/investors/disclosures/reg32-deviation" },
-    { title: "Annual Return", to: "/investors/disclosures/annual-return" },
-    { title: "Newspaper Advertisements", to: "/investors/disclosures/newspaper-advertisements" },
-    { title: "Subsidiary Financial Statements", url: "/investors/financial-reporting" },
-];
-
 export const CorporateAnnouncement = () => (
     <InvestorPageWrapper
         title="Statutory Communication & Announcements"
@@ -107,9 +80,20 @@ export const CorporateAnnouncement = () => (
                 <DocumentList documents={policies} />
             </AccordionItem>
 
-            <AccordionItem title="Disclosures under Regulation 46 & 62">
-                <DocumentList documents={reg4662} />
-            </AccordionItem>
+            <Link
+                to="/investors/regulation-46-62"
+                className="flex items-center justify-between gap-4 p-5 rounded-xl border border-brand-100 bg-brand-50/50 hover:bg-brand-50 hover:border-brand-200 transition-colors group"
+            >
+                <div>
+                    <p className="text-lg font-semibold text-gray-800 group-hover:text-brand-800">
+                        Disclosures under Regulation 46 & 62
+                    </p>
+                    <p className="text-sm text-gray-500 mt-0.5">
+                        View the complete website disclosure index under SEBI (LODR) Regulations, 2015.
+                    </p>
+                </div>
+                <ArrowRight size={20} className="text-brand-500 shrink-0 group-hover:translate-x-1 transition-transform" />
+            </Link>
         </div>
     </InvestorPageWrapper>
 );

@@ -12,6 +12,7 @@ import { InvestorsLanding } from './pages/investors/InvestorsLanding';
 import { FinancialReporting } from './pages/investors/FinancialReporting';
 import { ShareholdersInfo } from './pages/investors/ShareholdersInfo';
 import { CorporateAnnouncement } from './pages/investors/CorporateAnnouncement';
+import { RegulationDisclosures } from './pages/investors/RegulationDisclosures';
 import { PolicyPage } from './pages/investors/policies/PolicyPage';
 import { InvestorsContact } from './pages/investors/InvestorsContact';
 import { GrievanceRedressal } from './pages/investors/GrievanceRedressal';
@@ -97,6 +98,7 @@ function App() {
               <Route path="/investors/financial-reporting" element={<FinancialReporting />} />
               <Route path="/investors/shareholders-info" element={<ShareholdersInfo />} />
               <Route path="/investors/corporate-announcement" element={<CorporateAnnouncement />} />
+              <Route path="/investors/regulation-46-62" element={<RegulationDisclosures />} />
               <Route path="/investors/policies/:slug" element={<PolicyPage />} />
               <Route path="/investors/disclosures/:slug" element={<PolicyPage />} />
               <Route path="/investors/contact" element={<InvestorsContact />} />

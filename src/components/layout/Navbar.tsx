@@ -40,6 +40,7 @@ const navLinks = [
             { name: 'Financial Information', href: '/investors/financial-reporting' },
             { name: 'Shareholding Information', href: '/investors/shareholders-info' },
             { name: 'Statutory Communication & Announcements', href: '/investors/corporate-announcement' },
+            { name: 'Disclosures under Regulation 46 & 62', href: '/investors/regulation-46-62' },
             { name: 'Investor Contact', href: '/investors/contact' },
             { name: 'Smart ODR & SEBI SCORES', href: '/investors/grievance-redressal' },
             { name: 'Notices', href: '/investors/notice-board' },
