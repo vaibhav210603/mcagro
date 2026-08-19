@@ -2,9 +2,10 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Printer } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// A single block within a policy. Renders as a heading, paragraphs, a list, or a definition.
+// A single block within a policy. Renders as a heading, sub-heading, paragraphs, a list, or a definition.
 export type PolicyBlock =
     | { type: 'heading'; text: string }
+    | { type: 'subheading'; text: string }
     | { type: 'para'; text: string }
     | { type: 'list'; items: string[]; ordered?: boolean }
     | { type: 'defs'; items: { term: string; text: string }[] };
@@ -36,6 +37,12 @@ const Block = ({ block }: { block: PolicyBlock }) => {
                 <h2 className="text-lg md:text-xl font-bold text-dark mt-8 mb-3 scroll-mt-24">
                     {block.text}
                 </h2>
+            );
+        case 'subheading':
+            return (
+                <h3 className="text-base font-semibold text-brand-800 mt-5 mb-2">
+                    {block.text}
+                </h3>
             );
         case 'para':
             return <p className="text-gray-700 leading-relaxed mb-4 text-justify">{block.text}</p>;
