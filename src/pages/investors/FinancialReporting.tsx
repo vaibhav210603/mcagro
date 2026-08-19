@@ -28,8 +28,12 @@ const quarterlyFinancials: DocumentLink[] = [
     { title: "Financial Results — Quarter ended 31 December 2022", url: "/quaterlies/financial-results-for-quarter-ended-on-31-12-2022.pdf" },
 ];
 
+// RPT disclosures are filed half-yearly with BSE (Reg 23(9) of LODR); the earlier
+// RPT_Disclosure.pdf link was broken (no such file), so it points to the BSE portal.
+const BSE_ANNOUNCEMENTS =
+    'https://www.bseindia.com/stock-share-price/mrc-agrotech-ltd/mrcagro/540809/corp-announcements/';
 const rptDisclosure: DocumentLink[] = [
-    { title: "RPT Disclosure", url: "/documentforwebsiteupdate/RPT_Disclosure.pdf" },
+    { title: "Related Party Transaction Disclosures (filed with BSE)", url: BSE_ANNOUNCEMENTS },
     { title: "Policy on Material Related Party Transactions", url: "/Policy on Related Party Transactions - MRC.pdf" },
 ];
 
