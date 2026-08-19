@@ -4,15 +4,13 @@ import { InvestorPageWrapper, AccordionItem, DocumentList, type DocumentLink } f
 
 // Disclosure index under Regulation 46 & 62 of SEBI (LODR), 2015, following the same item
 // coverage and order used by listed peers, with each item pointing to MRC Agrotech's own
-// document / on-site page, or marked "Not Applicable" where the Company has nothing to disclose.
+// document / on-site page. Items not applicable to the Company are omitted entirely.
 type Item = {
     title: string;
     /** Internal SPA route (same tab). */
     to?: string;
     /** External document / PDF (new tab). Used only if `to` is not set. */
     url?: string;
-    /** Marks the item Not Applicable to the Company. */
-    na?: boolean;
     /** Sub-links; when present the item renders as an expandable accordion. */
     children?: DocumentLink[];
 };
@@ -55,13 +53,9 @@ const items: Item[] = [
     { title: "Financial information — notices of Board meetings and financial results", to: "/investors/financial-reporting" },
     { title: "Annual Reports", to: "/investors/financial-reporting" },
     { title: "Shareholding pattern and quarterly reports", to: "/investors/shareholders-info" },
-    { title: "Agreements entered into with media companies and/or their associates", na: true },
-    { title: "Schedule of analyst or institutional investor conference calls / meetings", na: true },
-    { title: "Audio / video recordings and transcripts of investor / analyst meetings", na: true },
     { title: "New name and old name of the listed entity (change of name)", to: "/investors/disclosures/name-change" },
     { title: "Reconciliation of Share Capital Audit Report", url: BSE_ANNOUNCEMENTS },
     { title: "Newspaper advertisements / publications", to: "/investors/disclosures/newspaper-advertisements" },
-    { title: "Credit ratings obtained for all outstanding instruments", na: true },
     { title: "Financial statements of subsidiary companies", to: "/investors/financial-reporting" },
     { title: "Secretarial Compliance Report", url: "/documentforwebsiteupdate/annual-secretarial-compliance-certificate.pdf" },
     { title: "Disclosure of material events / information filed with the Stock Exchange", url: BSE_ANNOUNCEMENTS },
@@ -71,25 +65,12 @@ const items: Item[] = [
     { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
     { title: "Annual Return under Section 92 of the Companies Act, 2013", to: "/investors/disclosures/annual-return" },
     { title: "Other disclosures filed with the Stock Exchange", children: stockExchangeLinks },
-    { title: "Details of any issue of securities during the year", na: true },
     { title: "Memorandum & Articles of Association of the Company", url: "/documentforwebsiteupdate/MRC_MOA_AOA.pdf" },
-    { title: "Employee Stock Option Scheme (ESOP)", na: true },
 ];
 
 const rowShell = "border border-gray-200 rounded-xl bg-white mb-4 transition-colors";
 
 const LinkRow = ({ item, n }: { item: Item; n: number }) => {
-    if (item.na) {
-        return (
-            <div className={`${rowShell} flex items-center justify-between gap-4 p-5`}>
-                <span className="text-lg font-semibold text-gray-500">{n}. {item.title}</span>
-                <span className="shrink-0 inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-500">
-                    Not Applicable
-                </span>
-            </div>
-        );
-    }
-
     const action = (
         <span className="shrink-0 inline-flex items-center gap-1.5 text-brand-600 group-hover:text-brand-800 font-medium">
             {item.to ? <FileText size={15} /> : <ExternalLink size={15} />} View
@@ -130,8 +111,7 @@ export const RegulationDisclosures = () => (
                 including natural essential oils, lemongrass, tea, seeds, nano fertilizers and guar gum. The equity
                 shares of the Company are listed on BSE Limited (Scrip Code: 540809). In accordance with Regulation 46
                 and 62 of the SEBI (LODR) Regulations, 2015, the Company makes the following information available to
-                its stakeholders. Items marked “Not Applicable” are those for which the Company has no disclosure to
-                make as on date.
+                its stakeholders.
             </p>
 
             <div>
