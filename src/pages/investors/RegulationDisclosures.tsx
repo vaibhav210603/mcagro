@@ -60,10 +60,10 @@ const items: Item[] = [
     { title: "Secretarial Compliance Report", url: "/documentforwebsiteupdate/annual-secretarial-compliance-certificate.pdf" },
     { title: "Disclosure of material events / information filed with the Stock Exchange", url: BSE_ANNOUNCEMENTS },
     { title: "Contact details of Key Managerial Personnel authorised to determine materiality", to: "/investors/contact" },
-    { title: "Disclosures under sub-regulation (8) of Regulation 30 of the LODR", url: "/policies/reg30-8-disclosures.pdf" },
-    { title: "Statements of deviation(s) or variation(s) under Regulation 32", url: "/policies/reg32-deviation.pdf" },
+    { title: "Disclosures under sub-regulation (8) of Regulation 30 of the LODR", url: BSE_ANNOUNCEMENTS },
+    { title: "Statements of deviation(s) or variation(s) under Regulation 32", url: BSE_ANNOUNCEMENTS },
     { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
-    { title: "Annual Return under Section 92 of the Companies Act, 2013", url: "/policies/annual-return.pdf" },
+    { title: "Annual Return under Section 92 of the Companies Act, 2013", to: "/investors/financial-reporting" },
     { title: "Other disclosures filed with the Stock Exchange", children: stockExchangeLinks },
     { title: "Memorandum & Articles of Association of the Company", url: "/documentforwebsiteupdate/MRC_MOA_AOA.pdf" },
 ];
