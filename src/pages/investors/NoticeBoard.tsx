@@ -1,10 +1,13 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { InvestorPageWrapper } from './InvestorComponents';
 import { Search, ExternalLink, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import { API_BASE_URL } from '../../config/api';
 
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
 const ITEMS_PER_PAGE = 15;
+const BSE_PORTAL_URL =
+    'https://www.bseindia.com/stock-share-price/mrc-agrotech-ltd/mrcagro/540809/corp-announcements/';
 
 type Notice = {
     date: string;
@@ -14,6 +17,30 @@ type Notice = {
     pdfUrl: string | null;
     source: 'bse' | 'local';
 };
+
+// ── Category filter (segregates notices by type) ──────────────────────
+type CatKey = 'all' | 'board' | 'trading-window' | 'closure';
+const CATEGORIES: { key: CatKey; label: string }[] = [
+    { key: 'all', label: 'All Notices' },
+    { key: 'board', label: 'Board Meetings' },
+    { key: 'trading-window', label: 'Trading Window' },
+    { key: 'closure', label: 'Closure of Trading Window' },
+];
+// Accepted values for the ?type= query param used to deep-link a pre-applied filter.
+function catFromParam(v: string | null): CatKey {
+    return v === 'board' || v === 'trading-window' || v === 'closure' ? v : 'all';
+}
+// Classify a notice against a category, using its category/subcategory/title text.
+// "Trading Window" is the broad bucket (includes closures); "Closure" is the subset.
+function inCategory(n: Notice, cat: CatKey): boolean {
+    if (cat === 'all') return true;
+    const t = `${n.category} ${n.subcategory ?? ''} ${n.title}`.toLowerCase();
+    const isTradingWindow = t.includes('trading window') || t.includes('trading-window');
+    if (cat === 'closure') return isTradingWindow && /clos/.test(t);
+    if (cat === 'trading-window') return isTradingWindow;
+    if (cat === 'board') return t.includes('board meeting');
+    return true;
+}
 
 // Company-hosted PDFs — always shown in their respective FY
 const LOCAL_NOTICES: Notice[] = [
@@ -116,12 +143,19 @@ function cacheKeyForFY(fyStart: number) {
 }
 
 export const NoticeBoard = () => {
+    const [searchParams] = useSearchParams();
     const [selectedFY, setSelectedFY] = useState<number>(CURRENT_FY);
     // undefined = not yet fetched; Notice[] = loaded (may be empty)
     const [fyData, setFyData] = useState<Partial<Record<number, Notice[]>>>({});
     const [search, setSearch] = useState('');
+    const [category, setCategory] = useState<CatKey>(() => catFromParam(searchParams.get('type')));
     const [currentPage, setCurrentPage] = useState(1);
     const preloadStarted = useRef(false);
+
+    // Keep the active category in sync with the ?type= query param (deep-links from other pages).
+    useEffect(() => {
+        setCategory(catFromParam(searchParams.get('type')));
+    }, [searchParams]);
 
     const localForFY = useCallback((fyStart: number): Notice[] =>
         LOCAL_NOTICES.filter(n => getFYStart(n.date) === fyStart),
@@ -188,12 +222,13 @@ export const NoticeBoard = () => {
 
     const filtered = useMemo(() => {
         if (!currentNotices) return [];
-        if (!search) return currentNotices;
         const q = search.toLowerCase();
-        return currentNotices.filter(n => n.title.toLowerCase().includes(q));
-    }, [currentNotices, search]);
+        return currentNotices.filter(n =>
+            inCategory(n, category) && (!q || n.title.toLowerCase().includes(q)),
+        );
+    }, [currentNotices, search, category]);
 
-    useEffect(() => { setCurrentPage(1); }, [search, selectedFY]);
+    useEffect(() => { setCurrentPage(1); }, [search, selectedFY, category]);
 
     const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
     const paginated = filtered.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
@@ -247,6 +282,23 @@ export const NoticeBoard = () => {
 
                 {/* ── Main Table ────────────────────────────────────────── */}
                 <div className="flex-1 min-w-0 flex flex-col gap-4">
+                    {/* Category filter */}
+                    <div className="flex flex-wrap gap-2">
+                        {CATEGORIES.map(c => (
+                            <button
+                                key={c.key}
+                                onClick={() => setCategory(c.key)}
+                                className={`px-3.5 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+                                    category === c.key
+                                        ? 'bg-brand-600 border-brand-600 text-white'
+                                        : 'bg-white border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-700'
+                                }`}
+                            >
+                                {c.label}
+                            </button>
+                        ))}
+                    </div>
+
                     <div className="bg-white rounded-lg border border-gray-100 overflow-hidden shadow-sm">
                         <div className="overflow-x-auto">
                             <table className="w-full text-sm">
@@ -277,7 +329,9 @@ export const NoticeBoard = () => {
                                                         <p className="text-sm">
                                                             {search
                                                                 ? 'No notices match your search'
-                                                                : `No notices for FY ${fyLabel(selectedFY)}`}
+                                                                : category !== 'all'
+                                                                    ? `No ${CATEGORIES.find(c => c.key === category)?.label.toLowerCase()} notices for FY ${fyLabel(selectedFY)}`
+                                                                    : `No notices for FY ${fyLabel(selectedFY)}`}
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -338,6 +392,21 @@ export const NoticeBoard = () => {
                             {filtered.length} notice{filtered.length !== 1 ? 's' : ''} in FY {fyLabel(selectedFY)}
                         </p>
                     )}
+
+                    {/* Source link — the full announcement history on the BSE portal */}
+                    <div className="mt-4 pt-5 border-t border-gray-100 text-center">
+                        <p className="text-xs text-gray-400 mb-1.5">
+                            Notices are compiled from the Company’s filings with BSE Limited (Scrip Code: 540809).
+                        </p>
+                        <a
+                            href={BSE_PORTAL_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 hover:text-brand-800 transition-colors"
+                        >
+                            <ExternalLink size={14} /> View all announcements on the BSE portal
+                        </a>
+                    </div>
                 </div>
             </div>
         </InvestorPageWrapper>

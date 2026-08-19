@@ -35,11 +35,12 @@ const policyLinks: DocumentLink[] = [
     { title: "Policy for Preservation of Documents", url: "/policies/preservation-documents.pdf" },
 ];
 
-// Stock-exchange filings hosted on the BSE portal for the Company.
+// Stock-exchange filings. Notice-type items (e.g. trading-window closures) link to the
+// Notices page with the matching filter; the rest point to the BSE portal.
 const stockExchangeLinks: DocumentLink[] = [
     { title: "Quarterly Financial Results", to: "/investors/financial-reporting" },
     { title: "Related Party Transaction disclosures", url: BSE_ANNOUNCEMENTS },
-    { title: "Closure of Trading Window", url: BSE_ANNOUNCEMENTS },
+    { title: "Closure of Trading Window", to: "/investors/notice-board?type=closure" },
 ];
 
 const items: Item[] = [
@@ -58,9 +59,9 @@ const items: Item[] = [
     { title: "Newspaper advertisements / publications", url: "/policies/newspaper-advertisements.pdf" },
     { title: "Financial statements of subsidiary companies", to: "/investors/financial-reporting" },
     { title: "Secretarial Compliance Report", url: "/documentforwebsiteupdate/annual-secretarial-compliance-certificate.pdf" },
-    { title: "Disclosure of material events / information filed with the Stock Exchange", url: BSE_ANNOUNCEMENTS },
+    { title: "Disclosure of material events / information filed with the Stock Exchange", to: "/investors/notice-board" },
     { title: "Contact details of Key Managerial Personnel authorised to determine materiality", to: "/investors/contact" },
-    { title: "Disclosures under sub-regulation (8) of Regulation 30 of the LODR", url: BSE_ANNOUNCEMENTS },
+    { title: "Disclosures under sub-regulation (8) of Regulation 30 of the LODR", to: "/investors/notice-board" },
     { title: "Statements of deviation(s) or variation(s) under Regulation 32", url: BSE_ANNOUNCEMENTS },
     { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
     { title: "Annual Return under Section 92 of the Companies Act, 2013", to: "/investors/financial-reporting" },
