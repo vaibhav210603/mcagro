@@ -19,25 +19,24 @@ type Notice = {
 };
 
 // ── Category filter (segregates notices by type) ──────────────────────
-type CatKey = 'all' | 'board' | 'trading-window' | 'closure';
+type CatKey = 'all' | 'board' | 'closure';
 const CATEGORIES: { key: CatKey; label: string }[] = [
     { key: 'all', label: 'All Notices' },
     { key: 'board', label: 'Board Meetings' },
-    { key: 'trading-window', label: 'Trading Window' },
     { key: 'closure', label: 'Closure of Trading Window' },
 ];
 // Accepted values for the ?type= query param used to deep-link a pre-applied filter.
 function catFromParam(v: string | null): CatKey {
-    return v === 'board' || v === 'trading-window' || v === 'closure' ? v : 'all';
+    return v === 'board' || v === 'closure' ? v : 'all';
 }
 // Classify a notice against a category, using its category/subcategory/title text.
-// "Trading Window" is the broad bucket (includes closures); "Closure" is the subset.
 function inCategory(n: Notice, cat: CatKey): boolean {
     if (cat === 'all') return true;
     const t = `${n.category} ${n.subcategory ?? ''} ${n.title}`.toLowerCase();
-    const isTradingWindow = t.includes('trading window') || t.includes('trading-window');
-    if (cat === 'closure') return isTradingWindow && /clos/.test(t);
-    if (cat === 'trading-window') return isTradingWindow;
+    if (cat === 'closure') {
+        const isTradingWindow = t.includes('trading window') || t.includes('trading-window');
+        return isTradingWindow && /clos/.test(t);
+    }
     if (cat === 'board') return t.includes('board meeting');
     return true;
 }
