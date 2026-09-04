@@ -1,4 +1,5 @@
-import { FileText, ExternalLink, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { FileText, ExternalLink, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { InvestorPageWrapper, AccordionItem, DocumentList, type DocumentLink } from './InvestorComponents';
 
@@ -13,6 +14,8 @@ type Item = {
     url?: string;
     /** Sub-links; when present the item renders as an expandable accordion. */
     children?: DocumentLink[];
+    /** Custom body node rendered inside an expandable accordion. */
+    content?: React.ReactNode;
 };
 
 const BSE_ANNOUNCEMENTS =
@@ -35,13 +38,64 @@ const policyLinks: DocumentLink[] = [
     { title: "Policy for Preservation of Documents", url: "/policies/preservation-documents.pdf" },
 ];
 
-// Stock-exchange filings. Notice-type items (e.g. trading-window closures) link to the
-// Notices page with the matching filter; the rest point to the BSE portal.
-const stockExchangeLinks: DocumentLink[] = [
+// Stock-exchange filings.
+const stockExchangeGeneralLinks: DocumentLink[] = [
     { title: "Quarterly Financial Results", to: "/investors/financial-reporting" },
     { title: "Related Party Transaction disclosures", url: BSE_ANNOUNCEMENTS },
-    { title: "Closure of Trading Window", to: "/investors/notice-board?type=closure" },
 ];
+
+const tradingWindowDisclosures: DocumentLink[] = [
+    { title: "Closure of Trading Window — Quarter ended 30 June 2026", tag: "Q1 FY 2026-27", url: "/trading-window/closure-trading-window-jun-2026.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 31 March 2026", tag: "Q4 FY 2025-26", url: "/trading-window/closure-trading-window-mar-2026.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 31 December 2025", tag: "Q3 FY 2025-26", url: "/trading-window/closure-trading-window-dec-2025.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 30 September 2025", tag: "Q2 FY 2025-26", url: "/trading-window/closure-trading-window-sep-2025.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 30 June 2025", tag: "Q1 FY 2025-26", url: "/trading-window/closure-trading-window-jun-2025.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 31 March 2025", tag: "Q4 FY 2024-25", url: "/trading-window/closure-trading-window-mar-2025.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 31 December 2024", tag: "Q3 FY 2024-25", url: "/trading-window/closure-trading-window-dec-2024.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 30 September 2024", tag: "Q2 FY 2024-25", url: "/trading-window/closure-trading-window-sep-2024.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 30 June 2024", tag: "Q1 FY 2024-25", url: "/trading-window/closure-trading-window-jun-2024.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 31 March 2024", tag: "Q4 FY 2023-24", url: "/trading-window/closure-trading-window-mar-2024.pdf" },
+    { title: "Closure of Trading Window — Quarter ended 31 December 2023", tag: "Q3 FY 2023-24", url: "/trading-window/closure-trading-window-dec-2023.pdf" },
+];
+
+const StockExchangeDisclosuresContent = () => {
+    const [tradingWindowOpen, setTradingWindowOpen] = useState(true);
+
+    return (
+        <div className="pt-2 space-y-4">
+            <div>
+                <DocumentList documents={stockExchangeGeneralLinks} />
+            </div>
+            <div className="pt-3 border-t border-gray-100">
+                <button
+                    type="button"
+                    onClick={() => setTradingWindowOpen(!tradingWindowOpen)}
+                    className="w-full flex items-center justify-between py-2 text-left group cursor-pointer"
+                >
+                    <div className="flex items-center gap-2">
+                        <h4 className="text-sm font-semibold text-gray-800 group-hover:text-brand-700 transition-colors">
+                            Closure of Trading Window
+                        </h4>
+                        <span className="text-xs bg-brand-50 text-brand-700 px-2.5 py-0.5 rounded-full font-medium border border-brand-100">
+                            11 filings
+                        </span>
+                    </div>
+                    <ChevronDown
+                        size={16}
+                        className={`text-gray-400 group-hover:text-brand-600 transition-transform duration-200 ${
+                            tradingWindowOpen ? 'rotate-180' : ''
+                        }`}
+                    />
+                </button>
+                {tradingWindowOpen && (
+                    <div className="pt-1">
+                        <DocumentList documents={tradingWindowDisclosures} />
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
 
 const items: Item[] = [
     { title: "Brief details of the business of the Company", to: "/about-us" },
@@ -65,7 +119,7 @@ const items: Item[] = [
     { title: "Statements of deviation(s) or variation(s) under Regulation 32", url: BSE_ANNOUNCEMENTS },
     { title: "Dividend Distribution Policy", url: "/Dividend Distribution Policy.pdf" },
     { title: "Annual Return under Section 92 of the Companies Act, 2013", to: "/investors/financial-reporting" },
-    { title: "Other disclosures filed with the Stock Exchange", children: stockExchangeLinks },
+    { title: "Other disclosures filed with the Stock Exchange", content: <StockExchangeDisclosuresContent /> },
     { title: "Memorandum & Articles of Association of the Company", url: "/documentforwebsiteupdate/MRC_MOA_AOA.pdf" },
 ];
 
@@ -117,7 +171,11 @@ export const RegulationDisclosures = () => (
 
             <div>
                 {items.map((item, idx) =>
-                    item.children ? (
+                    item.content ? (
+                        <AccordionItem key={idx} title={`${idx + 1}. ${item.title}`}>
+                            {item.content}
+                        </AccordionItem>
+                    ) : item.children ? (
                         <AccordionItem key={idx} title={`${idx + 1}. ${item.title}`}>
                             <DocumentList documents={item.children} />
                         </AccordionItem>

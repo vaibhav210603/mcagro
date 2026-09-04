@@ -44,10 +44,45 @@ function inCategory(n: Notice, cat: CatKey): boolean {
 // Company-hosted PDFs — always shown in their respective FY
 const LOCAL_NOTICES: Notice[] = [
     {
+        date: '2026-06-30',
+        title: 'Intimation for Closure of Trading Window (Q1 FY 2026-27)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-jun-2026.pdf',
+        source: 'local',
+    },
+    {
         date: '2026-06-22',
         title: 'Board Meeting Outcome - 22 Jun 2026',
         category: 'Board Meeting',
         pdfUrl: '/agm-egm/MRC - Board Meeting Outcome-22-06-2026.pdf',
+        source: 'local',
+    },
+    {
+        date: '2026-03-30',
+        title: 'Intimation for Closure of Trading Window (Q4 FY 2025-26)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-mar-2026.pdf',
+        source: 'local',
+    },
+    {
+        date: '2025-12-31',
+        title: 'Intimation for Closure of Trading Window (Q3 FY 2025-26)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-dec-2025.pdf',
+        source: 'local',
+    },
+    {
+        date: '2025-09-30',
+        title: 'Intimation for Closure of Trading Window (Q2 FY 2025-26)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-sep-2025.pdf',
+        source: 'local',
+    },
+    {
+        date: '2025-06-30',
+        title: 'Intimation for Closure of Trading Window (Q1 FY 2025-26)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-jun-2025.pdf',
         source: 'local',
     },
     {
@@ -58,10 +93,38 @@ const LOCAL_NOTICES: Notice[] = [
         source: 'local',
     },
     {
+        date: '2025-03-31',
+        title: 'Intimation for Closure of Trading Window (Q4 FY 2024-25)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-mar-2025.pdf',
+        source: 'local',
+    },
+    {
         date: '2025-01-01',
         title: 'Notice of Annual General Meeting 2025',
         category: 'AGM',
         pdfUrl: '/agm-egm/Notice-of-AGM-2025.pdf',
+        source: 'local',
+    },
+    {
+        date: '2024-12-30',
+        title: 'Intimation for Closure of Trading Window (Q3 FY 2024-25)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-dec-2024.pdf',
+        source: 'local',
+    },
+    {
+        date: '2024-09-30',
+        title: 'Closure of Trading Window (Q2 FY 2024-25)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-sep-2024.pdf',
+        source: 'local',
+    },
+    {
+        date: '2024-06-28',
+        title: 'Closure of Trading Window (Q1 FY 2024-25)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-jun-2024.pdf',
         source: 'local',
     },
     {
@@ -76,6 +139,13 @@ const LOCAL_NOTICES: Notice[] = [
         title: 'EGM Outcome - 03 Apr 2024',
         category: 'EGM',
         pdfUrl: '/agm-egm/EGM-Outcome-03-04-2024.pdf',
+        source: 'local',
+    },
+    {
+        date: '2024-03-29',
+        title: 'Closure of Trading Window (Q4 FY 2023-24)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-mar-2024.pdf',
         source: 'local',
     },
     {
@@ -97,6 +167,13 @@ const LOCAL_NOTICES: Notice[] = [
         title: 'EGM Notice',
         category: 'EGM',
         pdfUrl: '/agm-egm/EGM-Notice.pdf',
+        source: 'local',
+    },
+    {
+        date: '2024-01-01',
+        title: 'Closure of Trading Window (Q3 FY 2023-24)',
+        category: 'Closure of Trading Window',
+        pdfUrl: '/trading-window/closure-trading-window-dec-2023.pdf',
         source: 'local',
     },
 ];
