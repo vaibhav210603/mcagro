@@ -1,6 +1,7 @@
 import { InvestorPageWrapper, AccordionItem, DocumentList, type DocumentLink } from './InvestorComponents';
 
 const annualReports: DocumentLink[] = [
+    { title: "Annual Report 2025-26", url: "/annual-reports/MRC Agrotech Ltd Annual Report 25-26 .pdf" },
     { title: "Annual Report 2024-25", url: "/annual-reports/annual-report-2025.pdf" },
     { title: "Annual Report 2023-24", url: "/annual-reports/annual-report-2024.pdf" },
     { title: "Annual Report 2022-23", url: "/annual-reports/annual-report-2023.pdf" },
