@@ -15,7 +15,7 @@ const team = [
     { url: 'https://mrcagro.com/Image/Shweta.jpg', name: 'shweta.jpg' },
     { url: 'https://mrcagro.com/Image/Tyler.jpg', name: 'tyler.jpg' },
     { url: 'https://mrcagro.com/Image/Mehul.jpg', name: 'mehul.jpg' },
-    { url: 'https://mrcagro.com/Image/Deepak_Kilania.jpg', name: 'deepak_kilania.jpg' }
+
 ];
 
 const maharashtra = [

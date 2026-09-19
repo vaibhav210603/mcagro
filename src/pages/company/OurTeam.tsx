@@ -12,7 +12,7 @@ const teamMembers = [
         { name: "Mr. Sanjay Kumar Singh", role: "Agri-finance advisor", image: "/team/sanjay_kumar_singh.jpg", bio: "Sanjay Kumar Singh have more than 25 years of experience in consulting domains like Agri-Finance and agriculture. He is known for his precise analysis, practical insights and razor-sharp strategy. As a Director of the firm, he is deeply involved in consulting with clients and associates. Educational Qualification- MBA from Patna University." },
         { name: "Mr. Vijay Patill", role: "Operations", image: "/team/vijay5.jpeg", bio: "Vijay Patil oversees day-to-day operations at MRC Agrotech, ensuring seamless coordination across supply chain, logistics, and production. With a strong background in operational management and process optimization, he plays a vital role in maintaining quality standards and driving efficiency across all business verticals." },
 
-    { name: "Deepak Kilania", role: "President - Global Affairs", image: "/team/deepak_kilania.jpg", bio: "He is a 1st Gen Entrepreneur with several years of hands-on experience in the real estate and agro-industry sectors. With a strong foundation in Law after completing his bachelor's from NLU Patiala, he combines legal expertise with deep knowledge of Overseas Trade and Agricultural Business Management. As the President of MRC Agrotech, he is recognized for his professionalism, honesty, and commitment towards delivering the highest quality services. He is a strategic leader known for his ability to drive growth and build effective teams in dynamic business environments." },
+
    {
   name: "Mr. Vaibhav Upadhyay",
   role: "Technology and Operations Associate",

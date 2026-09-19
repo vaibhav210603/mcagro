@@ -15,7 +15,7 @@ const teamMembers = [
     
     //{ name: "Mr. Tyler Beaver", role: "Technology Consultant", image: "/team/tyler.jpg" },
     //{ name: "Mehul Kamdar", role: "Global Business Consultant", image: "/team/mehul.jpg" },
-    { name: "Deepak Kilania", role: "President - Global Affairs", image: "/team/deepak_kilania.jpg" },
+
 ];
 
 export const Leadership = () => {
@@ -72,7 +72,7 @@ export const Leadership = () => {
                         Our Leadership
                     </motion.h2>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 ">
                     <button
                         onClick={() => scroll('left')}
                         disabled={!canScrollLeft}
