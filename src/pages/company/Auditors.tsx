@@ -10,10 +10,11 @@ export const Auditors = () => {
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                             <h3 className="text-xl font-semibold text-primary mb-4">Statutory Auditors</h3>
                             <div className="space-y-2">
-                                <p className="font-medium text-dark">M/S Choudhary Choudhary & Company, (CA).(India) Pvt. Ltd.</p>
-                                <p className="text-gray-600">338 V Mall Asha Nagar Thakur Complex, Industrial Estate,</p>
-                                <p className="text-gray-600">Saidham Temple, WEH, Lower Parel (E), Kandivali E, Mumbai 400 101.</p>
-                                <p className="text-gray-600">Email: firmcco@gmail.com</p>
+                                <p className="font-medium text-dark">M/S P. C. Surana & Co., Chartered Accountants</p>
+                                <p className="text-gray-600">FRN: 110631W | Peer Review Certificate No. 026012</p>
+                                <p className="text-gray-600">Office No. 205–206, 2nd Floor, Standard House,</p>
+                                <p className="text-gray-600">83 Maharshi Karve Road, Marine Lines, Mumbai 400 002.</p>
+                                <p className="text-gray-600">Appointed at the 11th AGM, to hold office until the conclusion of the AGM for FY 2030-31.</p>
                             </div>
                         </div>
 

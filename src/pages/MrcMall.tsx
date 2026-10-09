@@ -476,9 +476,9 @@ const ProductCard = ({ product, cartItems, onAdd, onUpdate, theme = 'dark' }: an
                         alt={product.name}
                         className={`
                             ${product.image.includes('temi-tea-card')
-                                ? 'absolute inset-0 object-cover'
-                                : 'absolute inset-4 object-contain'}
-                            w-full h-full z-20 transition-all duration-700 ease-out transform group-hover:scale-105 group-hover:-translate-y-2
+                                ? 'absolute inset-0 w-full h-full object-cover'
+                                : 'absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-contain'}
+                            z-20 transition-all duration-700 ease-out transform group-hover:scale-105 group-hover:-translate-y-2
                             ${isLight ? 'drop-shadow-[0_20px_30px_rgba(30,64,45,0.15)]' : 'drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]'}
                         `}
                     />

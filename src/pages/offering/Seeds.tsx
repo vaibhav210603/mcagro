@@ -6,6 +6,18 @@ import { Droplets, Info } from 'lucide-react';
 
 const products = [
     {
+        name: "Golden Onion Seeds",
+        image: "/offerings/onion.jpg",
+        description: "Hi-yield certified Agronica onion seeds producing highly uniform globe bulbs with golden skin. Strong roots and outstanding bolting resistance under heat stress.",
+        details: [
+            { label: "Category", value: "Vegetable / Sowing" },
+            { label: "Variant", value: "Onion" },
+            { label: "Season", value: "Rabi / Kharif" },
+            { label: "Shelf Life", value: "Bulb storage up to 5 months" }
+        ],
+        uses: "Commercial onion cultivation across seasons, suited to nutrient-poor soils, with excellent bulb storage and high market returns."
+    },
+    {
         name: "Premium Cotton Seeds",
         image: "/offerings/cotton.jpg",
         description: "High-yield, disease-resistant cotton seeds tailored for high productivity in diverse climates. Ensures excellent fiber quality.",
@@ -81,7 +93,7 @@ export const Seeds = () => {
                             {products.map((product, index) => (
                                 <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
                                     <div className="md:w-1/2 h-64 md:h-auto overflow-hidden flex items-center justify-center p-6 relative bg-brand-50/50">
-                                        <img src={product.image} alt={product.name} className="h-full w-full object-cover rounded-xl hover:scale-105 transition-transform duration-500" />
+                                        <img src={product.image} alt={product.name} className="h-full w-full object-contain rounded-xl hover:scale-105 transition-transform duration-500" />
                                     </div>
                                     <div className="p-6 md:p-8 md:w-1/2 flex flex-col">
                                         <h3 className="text-2xl font-bold text-brand-900 mb-3">{product.name}</h3>

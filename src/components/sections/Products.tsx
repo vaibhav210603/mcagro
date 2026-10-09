@@ -20,6 +20,13 @@ const products = [
         link: '/offering/lemongrass'
     },
     {
+        title: 'Onion Seeds',
+        description: 'Golden onion seeds with uniform globe bulbs, bolting resistance and long shelf life.',
+        image: '/offerings/onion.jpg',
+        tag: 'New',
+        link: '/offering/seeds'
+    },
+    {
         title: 'Cotton Seeds',
         description: 'Premium quality cotton seeds for maximum agricultural yield.',
         image: '/offerings/cotton.jpg',
@@ -162,13 +169,17 @@ export const Products = () => {
                                     <source src={product.video} type="video/mp4" />
                                 </video>
                             ) : (
-                                <img
-                                    src={product.image}
-                                    alt={product.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
+                                <div className="absolute inset-x-0 top-0 bottom-[42%] bg-gradient-to-b from-brand-50 to-white p-5 flex items-center justify-center">
+                                    <img
+                                        src={product.image}
+                                        alt={product.title}
+                                        className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                </div>
                             )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent p-8 flex flex-col justify-end">
+                            <div className={`absolute inset-0 p-8 flex flex-col justify-end ${product.video
+                                ? 'bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent'
+                                : 'bg-[linear-gradient(to_top,rgb(17_24_39)_0%,rgb(17_24_39)_42%,transparent_42%)]'}`}>
                                 <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
                                     <span className="inline-block px-3 py-1 bg-brand-600/90 backdrop-blur-sm rounded-full text-[10px] font-bold uppercase tracking-widest text-white mb-4">
                                         {product.tag}

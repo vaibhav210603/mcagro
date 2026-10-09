@@ -58,7 +58,7 @@ export const GuarGum = () => {
                             {products.map((product, index) => (
                                 <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
                                     <div className="h-48 overflow-hidden flex items-center justify-center p-6 relative bg-brand-50/50">
-                                        <img src={product.image} alt={product.name} className="h-full w-full object-cover rounded-xl hover:scale-105 transition-transform duration-500" />
+                                        <img src={product.image} alt={product.name} className="h-full w-full object-contain rounded-xl hover:scale-105 transition-transform duration-500" />
                                     </div>
                                     <div className="p-6 flex-1 flex flex-col">
                                         <h3 className="text-xl font-bold text-brand-900 mb-3">{product.name}</h3>
