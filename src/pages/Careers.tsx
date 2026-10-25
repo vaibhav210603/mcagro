@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { SectionWrapper } from '../components/ui/SectionWrapper';
 import { motion } from 'framer-motion';
 import { Button } from '../components/ui/Button';
@@ -10,6 +10,8 @@ import { API_BASE_URL } from '../config/api';
 export const Careers = () => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
+    const [website, setWebsite] = useState('');
+    const formStartedAt = useRef(Date.now());
     const [showSuccessModal, setShowSuccessModal] = useState(false);
     const [formData, setFormData] = useState({
         fullName: '',
@@ -34,7 +36,7 @@ export const Careers = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, website, formStartedAt: formStartedAt.current }),
             });
 
             const data = await response.json();
@@ -74,6 +76,17 @@ export const Careers = () => {
                         <div className="bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100 mt-12 max-w-2xl mx-auto text-left">
                             <h2 className="text-2xl font-semibold text-brand-800 mb-6 font-display">Apply Now</h2>
                             <form onSubmit={handleSubmit} className="space-y-6">
+                                {/* Honeypot: hidden from people, bots fill it in */}
+                                <input
+                                    type="text"
+                                    name="website"
+                                    value={website}
+                                    onChange={e => setWebsite(e.target.value)}
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                    aria-hidden="true"
+                                    style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+                                />
                                 <div>
                                     <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                                     <input

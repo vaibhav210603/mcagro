@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Loader2 } from 'lucide-react';
 import { Button } from './Button';
@@ -12,6 +12,12 @@ interface ContactModalProps {
 
 export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     const [isLoading, setIsLoading] = useState(false);
+    const [website, setWebsite] = useState('');
+    const formStartedAt = useRef(Date.now());
+
+    useEffect(() => {
+        if (isOpen) formStartedAt.current = Date.now();
+    }, [isOpen]);
     const [showSuccess, setShowSuccess] = useState(false);
     const [formData, setFormData] = useState({
         fullName: '',
@@ -36,7 +42,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             const response = await fetch(`${API_BASE_URL}/api/contact`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, website, formStartedAt: formStartedAt.current }),
             });
 
             const data = await response.json();
@@ -85,6 +91,17 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-4">
+                                {/* Honeypot: hidden from people, bots fill it in */}
+                                <input
+                                    type="text"
+                                    name="website"
+                                    value={website}
+                                    onChange={e => setWebsite(e.target.value)}
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                    aria-hidden="true"
+                                    style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+                                />
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
                                     <input

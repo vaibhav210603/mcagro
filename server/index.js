@@ -75,14 +75,74 @@ const brandFooter = `
     <p style="margin:4px 0 0;color:#9ca3af;font-size:11px;">Block 404, 4th Floor, Sagar Tech Plaza, Andheri East, Mumbai – 400072</p>
   </div>`;
 
+// ─── Spam protection ─────────────────────────────────────────────────────────
+
+const escapeHtml = (value) => String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+const NAME_RE  = /^[\p{L}][\p{L}\s.'-]{1,79}$/u;
+
+const MIN_FILL_MS = 3000;                 // humans take longer than 3s to fill a form
+const MAX_FILL_MS = 24 * 60 * 60 * 1000;  // stale / replayed submissions
+const RATE_WINDOW_MS = 60 * 60 * 1000;
+const RATE_MAX = 3;                       // submissions per IP per hour
+const submissionsByIp = new Map();
+
+const isRateLimited = (ip) => {
+    const now = Date.now();
+    const recent = (submissionsByIp.get(ip) || []).filter(t => now - t < RATE_WINDOW_MS);
+    recent.push(now);
+    submissionsByIp.set(ip, recent);
+    return recent.length > RATE_MAX;
+};
+
+// Returns a reason string if the submission looks like spam, otherwise null.
+const detectSpam = (req) => {
+    const { fullName, email, phone, website, formStartedAt } = req.body || {};
+
+    if (website) return 'honeypot';
+
+    const elapsed = Date.now() - Number(formStartedAt);
+    if (!formStartedAt || !Number.isFinite(elapsed) || elapsed < MIN_FILL_MS || elapsed > MAX_FILL_MS) {
+        return 'timing';
+    }
+
+    if (!NAME_RE.test(String(fullName).trim())) return 'name';
+    if (!EMAIL_RE.test(String(email).trim())) return 'email';
+    const digits = String(phone).replace(/\D/g, '');
+    if (digits.length < 7 || digits.length > 15) return 'phone';
+
+    const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+    if (isRateLimited(ip)) return 'rate-limit';
+
+    return null;
+};
+
+// Silently "succeed" for bots so they don't learn what tripped the filter.
+const rejectSpam = (req, res, route) => {
+    const reason = detectSpam(req);
+    if (!reason) return false;
+    console.warn(`Blocked spam on ${route} (${reason})`);
+    res.status(200).json({ success: true });
+    return true;
+};
+
 // ─── /api/apply  (Careers) ────────────────────────────────────────────────────
 
 app.post('/api/apply', async (req, res) => {
-    const { fullName, email, phone } = req.body;
-
-    if (!fullName || !email || !phone) {
+    if (!req.body?.fullName || !req.body?.email || !req.body?.phone) {
         return res.status(400).json({ success: false, message: 'All fields are required.' });
     }
+    if (rejectSpam(req, res, '/api/apply')) return;
+
+    const fullName = escapeHtml(req.body.fullName.trim());
+    const email    = escapeHtml(req.body.email.trim());
+    const phone    = escapeHtml(req.body.phone.trim());
 
     try {
         // 1. Internal alert → mrcagrotech@gmail.com
@@ -107,11 +167,10 @@ app.post('/api/apply', async (req, res) => {
               </div>`,
         });
 
-        // 2. Confirmation → applicant (CC: mrcagrotech@gmail.com)
+        // 2. Confirmation → applicant
         await transporter.sendMail({
             from: HR_FROM,
             to: email,
-            cc: INTERNAL,
             subject: `Application Received — MRC Agrotech`,
             html: `
               <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
@@ -140,11 +199,17 @@ app.post('/api/apply', async (req, res) => {
 // ─── /api/contact  (Get In Touch · Quotation · Sample · Customer Care) ────────
 
 app.post('/api/contact', async (req, res) => {
-    const { fullName, email, phone, portfolio, note } = req.body;
-
-    if (!fullName || !email || !phone) {
+    if (!req.body?.fullName || !req.body?.email || !req.body?.phone) {
         return res.status(400).json({ success: false, message: 'Name, Email and Phone are required.' });
     }
+    if (rejectSpam(req, res, '/api/contact')) return;
+
+    const fullName  = escapeHtml(req.body.fullName.trim());
+    const email     = escapeHtml(req.body.email.trim());
+    const phone     = escapeHtml(req.body.phone.trim());
+    const note      = escapeHtml(req.body.note);
+    const rawPortfolio = String(req.body.portfolio || '').trim();
+    const portfolio = /^https?:\/\//i.test(rawPortfolio) ? escapeHtml(rawPortfolio) : '';
 
     try {
         // 1. Internal alert → mrcagrotech@gmail.com
@@ -171,11 +236,10 @@ app.post('/api/contact', async (req, res) => {
               </div>`,
         });
 
-        // 2. Confirmation → client (CC: mrcagrotech@gmail.com)
+        // 2. Confirmation → client
         await transporter.sendMail({
             from: HR_FROM,
             to: email,
-            cc: INTERNAL,
             subject: `We've received your request — MRC Agrotech`,
             html: `
               <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
