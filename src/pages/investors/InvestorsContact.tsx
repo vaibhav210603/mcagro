@@ -48,7 +48,7 @@ export const InvestorsContact = () => (
                     <div className="space-y-3 text-sm text-gray-600">
                         <div className="flex items-start gap-2">
                             <MapPin size={16} className="text-gray-400 mt-0.5 shrink-0" />
-                            <span>Office no 1028, The Summit Business Bay by Omkar, WEH, Andheri (E), Mumbai 400 093.</span>
+                            <span>Block 404, 4th floor, Sagar Tech Plaza, B Wing, Off Andheri Kurla Road, Sakinaka, Andheri East, Mumbai, Maharashtra - 400072.</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Mail size={16} className="text-gray-400 shrink-0" />

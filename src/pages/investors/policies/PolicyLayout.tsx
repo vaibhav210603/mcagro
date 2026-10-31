@@ -25,7 +25,7 @@ export const COMPANY = {
     name: 'MRC Agrotech Limited',
     scrip: 'BSE Scrip Code: 540809',
     office:
-        'Office No. 1028, The Summit Business Bay by Omkar, Western Express Highway, Andheri (East), Mumbai – 400 093',
+        'Block 404, 4th Floor, Sagar Tech Plaza, B Wing, Off Andheri Kurla Road, Sakinaka, Andheri (East), Mumbai – 400 072',
     email: 'info@mrcagro.com',
     complianceOfficer: 'Mr. Rahul Mathur, Company Secretary & Compliance Officer',
 };
