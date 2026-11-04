@@ -23,7 +23,7 @@ const products = [
     },
     {
         name: "Second Pluck",
-        images: img('second-pluck', 5),
+        images: img('second-pluck', 3),
         description: "The second flush harvest delivers a fuller body and richer muscatel character. A classic choice for those who love a robust, aromatic cup of Darjeeling-style tea.",
         details: [
             { label: "Category", value: "Beverages / Tea" },
@@ -47,7 +47,7 @@ const products = [
     },
     {
         name: "Classic",
-        images: img('classic', 4),
+        images: img('classic', 5),
         description: "Temi Tea Classic is the signature blend — a timeless, well-balanced cup that represents the very essence of Sikkim's pristine tea gardens. A consistent favourite.",
         details: [
             { label: "Category", value: "Beverages / Tea" },
@@ -59,7 +59,7 @@ const products = [
     },
     {
         name: "Special",
-        images: img('special', 4),
+        images: img('special', 3),
         description: "An elevated selection from the finest lots of each harvest, the Special blend is curated for connoisseurs who demand the best from Sikkim's high-altitude tea gardens.",
         details: [
             { label: "Category", value: "Beverages / Tea" },
@@ -71,7 +71,7 @@ const products = [
     },
     {
         name: "Green Tea",
-        images: img('green-tea', 4),
+        images: img('green-tea', 5),
         description: "Minimally processed green tea from Temi Estate, preserving the natural chlorophyll and catechins. Light, grassy, and refreshing with a clean finish.",
         details: [
             { label: "Category", value: "Beverages / Tea" },
@@ -83,7 +83,7 @@ const products = [
     },
     {
         name: "Temi Tea Dip",
-        images: img('dip', 5),
+        images: img('dip', 4),
         description: "Convenience meets quality — Temi Tea Dip bags are filled with finely cut leaves from the estate, delivering an authentic Temi experience in an easy-to-brew format.",
         details: [
             { label: "Category", value: "Beverages / Tea" },
@@ -95,7 +95,7 @@ const products = [
     },
     {
         name: "Green Tea Premium",
-        images: img('green-tea-premium', 6),
+        images: img('green-tea-premium', 3),
         description: "The finest grade of Temi green tea, hand-picked from select bushes at peak freshness. A rare, high-altitude green tea with a sweet vegetal note and delicate floral undertones.",
         details: [
             { label: "Category", value: "Beverages / Tea" },
@@ -107,7 +107,7 @@ const products = [
     },
     {
         name: "Premium Tea",
-        images: img('premium-tea', 6),
+        images: img('premium-tea', 5),
         description: "The crown jewel of the Temi Tea range — an ultra-premium selection sourced from the top lots of the estate's best-performing garden sections, season after season.",
         details: [
             { label: "Category", value: "Beverages / Tea" },
